@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Paper on Sheared Polygonal Texture Filtering accepted to Graphics Interface 2024! :sparkles: :smile:
+Paper on Sheared Polygonal Texture Filtering accepted to Graphics Interface 2024! :smile:
