@@ -22,4 +22,4 @@ I’m a PhD student at [CGV](https://graphics.tudelft.nl/). My research focuses 
 
 I got my MSc with honours in Computer Science (Informatica), Game and Media Technology programme from Utrecht University in the summer of 2020.
 
-Before this, I worked as a 3D GIS engineer at SuperMap, focusing on a project related to virtual earth production.
+Before this, I worked as a 3D GIS engineer in R&D department at SuperMap, focusing on productions related to virtual earth and map.
