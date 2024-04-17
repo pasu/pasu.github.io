@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Real-time Rendering. Neural Rendering. 
+subtitle: :black_nib: I imagine things and render. :running: I like music while running. 
 
 profile:
   align: right
@@ -18,6 +18,8 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-I’m a PhD student at [CGV](https://graphics.tudelft.nl/). My research focuses primarily on real-time rendering, realistic material, global illumination and VR rendering. In addition, I am interested in offline/differentiable rendering.
+I’m a PhD student at [CGV](https://graphics.tudelft.nl/). My research focuses primarily on real-time rendering, realistic material, global illumination and VR rendering. In addition, I am interested in Differentiable/Neural Rendering.
 
 I got my MSc with honours in Computer Science (Informatica), Game and Media Technology programme from Utrecht University in the summer of 2020.
+
+Before this, I worked as a 3D GIS engineer at SuperMap, focusing on a project related to virtual earth production.
