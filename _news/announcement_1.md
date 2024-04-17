@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Joined the [CGV](https://graphics.tudelft.nl/) group at TU Delft as a PhD Candidate.
+Joined the [CGV](https://graphics.tudelft.nl/) group at TU Delft as a PhD Candidate. :black_nib: :running:
