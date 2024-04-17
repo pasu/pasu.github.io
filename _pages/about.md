@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: :black_nib: I imagine things and render. :running: I like music while running. 
+subtitle: I imagine things and render. I listen to music while running. 
 
 profile:
   align: right

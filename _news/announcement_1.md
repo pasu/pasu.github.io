@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2024-02-28
+date: 2022-06-01
 inline: true
 related_posts: false
 ---
 
-Paper on Sheared Polygonal Texture Filtering accepted to Graphics Interface 2024! :smile:
+Joined the [CGV](https://graphics.tudelft.nl/) group at TU Delft as a PhD Candidate.
