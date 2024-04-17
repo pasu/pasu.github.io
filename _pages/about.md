@@ -1,6 +1,6 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
 subtitle: I imagine things and render<img class="emoji" title=":black_nib:" alt=":black_nib:" src="https://github.githubassets.com/images/icons/emoji/unicode/2712.png" height="20" width="20">. I listen to music while running<img class="emoji" title=":running:" alt=":running:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c3.png" height="20" width="20">. 
 
