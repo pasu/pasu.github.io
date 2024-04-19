@@ -2,12 +2,14 @@
 ---
 
 @inproceedings{
-lu2024sheared,
-title={Sheared Polygonal Texture Filtering},
-author={Guowei Lu and Jerry Jinfeng Guo and Petr Kellnhofer and Elmar Eisemann},
-booktitle={Graphics Interface 2024},
-year={2024},
-url={https://openreview.net/forum?id=FvacOa0yWl}
-abbr={Graphics Interface},
-abstract={Efficient and precise texture filtering is essential in various applications. However, there is often a trade-off between coarse real-time approximations and accurate computationally-expensive supersampling. We introduce a novel efficient texture-filtering method over arbitrary quadrilateral footprints, achieving high accuracy at a low computational cost. We achieve this by pre-computing integration tables that sparsely sample the space of possible footprints. Finally, we compare the qualitative and computational performance of our method to commonly used techniques and demonstrate various applications for high-quality real-time image synthesis, including normal filtering, soft shadow mapping, and glint rendering.}
+  uzolas2023templatefree,
+  title={Template-free Articulated Neural Point Clouds for Reposable View Synthesis},
+  author={Lukas Uzolas and Elmar Eisemann and Petr Kellnhofer},
+  booktitle={Thirty-seventh Conference on Neural Information Processing Systems},
+  year={2023},
+  url={https://openreview.net/forum?id=fyfmHi8ay3},
+  code={https://github.com/lukasuz/Articulated-Point-NeRF},
+  pdf={https://arxiv.org/abs/2305.19065},
+  abbr={NeurIPS},
+  abstract={Dynamic Neural Radiance Fields (NeRFs) achieve remarkable visual quality when synthesizing novel views of time-evolving 3D scenes. However, the common reliance on backward deformation fields makes reanimation of the captured object poses challenging. Moreover, the state of the art dynamic models are often limited by low visual fidelity, long reconstruction time or specificity to narrow application domains. In this paper, we present a novel method utilizing a point-based representation and Linear Blend Skinning (LBS) to jointly learn a Dynamic NeRF and an associated skeletal model from even sparse multi-view video. Our forward-warping approach achieves state-of-the-art visual fidelity when synthesizing novel views and poses while significantly reducing the necessary learning time when compared to existing work. We demonstrate the versatility of our representation on a variety of articulated objects from common datasets and obtain reposable 3D reconstructions without the need of object-specific skeletal templates.}
 }
