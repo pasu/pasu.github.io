@@ -9,7 +9,6 @@ thesis_years: [2020]
 nav: true
 nav_order: 2
 ---
-<i>* denotes equal contribution</i>
 
 <!-- <div class="publications">
 <h2>preprints</h2>
