@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: I imagine things and render🎨. I listen to music while running.
+subtitle: I imagine things and render🎨. I listen to music while running🏃.
 
 profile:
   align: right
