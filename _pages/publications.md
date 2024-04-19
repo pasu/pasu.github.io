@@ -20,7 +20,7 @@ nav_order: 2
 {% endfor %}
 
 <div class="publications">
-<h2>Theses</h2>
+<h2>Thesis</h2>
 
 {% for y in page.thesis_years %}
 
