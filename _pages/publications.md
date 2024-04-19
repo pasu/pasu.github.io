@@ -23,7 +23,7 @@ nav_order: 2
 <h2>Theses</h2>
 
 {% for y in page.thesis_years %}
-  
+
   <h2 class="year">{{y}}</h2>
   {% bibliography -f thesis -q @*[year={{y}}]* %}
 {% endfor %}
