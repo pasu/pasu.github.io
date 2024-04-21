@@ -8,4 +8,4 @@ categories: 3DGIS
 related_posts: false
 ---
 
-3D
+This is an example post with image galleries.
