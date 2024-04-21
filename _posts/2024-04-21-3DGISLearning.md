@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 3D GIS
+title: 3D GIS个人学习小结
 date: 2024-04-21 11:01:00
 tags: 3DGIS
 categories: 3DGIS
