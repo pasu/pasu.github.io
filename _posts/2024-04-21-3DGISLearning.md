@@ -6,4 +6,8 @@ tags: 3DGIS
 categories: 3DGIS
 ---
 
-3D GIS，顾名思义，3D要求具备一定的CG(知识)，包括Geometry（几何），Rendering（渲染）以及Simulation（模拟）等物理建模内容. GIS则针对地理信息领域，比如地形，建筑物以及云雨等地球尺度下的数据内容。因此，3D GIS的核心是对物理世界的建模。从技术研发角度，需要我们具备基本的Dev(编程)能力，比如C++，JS（WebGL/WebGPU），Shader以及性能调优（CPU/GPU）能力。而3D GIS的技术研究者也需要具备如上三点（CG/GIS/Dev）的相应知识储备。
+3D GIS，顾名思义，3D要求具备一定的'CG'(知识)，包括Geometry（几何），Rendering（渲染）以及Simulation（模拟）等物理建模内容. GIS则针对地理信息领域，比如地形，建筑物以及云雨等地球尺度下的数据内容。因此，3D GIS的核心是对物理世界的建模。从技术研发角度，需要我们具备基本的Dev(编程)能力，比如C++，JS（WebGL/WebGPU），Shader以及性能调优（CPU/GPU）能力。而3D GIS的研发者也需要具备如上三点（CG/GIS/Dev）的相应知识储备。
+
+
+
+Hoodie Thundercats retro, tote bag 8-bit Godard craft beer gastropub. Truffaut Tumblr taxidermy, raw denim Kickstarter sartorial dreamcatcher. Quinoa chambray slow-carb salvia readymade, bicycle rights 90's yr typewriter selfies letterpress cardigan vegan.
