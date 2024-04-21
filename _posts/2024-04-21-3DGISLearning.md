@@ -8,19 +8,4 @@ categories: 3DGIS
 
 3D GIS，顾名思义，3D要求具备一定的CG(知识)，包括Geometry（几何），Rendering（渲染）以及Simulation（模拟）等.
 
-#### Hipster list
-
-- brunch
-- fixie
-- raybans
-- messenger bag
-
-#### Check List
-
-- [x] Brush Teeth
-- [ ] Put on socks
-  - [x] Put on left sock
-  - [ ] Put on right sock
-- [x] Go to school
-
 Hoodie Thundercats retro, tote bag 8-bit Godard craft beer gastropub. Truffaut Tumblr taxidermy, raw denim Kickstarter sartorial dreamcatcher. Quinoa chambray slow-carb salvia readymade, bicycle rights 90's yr typewriter selfies letterpress cardigan vegan.
