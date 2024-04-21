@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 3D GIS
-date: 2015-05-15 21:01:00
+date: 2024-04-21 21:01:00
 description: this is what included images could look like
 tags: formatting images
 categories: sample-posts
