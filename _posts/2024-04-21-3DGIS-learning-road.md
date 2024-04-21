@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 3D GIS个人学习路线总结
+title: 3D GIS
 date: 2024-04-21 11:12:00-0400
-description: an example of a blog post with some math
-tags: 3DGIS 学习
-categories: 3DGIS
+description: this is what included images could look like
+tags: formatting images
+categories: sample-posts
 related_posts: false
 ---
 
