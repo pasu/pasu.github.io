@@ -3,7 +3,7 @@ layout: page
 permalink: /publications/
 title: Publications
 description:
-paper_years: [2024,2025]
+paper_years: [2024]
 thesis_years: [2020]
 nav: true
 nav_order: 2
