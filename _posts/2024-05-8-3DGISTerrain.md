@@ -23,4 +23,3 @@ categories: 3DGIS
 8 Point cloud processing/ Content/ massive
 
 9 hydrographic chart
-
