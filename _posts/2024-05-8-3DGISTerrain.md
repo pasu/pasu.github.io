@@ -10,9 +10,9 @@ categories: 3DGIS
 
 2 DT VD
 
-3 Representation and conversion / Simplification
+3 Representation and conversion / Simplification 、Global digital elevation models
 
-4 Global digital elevation models
+4 
 
 5 Topographic properties
 
