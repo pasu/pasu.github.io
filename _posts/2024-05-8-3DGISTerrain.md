@@ -6,13 +6,13 @@ tags: 3D GIS Terrain
 categories: 3DGIS
 ---
 
+上篇介绍感知技术时
+
 1 DEM/PC: optical and radar
 
 2 DT VD
 
 3 Representation and conversion / Simplification 、Global digital elevation models
-
-4 
 
 5 Topographic properties
 
