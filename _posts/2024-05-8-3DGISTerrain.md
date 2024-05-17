@@ -6,7 +6,7 @@ tags: 3D GIS Terrain
 categories: 3DGIS
 ---
 
-地形的采集
+地形的采集 laser
 
 1 DEM/PC: optical and radar
 
