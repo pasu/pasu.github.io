@@ -8,7 +8,7 @@ categories: C++
 
 pbrt-v4 plays a pivotal role in my research endeavors. Recognizing that my C++ proficiency requires modernization, I view this state-of-the-art open-source project as an ideal platform to enhance my skills in contemporary C++ practices. This series aims to document and share that journey.
 
-## The Evolution of pbrt-v4
+### The Evolution of pbrt-v4
 
 The journey began with Matt Pharr's keynote, "Porting pbrt to the GPU While Preserving its Soul," presented at HPG 2020. This talk illuminated the integration of modern C++ techniques within pbrt, including advanced memory management, polymorphic memory resources (pmr), and tagged dispatch for efficient polymorphism.
 
@@ -16,15 +16,15 @@ Modern C++ represents a paradigm shift from earlier iterations, such as C++98, w
 
 Moreover, modern C++ is a comprehensive solution for streamlining development and collaboration. It encompasses sophisticated build systems and project layouts (e.g., **CMake**), robust dependency management tools (e.g., **vcpkg** or **Conan**), continuous integration systems (e.g., **GitHub Actions**), and advanced IDEs (e.g., **VS Code**, **Visual Studio**, **CLion**) augmented by powerful AI tools like GitHub Copilot.
 
-## Why Learn Modern C++ Through pbrt-v4?
+### Why Learn Modern C++ Through pbrt-v4?
 
-### Key Attributes of pbrt-v4
+#### Key Attributes of pbrt-v4
 
 - Approximately 72,000 lines of modular, portable C++ code.
 - A design philosophy that balances pedagogical clarity with computational performance.
 - Implementation leveraging **C++17**, with features such as tagged dispatch, polymorphic memory allocation, and GPU-centric paradigms.
 
-### Rationale for Employing pbrt-v4 as a Learning Platform
+#### Rationale for Employing pbrt-v4 as a Learning Platform
 
 1. **A Codebase Exemplifying Advanced C++ Constructs**
 
@@ -48,7 +48,7 @@ Moreover, modern C++ is a comprehensive solution for streamlining development an
 
    - The framework provides a deep dive into the intricacies of rendering pipelines, mathematical modeling, and parallel computation, all realized through idiomatic C++.
 
-## Conclusion
+### Conclusion
 
 I began learning programming in high school in 2000. As a financially constrained student, I purchased two second-hand books: one on basic programming and another titled C++程序设计 by 谭浩强. My mother, despite our limited means, invested around 8000 RMB in a computer for me. Unfortunately, my first attempt to set up a Turbo C environment resulted in the computer breaking down. Consequently, I couldn’t program on it, but I cherish memories of playing the video game Sword and Fairy (仙剑奇侠传 98) with my sister on that machine.
 
