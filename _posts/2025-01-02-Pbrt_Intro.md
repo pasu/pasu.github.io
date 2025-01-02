@@ -50,7 +50,7 @@ Moreover, modern C++ is a comprehensive solution for streamlining development an
 
 ## Conclusion
 
-I began learning programming in high school in 2000. As a financially constrained student, I purchased two second-hand books: one on basic programming and another titled *C++程序设计* by 谭浩强. My mother, despite our limited means, invested around 8000 RMB in a computer for me. Unfortunately, my first attempt to set up a Turbo C environment resulted in the computer breaking down. Consequently, I couldn’t program on it, but I cherish memories of playing the video game *Sword and Fairy (仙剑奇侠传 98)* with my sister on that machine.
+I began learning programming in high school in 2000. As a financially constrained student, I purchased two second-hand books: one on basic programming and another titled C++程序设计 by 谭浩强. My mother, despite our limited means, invested around 8000 RMB in a computer for me. Unfortunately, my first attempt to set up a Turbo C environment resulted in the computer breaking down. Consequently, I couldn’t program on it, but I cherish memories of playing the video game Sword and Fairy (仙剑奇侠传 98) with my sister on that machine.
 
 My initial motivation to become a programmer stemmed from a desire to prove that the computer was a worthwhile investment, justifying the significant financial sacrifice my mother made.
 
