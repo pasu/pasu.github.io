@@ -10,9 +10,9 @@ pbrt-v4 plays a pivotal role in my research endeavors. Recognizing that my C++ p
 
 ### The Evolution of pbrt-v4
 
-The journey began with Matt Pharr's keynote, "Porting pbrt to the GPU While Preserving its Soul," presented at HPG 2020. This talk illuminated the integration of modern C++ techniques within pbrt, including advanced memory management, polymorphic memory resources (pmr), and tagged dispatch for efficient polymorphism.
+The journey began with Matt Pharr's keynote, "Porting pbrt to the GPU While Preserving its Soul," presented at HPG 2020 [1]. This talk illuminated the integration of modern C++ techniques within pbrt, including advanced memory management, polymorphic memory resources (pmr), and tagged dispatch for efficient polymorphism.
 
-Modern C++ represents a paradigm shift from earlier iterations, such as C++98, with consistent updates every three years culminating in C++23. Features like `std::optional`, lambdas, `std::move`, and `std::thread` simplify development and enhance robustness. For inspiration, I recommend the article "Remember the Vase!" by C++ founder Bjarne Stroustrup, who advises: "Work hard on a solid foundation, learn from experience, and don’t scrimp on testing." Personally, working with the pbrt project offers a hands-on avenue to practice these concepts. Adopting modern C++ isn't merely about acquiring new skills but also shedding outdated practices, such as over-reliance on `new` and raw pointers—a transformation that makes modern C++ feel like "C+" in essence.
+Modern C++ represents a paradigm shift from earlier iterations, such as C++98, with consistent updates every three years culminating in C++23. Features like `std::optional`, lambdas, `std::move`, and `std::thread` simplify development and enhance robustness. For inspiration, I recommend the article "Remember the Vase!" by C++ founder Bjarne Stroustrup, who advises: "Work hard on a solid foundation, learn from experience, and don’t scrimp on testing" [2]. Personally, working with the pbrt project offers a hands-on avenue to practice these concepts. Adopting modern C++ isn't merely about acquiring new skills but also shedding outdated practices, such as over-reliance on `new` and raw pointers—a transformation that makes modern C++ feel like "C+" in essence.
 
 Moreover, modern C++ is a comprehensive solution for streamlining development and collaboration. It encompasses sophisticated build systems and project layouts (e.g., **CMake**), robust dependency management tools (e.g., **vcpkg** or **Conan**), continuous integration systems (e.g., **GitHub Actions**), and advanced IDEs (e.g., **VS Code**, **Visual Studio**, **CLion**) augmented by powerful AI tools like GitHub Copilot.
 
@@ -57,3 +57,8 @@ My initial motivation to become a programmer stemmed from a desire to prove that
 Proficiency in modern C++ is indispensable for engineers and researchers striving to create scalable, efficient, and robust applications, particularly in performance-critical domains such as computer graphics.
 
 Have fun!
+
+## References
+
+1. Matt Pharr's keynote, "[Porting pbrt to the GPU While Preserving its Soul](https://highperformancegraphics.org/slides20/wed_pharr.pdf)," presented at HPG 2020.
+2. Bjarne Stroustrup's article "[Remember the Vasa!](https://www.stroustrup.com/P0977-remember-the-vasa.pdf)" highlighting foundational principles in programming and testing.
