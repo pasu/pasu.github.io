@@ -360,18 +360,20 @@ The osculating circle method differs from previous discrete curvature approximat
 
 #### Key Properties of Curvature Flows
 
-When studying curvature-based flows on curves, there are several fundamental properties that help in understanding their behavior:  
+When studying curvature-based flows on curves, there are several fundamental properties that help in understanding their behavior:
 
 1. **Total Curvature**
    **Property**: The **total curvature** remains constant throughout the flow.
-   - For smooth curves, the total curvature is $\int_0^L \kappa(s) \, ds$.  
+
+   - For smooth curves, the total curvature is $\int_0^L \kappa(s) \, ds$.
    - In the discrete case, the total curvature is typically expressed as $\sum_i \kappa_i$ (using one of the discrete definitions of curvature).
    - This conservation is tied to intrinsic geometric properties of the curve.
 
 2. **Drift**
    **Property**: The center of mass of the curve does not drift from the origin during the flow.
+
    - For a parameterized curve $\gamma(s)$, the center of mass is given by:
-     
+
      $$
      \text{Center of Mass} = \frac{1}{L} \int_0^L \gamma(s) \, ds.
      $$
