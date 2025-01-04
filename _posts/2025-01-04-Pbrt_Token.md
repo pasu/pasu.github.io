@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Exploring the Tokenizer and ParserTarget in PBRT
-date: 2025-01-04 15:30:00
-tags: ModernC++ Pbrt
-categories: C++
+title: DDG Introduction 2
+date: 2025-01-02 17:27:00
+tags: Geometry
+categories: DDG
 ---
 
 "Life would be easier if the world is continuous."
