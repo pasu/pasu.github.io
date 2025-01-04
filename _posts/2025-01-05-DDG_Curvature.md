@@ -15,7 +15,7 @@ A **continuous curve** is a fundamental concept in mathematics, appearing in fie
 
 ---
 
-### **What Is a Continuous Curve?**
+### What Is a Continuous Curve?
 
 A **parameterized curve** in the 2D plane can be defined as a mapping:
 
@@ -30,7 +30,7 @@ where:
 
 ---
 
-### **Tangent Vector of a Curve**
+### Tangent Vector of a Curve
 
 The **tangent vector** gives the direction of the curve at a specific point $\gamma(s)$. It is defined as the derivative of the curve with respect to the parameter $s$:
 
@@ -44,7 +44,7 @@ The tangent vector points in the direction in which the curve is moving at $\gam
 
 ---
 
-### **Normal Vector of a Curve**
+### Normal Vector of a Curve
 
 The **normal vector** is perpendicular to the tangent vector and provides the “sideways” direction of the curve at a given point. In 2D, the normal vector is obtained by performing a quarter-turn rotation (90° counter-clockwise) on the tangent vector. This is achieved using the **rotation operator**:
 
@@ -65,7 +65,7 @@ The tangent and normal vectors satisfy the following:
 
 ---
 
-### **Curvature of a Curve**
+### Curvature of a Curve
 
 The **curvature** quantifies how sharply a curve bends at a given point. It is defined as the rate of change of the tangent vector $T(s)$ with respect to the arc-length parameter $s$:
 
@@ -75,15 +75,16 @@ $$
 
 In simple terms, curvature measures how quickly the direction of the tangent vector changes as you move along the curve.
 
-#### **Geometric Interpretation**
+#### Geometric Interpretation
 
 - **High Curvature**: The curve bends sharply.
 - **Low Curvature**: The curve is almost straight.
 - For a **circle** of radius $r$, the curvature is constant everywhere: $\kappa = \frac{1}{r}$.
 
-#### **Signed Curvature**
+#### Signed Curvature
 
 In 2D, curvature can also carry a **sign** to indicate the direction of bending:
+
 - **Positive curvature**: The curve bends counter-clockwise.
 - **Negative curvature**: The curve bends clockwise.
 
@@ -103,7 +104,7 @@ where $\det(\gamma'(s), \gamma''(s))$ is the determinant of the tangent and seco
     </div>
 </div>
 
-### **Summary of Relationships**
+### Summary of Relationships
 
 1. **Tangent Vector $T(s)$**: Indicates the direction of motion.
 2. **Normal Vector $N(s)$**: Points perpendicular to $T(s)$, describing the sideways direction.
@@ -113,7 +114,7 @@ These elements together form the core tools for studying and analyzing the geome
 
 ---
 
-### **Discrete Curvature**
+### Discrete Curvature
 
 A **discrete curve** is a piecewise linear parameterized curve, defined as a sequence of vertices $\{\gamma_i\}$, connected by straight line segments. Unlike smooth curves, discrete curves do not have a continuous tangent or curvature, which poses challenges in defining curvature. Direct application of curvature definitions from smooth curves results in values that are either zero (for straight segments) or infinite (at sharp corners).
 
@@ -125,7 +126,7 @@ A **discrete curve** is a piecewise linear parameterized curve, defined as a seq
 
 To address this, we use **approximations of curvature** based on discrete geometry concepts.
 
-#### **Turning Angle**
+#### Turning Angle
 
 One approach to defining discrete curvature is through the **turning angle** at each vertex of the curve. For a vertex $\gamma_i$, the turning angle is defined as the angle between the vectors $(\gamma_i - \gamma_{i-1})$ and $(\gamma_{i+1} - \gamma_i)$:
 
@@ -149,7 +150,7 @@ This mathematical formulation expresses the **variation of the curve length** du
 
 ---
 
-#### **Length Variation of a Curve**
+#### Length Variation of a Curve
 
 Given a smooth parameterized curve $\gamma(s)$, we consider a perturbation of the curve by a smooth function $\eta(s)$, which modifies the original curve as:
 
@@ -159,7 +160,7 @@ $$
 
 where $\epsilon$ is a small parameter. The goal is to evaluate how the length of the curve changes under this perturbation at $\epsilon = 0$.
 
-##### **Length Functional**
+##### Length Functional
 
 The length of the perturbed curve $\gamma_\epsilon(s)$ is given by:
 
@@ -180,7 +181,7 @@ where:
 - $N(s)$ is the unit normal vector to the curve.
 - $\langle \cdot, \cdot \rangle$ denotes the dot product in $\mathbb{R}^2$.
 
-##### **Geometric Interpretation**
+##### Geometric Interpretation
 
 This formula reveals that the change in length depends on:
 
@@ -191,7 +192,7 @@ Therefore, the motion that most quickly decreases length is $\eta = \kappa N$. A
 
 In the discrete setting, the motion that minimizes the length of a curve at each vertex can be expressed in terms of the **turning angle** at that vertex. Specifically, the gradient of the curve length becomes proportional to $ 2 \sin(\theta_i / 2) N_i $, where $ \theta_i $ is the angle between the adjacent edges at vertex $ i $, and $ N_i $ is the normal direction at that vertex. Let’s break this down:
 
-##### **Discrete Length and Turning Angle**
+##### Discrete Length and Turning Angle
 
 For a discrete curve, the total length is:
 
@@ -205,7 +206,7 @@ $$
 \theta_i = \text{angle}(\gamma_i - \gamma_{i-1}, \gamma_{i+1} - \gamma_i).
 $$
 
-##### **Gradient of Length**
+##### Gradient of Length
 
 At each vertex, the gradient of the length $\nabla_{\gamma_i} \text{Length}(\gamma)$ (from earlier) is derived as:
 
@@ -236,9 +237,9 @@ $$
     </div>
 </div>
 
-#### **Relationship Between the Two**
+#### Relationship Between the Two
 
-For small $\theta_i$ (when the curve bends only slightly):  
+For small $\theta_i$ (when the curve bends only slightly):
 
 $$
 \kappa_i^B \approx \theta_i,
@@ -250,40 +251,41 @@ This shows that the **length variation** curvature ($ \kappa_i^B $) is a refined
 
 ---
 
-#### **Steiner Formula for Smooth Curves**  
+#### Steiner Formula for Smooth Curves
 
 The **Steiner Formula** provides a powerful connection between the geometry of a curve and how its length changes as the curve is offset in the normal direction. Here’s the explanation in detail:
 
-If a smooth curve $\gamma$ is moved at a constant distance $\epsilon$ in the **normal direction**, then the new length of the curve is given by: 
+If a smooth curve $\gamma$ is moved at a constant distance $\epsilon$ in the **normal direction**, then the new length of the curve is given by:
 
 $$
 \text{Length}(\gamma + \epsilon N) = \text{Length}(\gamma) - \epsilon \int_0^L \kappa(s) \, ds.
 $$
 
 ##### Key Insights:
+
 1. **Offset Motion**: Moving in the normal direction affects the length of the curve proportionally to the **total curvature**, i.e., the integral of $\kappa(s)$ along the arc length.
 2. **Geometric Meaning**: If the curve bends a lot (high curvature), offsetting it decreases the length more significantly. For flat or nearly straight curves, the change in length is minimal.
 
-##### **Discrete Setting**
+##### Discrete Setting
 
 In discrete curves, we offset each edge segment of the curve. The challenge lies in connecting these new offset segments consistently. Several natural strategies include:
 
-###### **A. Circular Arc of Radius $\epsilon$:**
+###### A. Circular Arc of Radius $\epsilon$:
 
-- Each corner is joined with a small arc, mimicking the curvature of the original smooth curve.  
-- This approach approximates the smooth curve behavior, including how curvature influences the overall length.  
+- Each corner is joined with a small arc, mimicking the curvature of the original smooth curve.
+- This approach approximates the smooth curve behavior, including how curvature influences the overall length.
 
-###### **B. Straight Line Connection:**
+###### B. Straight Line Connection:
 
-- Offset segments are connected by straight lines.  
-- Simpler to implement but less faithful to smooth curvature effects.  
+- Offset segments are connected by straight lines.
+- Simpler to implement but less faithful to smooth curvature effects.
 
-###### **C. Extending Edges Until Intersection:**
+###### C. Extending Edges Until Intersection:
 
-- Extend the offset edges until they intersect, creating natural meeting points between segments.  
+- Extend the offset edges until they intersect, creating natural meeting points between segments.
 - Reflects how many engineering applications handle discrete curves but introduces additional sharp features.
 
-These equations express the **length variation** of a discrete curve under different curvature approximations, using turning angle ($\theta_i$) and its trigonometric variants. Let’s clarify the context and interpretation: 
+These equations express the **length variation** of a discrete curve under different curvature approximations, using turning angle ($\theta_i$) and its trigonometric variants. Let’s clarify the context and interpretation:
 
 $$
 \text{Length}_A = \text{Length}(\gamma) - \epsilon \sum_i \theta_i
@@ -303,22 +305,24 @@ $$
     </div>
 </div>
 
-##### **Small $\theta_i$ Approximation**
+##### Small $\theta_i$ Approximation
 
-For small $\theta_i$, we can use:  
+For small $\theta_i$, we can use:
+
 $$
 \sin\left(\frac{\theta_i}{2}\right) \approx \tan\left(\frac{\theta_i}{2}\right) \approx \frac{\theta_i}{2}.
-$$  
+$$
 
 This makes all three formulas effectively equivalent when the turning angles are small. However, for larger angles, $\sin(\theta_i / 2)$ and $\tan(\theta_i / 2)$ offer better approximations.
 
 ---
 
-#### **Osculating Circle**
+#### Osculating Circle
 
-The **osculating circle** is the circle that best approximates a smooth curve at a given point.  
+The **osculating circle** is the circle that best approximates a smooth curve at a given point.
+
 - Its radius matches the radius of curvature of the curve, i.e., it captures the curve’s local bending behavior.
-- The **curvature** $\kappa$ of the curve is the reciprocal of the osculating circle’s radius:  
+- The **curvature** $\kappa$ of the curve is the reciprocal of the osculating circle’s radius:
 
 $$
 \kappa = \frac{1}{R}.
@@ -338,11 +342,12 @@ where $R_i$ is the circumcircle radius for the vertices $v_{i-1}, v_i, v_{i+1}$.
     </div>
 </div>
 
-##### **Comparison with Other Curvature Approximations** 
+##### Comparison with Other Curvature Approximations
 
 The osculating circle method differs from previous discrete curvature approximations, such as the turning angle or length variation, in its direct connection to geometric properties:
-1. **Turning Angle**: Measures the rate of direction change without explicit geometric constructs.  
-2. **Length Variation**: Relates to changes in curve length when offset, often smoothed over multiple vertices.  
+
+1. **Turning Angle**: Measures the rate of direction change without explicit geometric constructs.
+2. **Length Variation**: Relates to changes in curve length when offset, often smoothed over multiple vertices.
 3. **Osculating Circle**: Provides a direct geometric measure based on the localized radius of bending, connecting smoothly to the smooth setting.
 
 <div class="row mt-3">
@@ -353,29 +358,31 @@ The osculating circle method differs from previous discrete curvature approximat
 
 ---
 
-#### **Key Properties of Curvature Flows**  
+#### Key Properties of Curvature Flows
 
 When studying curvature-based flows on curves, there are several fundamental properties that help in understanding their behavior:  
 
-1. **Total Curvature**  
-   **Property**: The **total curvature** remains constant throughout the flow.  
-   - For smooth curves, the total curvature is \(\int_0^L \kappa(s) \, ds\).  
-   - In the discrete case, the total curvature is typically expressed as \(\sum_i \kappa_i\) (using one of the discrete definitions of curvature).  
-   - This conservation is tied to intrinsic geometric properties of the curve.  
+1. **Total Curvature**
+   **Property**: The **total curvature** remains constant throughout the flow.
+   - For smooth curves, the total curvature is $\int_0^L \kappa(s) \, ds$.  
+   - In the discrete case, the total curvature is typically expressed as $\sum_i \kappa_i$ (using one of the discrete definitions of curvature).
+   - This conservation is tied to intrinsic geometric properties of the curve.
 
-2. **Drift**  
-   **Property**: The center of mass of the curve does not drift from the origin during the flow.  
-   - For a parameterized curve \(\gamma(s)\), the center of mass is given by:  
-     \[
+2. **Drift**
+   **Property**: The center of mass of the curve does not drift from the origin during the flow.
+   - For a parameterized curve $\gamma(s)$, the center of mass is given by:
+     
+     $$
      \text{Center of Mass} = \frac{1}{L} \int_0^L \gamma(s) \, ds.
-     \]
-   - The non-drifting property ensures that the motion of the curve due to curvature flow does not introduce translational shifts in the overall system.  
+     $$
 
-3. **Roundness (Stationary for Circular Curves)**  
-   **Property**: Up to rescaling, the flow is stationary for circular curves.  
-   - Circular curves represent an equilibrium state under curvature flows because their curvature \(\kappa = 1/r\) is constant everywhere.  
-   - This means that circular shapes simply contract (or expand) uniformly during the flow but retain their geometry.  
-   - The radius of the circle may change over time, but the overall shape remains a perfect circle.  
+   - The non-drifting property ensures that the motion of the curve due to curvature flow does not introduce translational shifts in the overall system.
+
+3. **Roundness (Stationary for Circular Curves)**
+   **Property**: Up to rescaling, the flow is stationary for circular curves.
+   - Circular curves represent an equilibrium state under curvature flows because their curvature $\kappa = 1/r$ is constant everywhere.
+   - This means that circular shapes simply contract (or expand) uniformly during the flow but retain their geometry.
+   - The radius of the circle may change over time, but the overall shape remains a perfect circle.
 
 |            | Total | Drift | Round |
 | :--------- | :---: | ----: | ----: |
