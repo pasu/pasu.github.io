@@ -28,7 +28,7 @@ The `Token` structure represents an individual piece of meaningful data extracte
 
 #### **Example**
 
-```cpp
+```c++
 Token(std::string_view token, FileLoc loc) : token(token), loc(loc) {}
 
 std::string ToString() const {
@@ -50,7 +50,7 @@ This design ensures tokens are both lightweight and contextually rich.
 
 - **Token Extraction**: The `Next` method retrieves the next token, handling whitespace, comments, and escaped characters:
 
-  ```cpp
+  ```c++
   pstd::optional<Token> Next();
   ```
 
@@ -58,7 +58,7 @@ This design ensures tokens are both lightweight and contextually rich.
 
 - **Error Callback**:
 
-  ```cpp
+  ```c++
   auto errorCallback = [](const char *msg, const FileLoc *loc) {
       std::cerr << loc->ToString() << ": " << msg << std::endl;
   };
@@ -86,21 +86,21 @@ The `ParserTarget` provides an interface for processing structured data, ensurin
 1. **`AddShape`**:
    Handles shape declarations by accepting a name and parameters:
 
-   ```cpp
+   ```c++
    void AddShape(const std::string &name, ParsedParameterVector parameters);
    ```
 
 2. **`AddMaterial`**:
    Processes material definitions:
 
-   ```cpp
+   ```c++
    void AddMaterial(const std::string &name, ParsedParameterVector parameters);
    ```
 
 3. **`AddLight`**:
    Interprets light source specifications:
 
-   ```cpp
+   ```c++
    void AddLight(const std::string &name, ParsedParameterVector parameters);
    ```
 
