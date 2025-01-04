@@ -125,6 +125,7 @@ This modular design exemplifies sound software engineering, with each component 
 
 ### **Comparison to JSON or XML**
 
+```markdown
 | Aspect                 | Tokenizer in PBRT | JSON                | XML                   |
 | ---------------------- | ----------------- | ------------------- | --------------------- |
 | **Syntax**             | Custom, minimal   | Rigid, hierarchical | Verbose, hierarchical |
@@ -133,6 +134,7 @@ This modular design exemplifies sound software engineering, with each component 
 | **Parsing Complexity** | Lightweight       | Moderate            | Heavy                 |
 | **Expressiveness**     | Domain-specific   | Generic             | Generic               |
 | **Error Handling**     | Customized        | Standardized        | Standardized          |
+```
 
 ### **Why Not JSON or XML?**
 
