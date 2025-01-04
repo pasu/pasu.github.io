@@ -4,6 +4,8 @@ title: Learning Modern C++ Through pbrt-v4
 date: 2025-01-02 17:27:00
 tags: ModernC++ Pbrt
 categories: C++
+giscus_comments: true
+related_posts: true
 ---
 
 pbrt-v4 plays a pivotal role in my research endeavors. Recognizing that my C++ proficiency requires modernization, I view this state-of-the-art open-source project as an ideal platform to enhance my skills in contemporary C++ practices. This series aims to document and share that journey.

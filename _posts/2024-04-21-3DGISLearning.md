@@ -4,6 +4,8 @@ title: 3D GIS入门指南
 date: 2024-04-21 11:01:00
 tags: 3D GIS 入门
 categories: 3DGIS
+giscus_comments: true
+related_posts: true
 ---
 
 3D GIS，顾名思义，要求具备一定的CG（计算机图形学）知识，包括几何学、渲染和模拟等物理建模内容。GIS则涉及地理信息领域，如地形、建筑物和天气等地球尺度下的数据。因此，3D GIS的核心是对物理世界的建模。从开发角度来看，需要具备基本的编程能力，如C++、JS（WebGL/WebGPU）、Shader编程以及性能优化（CPU/GPU）。而3D GIS的研发人员也需要掌握以上三个领域的知识。
