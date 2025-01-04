@@ -6,6 +6,7 @@ tags: Geometry
 categories: DDG
 giscus_comments: true
 related_posts: true
+pretty_table: true
 ---
 
 ### Exploring Continuous Curves: Tangents, Normals, and Curvature
