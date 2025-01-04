@@ -126,7 +126,7 @@ This modular design exemplifies sound software engineering, with each component 
 ### **Comparison to JSON or XML**
 
 | Aspect| Tokenizer in PBRT| JSON| XML|
-|-----------------------|-------------------------|--------------------------|--------------------------|
+|----------------------|-----------------|-------------------|---------------------|
 | **Syntax**| Custom, minimal| Rigid, hierarchical| Verbose, hierarchical|
 | **Readability**| High for humans| Medium| Low|
 | **Extensibility**| Highly flexible| Moderate| Moderate|
