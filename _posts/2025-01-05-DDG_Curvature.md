@@ -25,8 +25,8 @@ $$
 
 where:
 
-- **s** is the parameter, often representing arc length, defined in the interval $[0, L]$.
-- $\gamma(s) = (x(s), y(s))$ specifies the position of a point on the curve.
+- **s** is the parameter, often representing arc length, defined in the interval $$[0, L]$$.
+- $$\gamma(s) = (x(s), y(s))$$ specifies the position of a point on the curve.
 
 ---
 
