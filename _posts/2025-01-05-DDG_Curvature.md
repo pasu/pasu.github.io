@@ -9,7 +9,7 @@ related_posts: true
 pretty_table: true
 ---
 
-### Exploring Continuous Curves: Tangents, Normals, and Curvature
+### Exploring Curvature
 
 A **continuous curve** is a fundamental concept in mathematics, appearing in fields ranging from physics to computer graphics. Understanding its properties, such as the tangent, normal, and curvature, provides valuable insights into its geometry and behavior. Let’s delve into these ideas in detail.
 
