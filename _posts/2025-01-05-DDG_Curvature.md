@@ -19,9 +19,9 @@ A **continuous curve** is a fundamental concept in mathematics, appearing in fie
 
 A **parameterized curve** in the 2D plane can be defined as a mapping:
 
-$$
+\[
 \gamma(s): [0, L] \to \mathbb{R}^2
-$$
+\]
 
 where:
 
@@ -48,9 +48,9 @@ The tangent vector points in the direction in which the curve is moving at $\gam
 
 The **normal vector** is perpendicular to the tangent vector and provides the “sideways” direction of the curve at a given point. In 2D, the normal vector is obtained by performing a quarter-turn rotation (90° counter-clockwise) on the tangent vector. This is achieved using the **rotation operator**:
 
-$
+$$
 \mathcal{R}(x, y) = (-y, x)
-$
+$$
 
 Thus, for a tangent vector $T(s) = (T_x(s), T_y(s))$, the normal vector $N(s)$ is:
 
