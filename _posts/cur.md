@@ -1,14 +1,3 @@
----
-layout: post
-title: DDG Curvature
-date: 2025-01-04 20:27:00
-tags: Geometry
-categories: DDG
-giscus_comments: true
-related_posts: true
-pretty_table: true
----
-
 ### Exploring Continuous Curves: Tangents, Normals, and Curvature
 
 A **continuous curve** is a fundamental concept in mathematics, appearing in fields ranging from physics to computer graphics. Understanding its properties, such as the tangent, normal, and curvature, provides valuable insights into its geometry and behavior. Let’s delve into these ideas in detail.
@@ -98,12 +87,6 @@ where $$\det(\gamma'(s), \gamma''(s))$$ is the determinant of the tangent and se
 
 ---
 
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/DDG/smooth_curve.jpg" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-
 ### Summary of Relationships
 
 1. **Tangent Vector $$T(s)$$**: Indicates the direction of motion.
@@ -117,12 +100,6 @@ These elements together form the core tools for studying and analyzing the geome
 ### Discrete Curvature
 
 A **discrete curve** is a piecewise linear parameterized curve, defined as a sequence of vertices $$\{\gamma_i\}$$, connected by straight line segments. Unlike smooth curves, discrete curves do not have a continuous tangent or curvature, which poses challenges in defining curvature. Direct application of curvature definitions from smooth curves results in values that are either zero (for straight segments) or infinite (at sharp corners).
-
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/DDG/discrete_curve.jpg" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
 
 To address this, we use **approximations of curvature** based on discrete geometry concepts.
 
@@ -141,12 +118,6 @@ $$
 $$
 
 This mathematical formulation expresses the **variation of the curve length** due to a perturbation $$\eta(s)$$. Let’s improve the explanation around this concept to clarify its significance and provide proper context.
-
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/DDG/turning_angle.jpg" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
 
 ---
 
@@ -231,12 +202,6 @@ $$
    \kappa_i^B = 2 \sin\left(\frac{\theta_i}{2}\right)
 $$
 
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/DDG/length_variation.jpg" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-
 #### Relationship Between the Two
 
 For small $$\theta_i$$ (when the curve bends only slightly):
@@ -299,12 +264,6 @@ $$
 \text{Length}_C = \text{Length}(\gamma) - \epsilon \sum_i 2 \tan\left(\frac{\theta_i}{2}\right)
 $$
 
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/DDG/stein.jpg" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-
 ##### Small $$\theta_i$$ Approximation
 
 For small $$\theta_i$$, we can use:
@@ -336,12 +295,6 @@ $$\kappa_i^D = \frac{1}{R_i} = \frac{2 \sin(\theta_i)}{\omega_i}$$
 
 where $$R_i$$ is the circumcircle radius for the vertices $$v_{i-1}, v_i, v_{i+1}$$.
 
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/DDG/osculating.jpg" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-
 ##### Comparison with Other Curvature Approximations
 
 The osculating circle method differs from previous discrete curvature approximations, such as the turning angle or length variation, in its direct connection to geometric properties:
@@ -349,12 +302,6 @@ The osculating circle method differs from previous discrete curvature approximat
 1. **Turning Angle**: Measures the rate of direction change without explicit geometric constructs.
 2. **Length Variation**: Relates to changes in curve length when offset, often smoothed over multiple vertices.
 3. **Osculating Circle**: Provides a direct geometric measure based on the localized radius of bending, connecting smoothly to the smooth setting.
-
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/DDG/four.jpg" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
 
 ---
 
@@ -393,7 +340,3 @@ When studying curvature-based flows on curves, there are several fundamental pro
 | $$\kappa^D$$ |   ×   |     × |     √ |
 
 No choice of discrete curvature simultaneously captures all three properties of the smooth flow.
-
-### Conclusion
-
-Curvature and its related properties, such as tangent vectors, normal vectors, and curvature flows, provide a fundamental framework for understanding the geometry of curves in both smooth and discrete settings. Key concepts like the Steiner formula, osculating circle, and curvature approximations help quantify and analyze the bending and motion of curves. While no single discrete curvature captures all the properties of smooth flows, these tools collectively enable deeper exploration and application of geometric principles in various fields, from robotics to computer graphics.
