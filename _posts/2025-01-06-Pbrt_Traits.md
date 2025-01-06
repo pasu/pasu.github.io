@@ -10,8 +10,6 @@ related_posts: true
 
 # Designing Traits in C++
 
-> "Think of a trait as a small object whose main purpose is to carry information used by another object or algorithm to determine 'policy' or 'implementation details'." - Bjarne Stroustrup
-
 Traits are a powerful design pattern in C++ that allow you to associate compile-time metadata and behaviors with specific types. This tutorial explores how traits are used in the `pbrt` project to handle parameter parsing for various types, illustrating how traits can simplify type-specific behavior and make code cleaner and more extensible.
 
 ---
