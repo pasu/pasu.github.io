@@ -1,12 +1,11 @@
 ---
 layout: post
 title: Traits
-date: 2025-01-06 15:07:00
+date: 2025-01-06 10:27:00
 tags: ModernC++ Pbrt
 categories: C++
 giscus_comments: true
 related_posts: true
-pretty_table: true
 ---
 
 # Designing Traits in C++
