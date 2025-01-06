@@ -386,8 +386,8 @@ When studying curvature-based flows on curves, there are several fundamental pro
    - This means that circular shapes simply contract (or expand) uniformly during the flow but retain their geometry.
    - The radius of the circle may change over time, but the overall shape remains a perfect circle.
 
-|            | Total | Drift | Round |
-| :--------- | :---: | ----: | ----: |
+|              | Total | Drift | Round |
+| :----------- | :---: | ----: | ----: |
 | $$\kappa^A$$ |   √   |     × |     × |
 | $$\kappa^B$$ |   ×   |     √ |     × |
 | $$\kappa^D$$ |   ×   |     × |     √ |
