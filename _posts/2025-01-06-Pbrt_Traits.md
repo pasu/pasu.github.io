@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Traits
-date: 2025-01-06 15:27:00
+date: 2025-01-06 15:07:00
 tags: ModernC++ Pbrt
 categories: C++
 giscus_comments: true
