@@ -9,8 +9,6 @@ related_posts: true
 pretty_table: true
 ---
 
-# Introduction to Manifolds and Topological Structures
-
 ### What is a Manifold?
 
 A manifold is a fundamental concept in geometry that describes a "nice" space that locally looks like Euclidean space $$\mathbb{R}^n$$. For instance:
@@ -23,6 +21,12 @@ Formally, a topological space is a **manifold** if:
 1. It is Hausdorff (any two distinct points have disjoint neighborhoods).
 2. Every point has a neighborhood homeomorphic to $$\mathbb{R}^n$$.
 
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/DDG/4_manifold.jpg" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
 ### Simplicial Manifold
 
 A **simplicial $$k$$-complex** is called a manifold if the **link** of every vertex is homeomorphic to a $$(k-1)$$-dimensional sphere.
@@ -33,6 +37,12 @@ A **simplicial $$k$$-complex** is called a manifold if the **link** of every ver
   - For $$k = 3$$: The link of a vertex should resemble a 2-dimensional sphere.
 
 As $$k$$ increases, checking whether a simplicial complex is a manifold becomes more computationally difficult. For $$k = 4$$, verifying that each link is a 3-sphere is an NP-hard problem.
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/DDG/4_mesh_simplicial_manifold.jpg" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
 
 ### Manifold Meshes
 
@@ -59,6 +69,12 @@ Manifold meshes provide simplicity similar to a regular pixel grid in 2D images:
 
 #### Adjacency List
 
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/DDG/4_manifold_adjacent_list.jpg" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
 The **adjacency list** is a lightweight data structure for storing topological relationships:
 
 - **What it stores**: Only the top-dimensional simplices (e.g., triangles in a 2D mesh or tetrahedra in a 3D mesh).
@@ -70,6 +86,12 @@ The **adjacency list** is a lightweight data structure for storing topological r
   - Accessing neighbors of a simplex can be slow due to extra computation.
 
 #### Incidence Matrix
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/DDG/4_manifold_adjacent_matrix.jpg" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
 
 The **incidence matrix** captures relationships between simplices of different dimensions, such as:
 
@@ -95,12 +117,24 @@ To improve efficiency, **sparse matrix data structures** are often used:
 
 #### Signed Incidence Matrix
 
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/DDG/4_manifold_signed_adjacent_matrix.jpg" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
 The **signed incidence matrix** extends the basic incidence matrix by encoding the **orientation** of simplices:
 
 - Each nonzero entry has a sign ($$+$$ or $$-$$) that depends on the relative orientation of the two simplices.
 - Commonly used in **discrete exterior calculus** to define operators like divergence, gradient, and curl.
 
 #### Half-Edge Data Structure
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/DDG/4_manifold_half_edge.jpg" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
 
 The **half-edge data structure** is an efficient way to represent the connectivity of a mesh:
 
@@ -156,6 +190,12 @@ A **simplicial complex** is a collection of simplices (points, edges, triangles,
 This structure is fundamental in computational topology and discrete geometry, enabling clean and efficient representations of shapes.
 
 #### Poincaré Dual
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/DDG/4_manifold_dual_complex.jpg" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
 
 The **Poincaré dual** is a dual structure associated with a simplicial complex, forming a **cell complex** where:
 
