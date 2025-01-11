@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Introduction Streets.GL
+title: Streets.GL Meets OSMBuilding
 date: 2025-01-11 20:27:00
 tags: WebGL GIS
 categories: 3DGIS
@@ -9,6 +9,14 @@ related_posts: true
 pretty_table: true
 ---
 
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/3dgis/streets_gl.jpg" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
+Have you ever wondered if you could quickly create a vivid 3D city map on the web using open-source tools? This article introduces two fascinating projects: **Streets.GL** and **OSMBuilding**. Both are based on OpenStreetMap data, transforming abstract map elements into 3D buildings, roads, and trees. **Streets.GL** focuses on advanced rendering effects like dynamic lighting and atmospheric simulation, making it ideal for showcasing detailed 3D map scenes. On the other hand, **OSMBuilding** is more lightweight, designed for simple building visualization and easy integration into various mapping applications. Whether you're looking to present complex urban landscapes or create quick, interactive maps, these two tools each offer unique advantages. 
+
 # Streets.GL
 
 Last week, my colleague shared a fascinating web application called [Streets.GL](https://streets.gl/). Intrigued by its unique approach, I explored its features despite having limited time. In today’s push for ultra-realistic graphics, we often overlook the costs and practicality. Streets.GL, however, strikes a balance between rendering quality and global 3D building visualization, offering a practical and efficient alternative.
@@ -16,6 +24,12 @@ Last week, my colleague shared a fascinating web application called [Streets.GL]
 Streets.GL is an open-source, web-based 3D map renderer that utilizes OpenStreetMap (OSM) data to create dynamic, interactive visualizations of various geographical features, including buildings, roads, paths, and trees. Developed by StrandedKitty, the project was announced on May 2, 2023. It aims to promote open data while providing the mapping community with a tool for visual map validation.
 
 Written in TypeScript, Streets.GL leverages a custom low-level library that wraps the WebGL2 API for rendering. It uses a render graph to manage its rendering pipeline, generating geometry in real time to support complex building shapes, adhering to the Simple 3D Buildings schema. Initially, data was sourced from public Overpass API instances. However, as of June 24, 2023, Streets.GL transitioned to a custom self-hosted vector tileset for improved tile loading speed, reducing strain on public servers. This change introduces a slight lag in map updates as tilesets are refreshed weekly.
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/3dgis/streets_featuers.jpg" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
 
 ## Key Features:
 
@@ -51,6 +65,12 @@ OSM Buildings is an open-source JavaScript library for visualizing OpenStreetMap
 - Compatible with mapping services, supporting custom map tiles and GeoJSON sources.
 
 ### Pipeline
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/3dgis/streets_roof_property.jpg" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
 
 OSMBuilding processes GeoJSON data to create triangle meshes for 3D rendering using the following steps:
 
@@ -104,6 +124,12 @@ The [Simple 3D Buildings](https://wiki.openstreetmap.org/wiki/Simple_3D_Building
    - `building:levels=*`: Number of levels above ground.
    - `roof:levels=*`: Number of levels within the roof.
 
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/3dgis/roof_type.jpg" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
 4. **Roof Attributes:**
 
    - `roof:shape=*`: Specifies the roof shape (e.g., flat, gabled).
@@ -121,6 +147,12 @@ By using this schema, OSM contributors improve data quality for richer visualiza
 ---
 
 ### Planet OSM
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/3dgis/streets_Planetiler.jpg" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
 
 Planetiler is a high-performance tool for generating vector tiles from geographic datasets like OSM. Designed for speed and efficiency, it can create global maps in hours on a single machine. The tool outputs data in protobuf format, categorizing it into layers like water, buildings, and transport.
 
