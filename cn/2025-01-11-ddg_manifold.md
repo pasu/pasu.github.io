@@ -25,6 +25,8 @@
 
 随着 $$k$$ 的增加，判断单纯复形是否是流形变得更加计算复杂。对于 $$k = 4$$，验证每个链接是否是一个三维球面是一个 NP 难问题。
 
+![simplicial manifold](../assets/img/DDG/4_mesh_simplicial_manifold.jpg "simplicial manifold")
+
 ---
 
 #### 流形网格（Manifold Meshes）
@@ -54,6 +56,8 @@
 
 #### 邻接表（Adjacency List）
 
+![adjacent list](../assets/img/DDG/4_manifold_adjacent_list.jpg "adjacent list")
+
 **邻接表（adjacency list）** 是一种轻量级数据结构，用于存储拓扑关系：
 
 - **存储内容**：仅存储最高维单形（如二维网格中的三角形或三维网格中的四面体）。
@@ -65,6 +69,8 @@
   - 访问单形的邻居可能较慢，因为需要额外计算。
 
 #### 关联矩阵（Incidence Matrix）
+
+![incidence matrix](../assets/img/DDG/4_manifold_adjacent_matrix.jpg "incidence matrix")
 
 **关联矩阵（incidence matrix）** 表示不同维度单形之间的关系，例如：
 
@@ -90,12 +96,16 @@
 
 #### 带符号关联矩阵（Signed Incidence Matrix）
 
+![signed incidence matrix](../assets/img/DDG/4_manifold_signed_adjacent_matrix.jpg "signed incidence matrix")
+
 **带符号关联矩阵（signed incidence matrix）** 扩展了基本关联矩阵，通过编码单形的**方向（orientation）**：
 
 - 每个非零条目带有符号（$$+$$ 或 $$-$$），取决于两个单形的相对方向。
 - 常用于**离散外微分（discrete exterior calculus）**，以定义散度（divergence）、梯度（gradient）和旋度（curl）等算子。
 
 #### 半边数据结构（Half-Edge Data Structure）
+
+![half edge](../assets/img/DDG/4_manifold_half_edge.jpg "half edge")
 
 **半边数据结构（half-edge data structure）** 是高效表示网格连接性的方法：
 
@@ -130,6 +140,8 @@
 ### 对偶复形与庞加莱对偶性（Dual Complex and Poincaré Duality）
 
 #### 原复形与对偶复形（Primal and Dual Complexes）
+
+![dual complex](../assets/img/DDG/4_manifold_dual_complex.jpg "dual complex")
 
 **原复形（primal complex）** 是由单形（simplices，如顶点、边、三角形等）组成的原始单纯复形（simplicial complex），它定义了几何或拓扑结构。而**对偶复形（dual complex）** 是通过“反转”这些单形的角色构造的：
 
