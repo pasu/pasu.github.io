@@ -10,6 +10,8 @@
 1. 它是豪斯多夫（Hausdorff）空间（任何两个不同的点都有不相交的邻域）。
 2. 每个点都有一个邻域与 $$\mathbb{R}^n$$ 同胚（homeomorphic）。
 
+![manifold](../assets/img/DDG/4_manifold.jpg "manifold")
+
 ---
 
 #### 单纯流形（Simplicial Manifold）
