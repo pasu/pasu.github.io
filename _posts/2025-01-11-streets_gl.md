@@ -15,7 +15,7 @@ pretty_table: true
     </div>
 </div>
 
-Have you ever wondered if you could quickly create a vivid 3D city map on the web using open-source tools? This article introduces two fascinating projects: **Streets.GL** and **OSMBuilding**. Both are based on OpenStreetMap data, transforming abstract map elements into 3D buildings, roads, and trees. **Streets.GL** focuses on advanced rendering effects like dynamic lighting and atmospheric simulation, making it ideal for showcasing detailed 3D map scenes. On the other hand, **OSMBuilding** is more lightweight, designed for simple building visualization and easy integration into various mapping applications. Whether you're looking to present complex urban landscapes or create quick, interactive maps, these two tools each offer unique advantages. 
+Have you ever wondered if you could quickly create a vivid 3D city map on the web using open-source tools? This article introduces two fascinating projects: **Streets.GL** and **OSMBuilding**. Both are based on OpenStreetMap data, transforming abstract map elements into 3D buildings, roads, and trees. **Streets.GL** focuses on advanced rendering effects like dynamic lighting and atmospheric simulation, making it ideal for showcasing detailed 3D map scenes. On the other hand, **OSMBuilding** is more lightweight, designed for simple building visualization and easy integration into various mapping applications. Whether you're looking to present complex urban landscapes or create quick, interactive maps, these two tools each offer unique advantages.
 
 # Streets.GL
 
@@ -124,12 +124,6 @@ The [Simple 3D Buildings](https://wiki.openstreetmap.org/wiki/Simple_3D_Building
    - `building:levels=*`: Number of levels above ground.
    - `roof:levels=*`: Number of levels within the roof.
 
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3dgis/roof_type.jpg" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-
 4. **Roof Attributes:**
 
    - `roof:shape=*`: Specifies the roof shape (e.g., flat, gabled).
@@ -141,6 +135,12 @@ The [Simple 3D Buildings](https://wiki.openstreetmap.org/wiki/Simple_3D_Building
 
    - `building:material=*` and `building:colour=*`: Define the facade’s primary material and color.
    - `roof:material=*` and `roof:colour=*`: Specify roof material and color.
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/3dgis/roof_type.jpg" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
 
 By using this schema, OSM contributors improve data quality for richer visualization and urban analysis.
 
