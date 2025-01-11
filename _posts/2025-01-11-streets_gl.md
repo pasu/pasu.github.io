@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Introduction of Streets.GL
+title: Introduction Streets.GL
 date: 2025-01-11 20:27:00
 tags: WebGL GIS
-categories: 3DGIS  
+categories: 3DGIS
 giscus_comments: true
 related_posts: true
 pretty_table: true
@@ -55,24 +55,30 @@ OSM Buildings is an open-source JavaScript library for visualizing OpenStreetMap
 OSMBuilding processes GeoJSON data to create triangle meshes for 3D rendering using the following steps:
 
 1. **Load GeoJSON Data:**
+
    - Iterate through each feature in the `geojson.features` array.
 
 2. **Process Each Feature:**
+
    - Pass each feature into the `triangulate` function to generate 3D geometry.
 
 3. **Base Mesh (via `addBuilding`):**
+
    - **Convert Geometry:** Transform the feature’s 2D latitude and longitude into local 3D coordinates.
    - **Create Base:** Generate a triangle mesh of the building’s ground footprint using a triangulation algorithm like `earcut`.
    - **Extrude Walls:** Create vertical walls by connecting the base to vertices at the building’s specified height.
 
 4. **Roof Mesh (via `createRoof`):**
+
    - **Interpret Roof Properties:** Use attributes like height, shape, and direction to determine roof vertices.
    - **Generate Roof Shape:** Apply specific logic based on the roof’s shape (e.g., flat or skillion) to build the triangle mesh.
 
 5. **Combine Geometry:**
+
    - Consolidate vertices and indices from the base, walls, and roof into a shared geometry buffer.
 
 6. **Render 3D Mesh:**
+
    - Send the combined triangle mesh to a rendering engine like WebGL or Three.js.
 
 ### Simple 3D Buildings Schema
@@ -82,26 +88,31 @@ The [Simple 3D Buildings](https://wiki.openstreetmap.org/wiki/Simple_3D_Building
 #### Key Components:
 
 1. **Building Outlines (`building=*`):**
+
    - Represent the building’s footprint.
    - Include attributes like address, name, overall height, and operator.
 
 2. **Building Parts (`building:part=*`):**
+
    - Specify sections of a building with distinct physical characteristics.
    - Support detailed modeling of complex structures.
 
 3. **Height Attributes:**
+
    - `height=*`: Total height of the building or part.
    - `min_height=*`: Starting height above the ground.
    - `building:levels=*`: Number of levels above ground.
    - `roof:levels=*`: Number of levels within the roof.
 
 4. **Roof Attributes:**
+
    - `roof:shape=*`: Specifies the roof shape (e.g., flat, gabled).
    - `roof:height=*`: Vertical height of the roof.
    - `roof:material=*`: Roof material (e.g., tiles, metal).
    - `roof:orientation=*`: Orientation, particularly for asymmetrical roofs.
 
 5. **Material and Color Attributes:**
+
    - `building:material=*` and `building:colour=*`: Define the facade’s primary material and color.
    - `roof:material=*` and `roof:colour=*`: Specify roof material and color.
 
@@ -109,7 +120,7 @@ By using this schema, OSM contributors improve data quality for richer visualiza
 
 ---
 
-### Planetiler
+### Planet OSM
 
 Planetiler is a high-performance tool for generating vector tiles from geographic datasets like OSM. Designed for speed and efficiency, it can create global maps in hours on a single machine. The tool outputs data in protobuf format, categorizing it into layers like water, buildings, and transport.
 
