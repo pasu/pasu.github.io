@@ -164,6 +164,12 @@ Supporting OSMBuilding in production opens up numerous applications, as evidence
 
 ### Instance Objects in Streets.GL
 
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/3dgis/streets_tree.jpg" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
 Streets.GL supports instance objects for commonly occurring features. For example, it can draw trees in regions labeled as "plant" by instancing tree models.
 
 ### Terrain
