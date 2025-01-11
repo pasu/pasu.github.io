@@ -19,6 +19,7 @@ A manifold is a fundamental concept in geometry that describes a "nice" space th
 - A space is **non-manifold** if it has regions where this local resemblance breaks down, such as points where multiple surfaces intersect in a way that cannot be flattened into a Euclidean patch.
 
 Formally, a topological space is a **manifold** if:
+
 1. It is Hausdorff (any two distinct points have disjoint neighborhoods).
 2. Every point has a neighborhood homeomorphic to $$\mathbb{R}^n$$.
 
@@ -36,16 +37,19 @@ As $$k$$ increases, checking whether a simplicial complex is a manifold becomes 
 ### Manifold Meshes
 
 A **manifold mesh** is a triangle mesh that satisfies the following conditions:
+
 1. Every edge is shared by exactly two triangles, or just one if it lies on the boundary.
 2. Every vertex has a neighborhood forming a single loop of triangles or a "fan" of triangles along the boundary.
 
 Manifold meshes are advantageous because they have **predictable neighborhoods**, which simplify data structures and algorithms:
+
 - Adjacency relationships are easier to manage.
 - They are particularly useful in graphics and simulations for operations like subdivision and integration.
 
 ### Motivation for Manifold Meshes
 
 Manifold meshes provide simplicity similar to a regular pixel grid in 2D images:
+
 - Predictable structure (e.g., each pixel has exactly four neighbors).
 - Enables robust and efficient computations, especially in discrete differential geometry.
 
@@ -68,6 +72,7 @@ The **adjacency list** is a lightweight data structure for storing topological r
 #### Incidence Matrix
 
 The **incidence matrix** captures relationships between simplices of different dimensions, such as:
+
 - Vertices and edges,
 - Edges and faces,
 - Faces and volumes.
@@ -81,6 +86,7 @@ Each matrix entry indicates whether a given simplex (row) is part of another sim
   - Can grow large for dense meshes, wasting storage if many entries are zero.
 
 To improve efficiency, **sparse matrix data structures** are often used:
+
 1. **Associative array**: Maps nonzero entries to their locations (e.g., hash tables).
 2. **Array of linked lists**: Stores nonzero entries in lists grouped by rows or columns.
 3. **Compressed column format (CCF)**:
@@ -157,6 +163,7 @@ The **Poincaré dual** is a dual structure associated with a simplicial complex,
 - The connectivity of the primal determines the connectivity of the dual.
 
 Example:
+
 - In a 2D simplicial complex (triangular mesh), the dual complex is a graph where:
   - Nodes represent triangles (2-simplices).
   - Edges connect nodes whose triangles share a primal edge.
