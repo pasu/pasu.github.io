@@ -159,10 +159,14 @@ Planetiler is a high-performance tool for generating vector tiles from geographi
 In Streets.GL, we can create a tile using `Tile3DFromVectorProvider`:
 
 ```typescript
-const providerParams: Tile3DProviderParams = { /* initialize params as needed */ };
+const providerParams: Tile3DProviderParams = {
+  /* initialize params as needed */
+};
 const tile3DProvider = new Tile3DFromVectorProvider(providerParams);
 
-const x = 0, y = 0, zoom = 15;
+const x = 0,
+  y = 0,
+  zoom = 15;
 const featureCollection = await tile3DProvider.getCollection({ x, y, zoom });
 
 const tile = new Tile(x, y);
