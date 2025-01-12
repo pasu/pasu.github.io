@@ -156,6 +156,33 @@ By using this schema, OSM contributors improve data quality for richer visualiza
 
 Planetiler is a high-performance tool for generating vector tiles from geographic datasets like OSM. Designed for speed and efficiency, it can create global maps in hours on a single machine. The tool outputs data in protobuf format, categorizing it into layers like water, buildings, and transport.
 
+In Streets.GL, we can create a tile using `Tile3DFromVectorProvider`:
+
+```typescript
+const providerParams: Tile3DProviderParams = { /* initialize params as needed */ };
+const tile3DProvider = new Tile3DFromVectorProvider(providerParams);
+
+const x = 0, y = 0, zoom = 15;
+const featureCollection = await tile3DProvider.getCollection({ x, y, zoom });
+
+const tile = new Tile(x, y);
+tile.load(featureCollection);
+```
+
+Under `Tile3DFromVectorProvider`, the key components are:
+
+1. **Tile3DFromVectorProvider:**
+   This class converts vector tile data into 3D feature collections that can be rendered in a 3D environment. It processes vector tiles to generate various 3D geometries, such as extruded buildings, projected lines, and other features.
+
+2. **Tile3DExtrudedGeometry:**
+   This interface represents extruded 3D geometries, typically used for 3D buildings. It includes various buffers for positions, UV coordinates, normals, texture IDs, colors, and IDs, along with a bounding box for the geometry.
+
+3. **RoofBuilder:**
+   This interface defines a builder for creating roof geometries for extruded 3D buildings. It includes methods and parameters for building various types of roofs, such as gabled, hipped, and flat roofs.
+
+4. **Tile3DExtrudedGeometryBuilder:**
+   This class is responsible for constructing `Tile3DExtrudedGeometry` objects. It handles the generation of walls, roofs, and other extruded features for buildings, utilizing various builders for specific roof types and other details.
+
 Supporting OSMBuilding in production opens up numerous applications, as evidenced by Cesium’s use of OSM data. However, OSMBuilding raised concerns in 2020 over Cesium’s trademark “Cesium OSM Buildings,” fearing confusion with their own open-source project.
 
 ---
