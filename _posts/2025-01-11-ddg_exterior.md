@@ -154,7 +154,7 @@ where $$ v_i $$ are scalar coefficients.
 
 **Basis 2-Vectors**:
 
-A 2-vector is the wedge product of two basis 1-vectors, such as $$ \mathbf{e}_i \wedge \mathbf{e}_j $$ (with $$ i < j $$). These represent oriented areas in the planes spanned by the two vectors. For $$ \mathbb{R}^3 $$, there are $$ \binom{3}{2} = 3 $$ basis 2-vectors:
+A 2-vector is the wedge product of two basis 1-vectors, such as $$ \mathbf{e}\_i \wedge \mathbf{e}\_j $$ (with $$ i < j $$). These represent oriented areas in the planes spanned by the two vectors. For $$ \mathbb{R}^3 $$, there are $$ \binom{3}{2} = 3 $$ basis 2-vectors:
 
 $$
 \{\mathbf{e}_1 \wedge \mathbf{e}_2, \mathbf{e}_1 \wedge \mathbf{e}_3, \mathbf{e}_2 \wedge \mathbf{e}_3\}.
