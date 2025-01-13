@@ -78,12 +78,12 @@ $$
 
 ![5_exterior_hodge_star](../assets/img/DDG/5_exterior_hodge_star.jpg "5_exterior_hodge_star")
 
-- **带符号的补集 (Signed Complement)**: Hodge 星算子将一个 k-向量变换为一个保留方向的补充体积。
-- **双星性质 (Double Star)**: 连续应用 Hodge 星算子两次，将得到原向量的一个标量倍数：
+- 带符号的补集 (Signed Complement): Hodge 星算子将一个 $$k$$-向量变换为一个保留方向的补充体积。
+- 双星性质 (Double Star): 连续应用 Hodge 星算子两次，将得到原向量的一个标量倍数：
 
-  $$
+$$
   \star (\star \mathbf{v}) = (-1)^{k(n-k)} \mathbf{v}.
-  $$
+$$
 
 #### **几何示例**
 
@@ -153,25 +153,25 @@ $$
 
 - **基 1-向量的 Hodge 星**映射到基 2-向量：
 
-  $$
+$$
   \star \mathbf{e}_1 = \mathbf{e}_2 \wedge \mathbf{e}_3, \quad
   \star \mathbf{e}_2 = \mathbf{e}_3 \wedge \mathbf{e}_1, \quad
   \star \mathbf{e}_3 = \mathbf{e}_1 \wedge \mathbf{e}_2.
-  $$
+$$
 
 - **基 2-向量的 Hodge 星**映射到基 1-向量：
 
-  $$
+$$
   \star (\mathbf{e}_1 \wedge \mathbf{e}_2) = \mathbf{e}_3, \quad
   \star (\mathbf{e}_2 \wedge \mathbf{e}_3) = \mathbf{e}_1, \quad
   \star (\mathbf{e}_3 \wedge \mathbf{e}_1) = \mathbf{e}_2.
-  $$
+$$
 
 - **基 3-向量的 Hodge 星**映射到标量 (0-向量)：
 
-  $$
+$$
   \star (\mathbf{e}_1 \wedge \mathbf{e}_2 \wedge \mathbf{e}_3) = 1.
-  $$
+$$
 
 #### **示例：楔积与面积**
 

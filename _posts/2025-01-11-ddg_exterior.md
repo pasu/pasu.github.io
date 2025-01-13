@@ -91,7 +91,7 @@ Geometrically, the orthogonal complement captures what a subspace excludes. For 
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/DDG/5_exterior_k-vectors.jpg" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/DDG/5_exterior_hodge.jpg" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 
