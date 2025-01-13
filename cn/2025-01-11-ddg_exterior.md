@@ -49,7 +49,7 @@ $$
 
 ---
 
-### **2. Hodge 星算子：正交补与对偶性** 
+### **2. Hodge 星算子：正交补与对偶性**
 
 ![5_exterior_hodge](../assets/img/DDG/5_exterior_hodge.jpg "5_exterior_hodge")
 
@@ -113,7 +113,7 @@ Hodge 星算子连接了楔积和对偶性，常用于以下场景：
 
 **基 1-向量 (Basis 1-Vectors)**:
 
-在 $$ \mathbb{R}^n $$ 中，基 1-向量 $$ \{\mathbf{e}_1, \mathbf{e}_2, \dots, \mathbf{e}_n\} $$ 是标准单位向量，张成整个空间。任意向量 $$ \mathbf{v} $$ 可表示为：
+在 $$ \mathbb{R}^n $$ 中，基 1-向量 $$ \{\mathbf{e}\_1, \mathbf{e}\_2, \dots, \mathbf{e}\_n\} $$ 是标准单位向量，张成整个空间。任意向量 $$ \mathbf{v} $$ 可表示为：
 
 $$
 \mathbf{v} = v_1 \mathbf{e}_1 + v_2 \mathbf{e}_2 + \dots + v_n \mathbf{e}_n,
@@ -123,7 +123,7 @@ $$
 
 **基 2-向量 (Basis 2-Vectors)**:
 
-2-向量是两个基 1-向量的楔积，如 $$ \mathbf{e}_i \wedge \mathbf{e}_j $$（其中 $$ i < j $$）。这些表示两个向量所张成的平面中的有向面积。在 $$ \mathbb{R}^3 $$ 中，有 $$ \binom{3}{2} = 3 $$ 个基 2-向量：
+2-向量是两个基 1-向量的楔积，如 $$ \mathbf{e}\_i \wedge \mathbf{e}\_j $$（其中 $$ i < j $$）。这些表示两个向量所张成的平面中的有向面积。在 $$ \mathbb{R}^3 $$ 中，有 $$ \binom{3}{2} = 3 $$ 个基 2-向量：
 
 $$
 \{\mathbf{e}_1 \wedge \mathbf{e}_2, \mathbf{e}_1 \wedge \mathbf{e}_3, \mathbf{e}_2 \wedge \mathbf{e}_3\}.
@@ -176,8 +176,8 @@ $$
 #### **示例：楔积与面积**
 
 为了说明楔积与面积的关系，考虑 $$ \mathbb{R}^3 $$ 中的两个向量：  
-$$ \mathbf{u} = u_1 \mathbf{e}_1 + u_2 \mathbf{e}_2 + u_3 \mathbf{e}_3 $$ 和  
-$$ \mathbf{v} = v_1 \mathbf{e}_1 + v_2 \mathbf{e}_2 + v_3 \mathbf{e}_3 $$。
+$$ \mathbf{u} = u_1 \mathbf{e}\_1 + u_2 \mathbf{e}\_2 + u_3 \mathbf{e}\_3 $$ 和  
+$$ \mathbf{v} = v_1 \mathbf{e}\_1 + v_2 \mathbf{e}\_2 + v_3 \mathbf{e}\_3 $$。
 
 它们的楔积 $$ \mathbf{u} \wedge \mathbf{v} $$ 展开为：
 
