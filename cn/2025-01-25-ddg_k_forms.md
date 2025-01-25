@@ -11,6 +11,8 @@
 
 ### **向量与协向量：对偶关系**
 
+![covectors](../assets/img/DDG/6_kforms_covectors.jpg "covectors")
+
 向量（vectors）和协向量（covectors）具有一种对偶关系，就像测量系统中的对应物：
 
 - **向量** 表示既有方向又有大小的量。
@@ -101,7 +103,11 @@ $$
 
 类似地，2-forms（2-形式）可以用来表示投影面积，3-forms（3-形式）可以用来表示投影体积。
 
+![covectors](../assets/img/DDG/6_2_form.jpg "covectors")
+
 例如，可以通过2-form$$ (\alpha \wedge \beta)(u, v) := \alpha(u)\beta(v) - \alpha(v)\beta(u) $$计算由两个向量$$ u $$和$$ v $$定义的平行四边形在平面上的投影面积，其中$$ \alpha $$和$$ \beta $$是共轭向量。
+
+![covectors](../assets/img/DDG/6_3_form.jpg "covectors")
 
 为了计算由三个向量$$ u $$、$$ v $$和$$ w $$定义的平行六面体在三共轭向量$$ \alpha $$、$$ \beta $$和$$ \gamma $$张成空间上的投影体积，可以使用3-form$$ \alpha \wedge \beta \wedge \gamma $$，其定义为：
 $$
@@ -163,6 +169,8 @@ $$
 此外，对偶基作为 vectors 和 covectors 之间的桥梁，支持操作如收缩（contraction）、楔积（wedge products）以及从原空间到对偶空间的转换。它在理解几何与代数的交互中不可或缺。
 
 ## Example: Computing $$ (\alpha \wedge \beta)(u, v) $$
+
+![covectors](../assets/img/DDG/6_basis.jpg "covectors")
 
 以下是使用示例逐步计算 $$ (\alpha \wedge \beta)(u, v) $$ 的过程：
 
@@ -258,6 +266,8 @@ $$
 事实证明，这些工具确实非常宝贵，并已成为研究数学和物理系统的必备方法。
 
 ### Sharp ($$ \# $$) 和 Flat ($$ \flat $$) 运算
+
+![covectors](../assets/img/DDG/6_music.jpg "covectors")
 
 **Sharp** 和 **Flat** 运算用于通过**度量张量**（metric tensor）升高或降低指标，在 vectors 和 covectors 之间进行转换。
 
