@@ -18,7 +18,7 @@
 - **向量** 表示既有方向又有大小的量。
 - **协向量** 是测量这些向量的“工具”，在数学上与向量是对偶的。
 
-#### **对偶空间 $$ V^* $$**：
+####  **对偶空间** $$V^*$$：
 
 给定一个向量空间 $$ V $$，其对偶空间 $$ V^* $$ 由线性映射 $$ \alpha: V \to \mathbb{R} $$ 组成。其结构与 $$ V $$ 类似：
 
@@ -32,25 +32,29 @@
 在像 $$ \mathbb{R}^n $$ 这样的空间中，**flat ($$ \flat $$)** 和 **sharp ($$ \sharp $$)** 运算符使用度量张量 $$ g $$ 在向量和协向量之间进行转换。
 
 1. **Flat ($$ \flat $$)**：将向量 $$ v $$ 转换为协向量 $$ v^\flat $$：
-   $$
-   v^\flat(w) = g(v, w),
-   $$
-   其中 $$ g(v, w) $$ 是内积。
+
+$$
+v^\flat(w) = g(v, w),
+$$
+
+其中 $$ g(v, w) $$ 是内积。
 
 2. **Sharp ($$ \sharp $$)**：将协向量转换回向量 $$ \alpha^\sharp $$：
-   $$
+
+$$
    g(\alpha^\sharp, w) = \alpha(w).
-   $$
+$$
 
 ---
 
-### **示例：在 $$ \mathbb{R}^2 $$ 中的计算**
+### 示例：在 $$ \mathbb{R}^2 $$ 中的计算
 
 设度量张量 $$ g = \begin{bmatrix} 2 & 0 \\ 0 & 1 \end{bmatrix} $$ 和向量 $$ v = \begin{bmatrix} 3 \\ 4 \end{bmatrix} $$。
 
 #### **应用 $$ \flat $$：**
 
 协向量 $$ v^\flat = g v $$：
+
 $$
 v^\flat = \begin{bmatrix} 6 \\ 4 \end{bmatrix}.
 $$
@@ -58,9 +62,11 @@ $$
 #### **应用 $$ \sharp $$：**
 
 向量 $$ \alpha^\sharp = g^{-1} \alpha $$：
+
 $$
 \alpha^\sharp = \begin{bmatrix} 3 \\ 4 \end{bmatrix},
 $$
+
 可以还原原始向量 $$ v $$。
 
 ---
@@ -70,23 +76,26 @@ $$
 验证内积的一致性：
 
 1. 使用 $$ g $$ 直接计算：
+
    设 $$ u = \begin{bmatrix} 1 \\ 2 \end{bmatrix} $$，则：
-   $$
+   
+$$
    \langle v, u \rangle = v^T g u = \begin{bmatrix} 3 & 4 \end{bmatrix}
    \begin{bmatrix} 2 & 0 \\ 0 & 1 \end{bmatrix}
    \begin{bmatrix} 1 \\ 2 \end{bmatrix} = 10.
-   $$
+$$
 
 2. 使用 $$ v^\flat $$ 计算：
-   $$
+
+$$
    v^\flat(u) = \begin{bmatrix} 6 & 4 \end{bmatrix} \begin{bmatrix} 1 \\ 2 \end{bmatrix} = 6 \cdot 1 + 4 \cdot 2 = 10.
-   $$
+$$
 
 两种方法结果一致，验证了运算的正确性。对向量应用 flat 等价于求内积；用 sharp 求内积等价于应用原始协向量。
 
 ---
 
-## **k-Forms（k-形式）**
+## k-Forms（k-形式）
 
 |                      | **Primal（原空间）** | **Dual（对偶空间）** |  
 | -------------------- | ------------------- | ------------------- |  
@@ -96,9 +105,11 @@ $$
 我们现在可以定义**Covectors（共轭向量）**，它们是从向量到标量的线性映射。**Exterior Algebra（外代数）**允许我们通过向量构造$$ k $$-vectors，并结合这些思想，我们可以构建一个共轭向量的外代数，称为$$ k $$-forms（k-形式），它是多线性映射。
 
 一个**1-form（1-形式）**可以被视为一个共轭向量$$ \alpha $$用来“测量”一个向量$$ u $$。其表示为函数应用$$ \alpha(u) $$。在分量形式中，这可以表示为：
+
 $$
 \alpha(\mu) := \sum_i \alpha_i \mu^i,
 $$
+
 其中$$ \alpha_i $$是共轭向量的分量，$$ \mu^i $$是向量的分量。
 
 类似地，2-forms（2-形式）可以用来表示投影面积，3-forms（3-形式）可以用来表示投影体积。
@@ -110,6 +121,7 @@ $$
 ![covectors](../assets/img/DDG/6_3_form.jpg "covectors")
 
 为了计算由三个向量$$ u $$、$$ v $$和$$ w $$定义的平行六面体在三共轭向量$$ \alpha $$、$$ \beta $$和$$ \gamma $$张成空间上的投影体积，可以使用3-form$$ \alpha \wedge \beta \wedge \gamma $$，其定义为：
+
 $$
 (\alpha \wedge \beta \wedge \gamma)(u, v, w) = \text{det}
 \begin{bmatrix}
@@ -121,7 +133,7 @@ $$
 
 这里的行列式表示被共轭向量$$ \alpha $$、$$ \beta $$和$$ \gamma $$“测量”后平行六面体的有向体积。
 
-### **k-Forms的概念化计算**
+### k-Forms的概念化计算
 
 通过行列式计算一个$$ k $$-form对$$ k $$个向量的值可以表示为：
 
@@ -136,7 +148,7 @@ $$
 
 这种形式允许通过行列式计算高维空间中的体积类量，从而建立代数结构与几何之间的清晰联系。
 
-### **k-Forms的反对称性**
+### k-Forms的反对称性
 
 **k-Forms**的一个关键性质是其**反对称性**（Antisymmetry）。这意味着交换任意两个参数（无论是向量还是共轭向量）会反转结果的符号。例如，如果我们在一个$$ k $$-form$$ \alpha_1 \wedge \alpha_2 \wedge \cdots \wedge \alpha_k $$的计算中交换了两个向量$$ u_i $$和$$ u_j $$，则形式的值会变为其负值：
 
