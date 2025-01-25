@@ -22,6 +22,12 @@ Here’s a way to think about it:
 
 ## **Vectors vs. Covectors: The Dual Relationship**
 
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/DDG/6_kforms_covectors.jpg" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
 Vectors and covectors have a dual relationship, like counterparts in a measurement system:
 
 - **Vectors** represent quantities with both direction and magnitude.
@@ -106,7 +112,19 @@ where $$ \alpha_i $$ are the components of the covector and $$ \mu^i $$ are the 
 
 Similarly, we can extend this concept to 2-forms as a projected area and 3-forms as a projected volume.
 
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/DDG/6_2_form.jpg" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
 We compute the projected area of a parallelogram defined by two vectors $$ u $$ and $$ v $$ onto a plane using the 2-form $$ (\alpha \wedge \beta)(u, v) := \alpha(u)\beta(v) - \alpha(v)\beta(u) $$, where $$ \alpha $$ and $$ \beta $$ are covectors.
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/DDG/6_3_form.jpg" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
 
 To compute the **projected volume** of a parallelepiped defined by three vectors $$ u $$, $$ v $$, and $$ w $$ onto the space spanned by three covectors $$ \alpha $$, $$ \beta $$, and $$ \gamma $$, we use a 3-form $$ \alpha \wedge \beta \wedge \gamma $$, defined as:
 $$
@@ -168,6 +186,12 @@ The dual basis plays a crucial role in translating geometric objects into algebr
 Moreover, the dual basis serves as a bridge between vectors and covectors, enabling operations such as contraction, wedge products, and the transition between the primal and dual spaces. It is indispensable for understanding the interaction between geometry and algebra.
 
 ## Example: Computing $$ (\alpha \wedge \beta)(u, v) $$
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/DDG/6_basis.jpg" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
 
 Let’s calculate $$ (\alpha \wedge \beta)(u, v) $$ step by step using the following example:
 
@@ -263,6 +287,12 @@ The power of Einstein summation doesn’t stop here—it can be extended to tens
 Indeed, these tools have proven invaluable, becoming essential in the study of mathematical and physical systems.
 
 ## Sharp ($$ \# $$) and Flat ($$ \flat $$) Operators
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/DDG/6_music.jpg" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
 
 The **sharp** and **flat** operators enable us to transition between vectors and covectors by raising or lowering indices using the **metric tensor**.
 
