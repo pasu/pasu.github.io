@@ -1,7 +1,7 @@
 ---
 layout: post
 title: DDG k-Forms
-date: 2025-01-13 10:27:00
+date: 2025-01-25 10:27:00
 tags: Geometry
 categories: DDG
 giscus_comments: true
