@@ -1,7 +1,7 @@
 ---
 layout: post
-title: DDG k-Forms
-date: 2025-01-25 10:27:00
+title: DDG Integration
+date: 2025-04-21 10:27:00
 tags: Geometry
 categories: DDG
 giscus_comments: true
