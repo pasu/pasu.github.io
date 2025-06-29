@@ -9,6 +9,8 @@ related_posts: true
 pretty_table: true
 ---
 
+原课件来自：https://brickisland.net/ddg-web/
+
 ## 光滑曲面 II
 
 好久不看DDG，导致每次看，感觉上次写的自己都看不懂，什么玩意，都需要在简单的温故一下，然后有会觉得有一些上次学习忽略的地方。不管怎样，今天无论如何都要看完Surface II。
