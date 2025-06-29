@@ -1,7 +1,7 @@
 ---
 layout: post
 title: DDG Smooth Surfaces II
-date: 2025-06-28 10:27:00
+\mathrm{d}Ate: 2025-06-28 10:27:00
 tags: Geometry
 categories: DDG
 giscus_comments: true
@@ -53,13 +53,13 @@ pretty_table: true
 1. 给定参数化 $ f(u,v) $，计算切向量：  
 
    $$
-   df_u = \frac{\partial f}{\partial u}, \quad df_v = \frac{\partial f}{\partial v}
+   \mathrm{d}f_u = \frac{\partial f}{\partial u}, \quad \mathrm{d}f_v = \frac{\partial f}{\partial v}
    $$  
 
 2. 法向量由叉积得到：  
 
    $$
-   N = \frac{df_u \times df_v}{\|df_u \times df_v\|}
+   N = \frac{\mathrm{d}f_u \times \mathrm{d}f_v}{\|\mathrm{d}f_u \times \mathrm{d}f_v\|}
    $$  
 
    **条件**：切向量必须线性独立（叉积非零）。  
@@ -69,12 +69,12 @@ pretty_table: true
 - 参数化 $ f(u,v) = (\cos u \sin v, \sin u \sin v, \cos v) $ 
 - 切向量： 
 
-  $ df(\frac{\partial}{\partial u}) = (-\sin u \sin v, \cos u \sin v, 0) $,  
-  $ df(\frac{\partial}{\partial v}) = (\cos u \cos v, \sin u \cos v, -\sin v) $。  
+  $ \mathrm{d}f(\frac{\partial}{\partial u}) = (-\sin u \sin v, \cos u \sin v, 0) $,  
+  $ \mathrm{d}f(\frac{\partial}{\partial v}) = (\cos u \cos v, \sin u \cos v, -\sin v) $。  
 
 - 叉积结果：  
 
-  $ df(\frac{\partial}{\partial u}) \times df(\frac{\partial}{\partial v}) = -\sin v \cdot f(u,v) $。  
+  $ \mathrm{d}f(\frac{\partial}{\partial u}) \times \mathrm{d}f(\frac{\partial}{\partial v}) = -\sin v \cdot f(u,v) $。  
   
 - 单位法向量：$ N = -f(u,v) $（与球心对称，直接取反即可）。
 
@@ -96,20 +96,218 @@ pretty_table: true
 **定义**：对曲面片 $ \Omega $，向量面积是法向量的加权积分：  
 
 $$
-\text{Vector Area} = \int_\Omega N \, dA = \frac{1}{2} \int_\Omega df \wedge df
+\text{Vector Area} = \int_\Omega N \, \mathrm{d}A = \frac{1}{2} \int_\Omega \mathrm{d}f \wedge \mathrm{d}f
 $$  
 
-**性质**： 
+$$
+A = \frac{1}{2} \mathrm{d}f \wedge \mathrm{d}f
+$$  
 
-1. **边界唯一性**：仅依赖曲面片的边界 $ \partial \Omega $。  
-   - 对任意共享边界的曲面片，向量面积相同（如非平面多边形）。  
-2. **封闭曲面**：若 $ \Omega $ 无边界（如球面），则向量面积积分为零：  
+### Exterior Calculus on Immersed Surfaces
+
+#### 基本概念
+
+Immersed surface是指通过光滑映射 $ f: M \to \mathbb{R}^3 $ 定义的曲面，其中微分 $ \mathrm{d}f $ 处处非退化（即切空间维度保持为2）。  
+
+#### Induced Area 2-Form
+
+- **定义**：给定参数域中的向量 $ X, Y $，其映射后的有向面积由叉积给出：  
+
+  $$
+  \mathrm{d}A(X, Y) = \| \mathrm{d}f(X) \times \mathrm{d}f(Y) \| \cdot \text{orientation}
+  $$  
+
+- **坐标表达式**：若 $ f(u,v) $ 是参数化，则：  
+
+  $$
+  \mathrm{d}A = \| f_u \times f_v \| \, du \wedge dv
+  $$  
+
+- **与法向量的关系**：  
+
+  $$
+  \mathrm{d}f \wedge \mathrm{d}f = 2 (\mathrm{d}f(X) \times \mathrm{d}f(Y)) \, du \wedge dv = 2 N \, \mathrm{d}A
+  $$  
+
+  （$ \mathrm{d}f \wedge \mathrm{d}f $ 的方向与单位法向量 $ N $ 一致，大小为 $ 2 \, \mathrm{d}A $）。
+
+#### Hodge Star
+
+在浸入曲面 $ f(M) $ 上，霍奇星算子需根据微分形式的阶数分别定义：
+
+##### 0-Forms
+
+- **定义**：  
+
+  给定面积2-形式 $ \mathrm{d}A $ 和标量函数（0-形式）$ \phi $，定义：  
+
+  $$
+  \star \phi := \phi \, \mathrm{d}A
+  $$  
+
+- **几何意义**：  
+
+  将函数 $ \phi $ 的值作为权重，缩放曲面的局部面积形式 $ \mathrm{d}A $，生成一个**带权面积2-形式**。  
+  **示例**：  
+  若 $ \phi $ 表示曲面的温度分布，则 $ \star \phi $ 表示“温度加权的面积微元”。
+
+##### 2-Forms
+
+- **定义**：  
+
+  对任意2-形式 $ \omega $，存在唯一的标量函数 $ \phi $ 使得：  
+
+  $$
+  \omega = \phi \, \mathrm{d}A
+  $$  
+
+  则定义其霍奇对偶为：  
+
+  $$
+  \star \omega := \phi
+  $$  
+
+- **几何意义**：  
+
+  将2-形式 $ \omega $ 分解为面积形式 $ \mathrm{d}A $ 和一个标量函数 $ \phi $，提取该函数作为霍奇对偶。 
+
+  **示例**：  
+  若 $ \omega = \sin v \, du \wedge dv $ 且 $ \mathrm{d}A = \sin v \, du \wedge dv $，则 $ \star \omega = 1 $。
+
+### Complex Structure
+
+#### 基本定义
+
+复结构 $ J $ 是浸入曲面 $ f: M \to \mathbb{R}^3 $ 切空间上的线性算子，满足以下核心性质：
+
+1. **旋转特性**：$ J^2 = -\text{Id} $，即对任意切向量连续应用两次 $ J $ 等价于反向。
+2. **几何实现**：通过法向量叉积定义切向量的旋转：
+
    $$
-   \int_{\text{Closed}} N \, dA = 0
-   $$  
+   \mathrm{d}f(JX) = N \times \mathrm{d}f(X), \quad \forall X \in T_p M
+   $$
 
-**应用**： 
+   其中 $ N $ 是单位法向量，$ \mathrm{d}f $ 是微分映射。
 
-- 计算离散网格的法向量（外微积分方法）。  
-- 流体力学中的通量计算（如通过曲面的净流量）。  
+在 $ \mathbb{R}^2 $ 中，标准复结构为固定矩阵：
 
+$$
+J_{\mathbb{R}^2} = \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}, \quad \text{对应旋转} \begin{bmatrix} x \\ y \end{bmatrix} \mapsto \begin{bmatrix} -y \\ x \end{bmatrix}
+$$
+
+曲面上的 $ J $ 是此概念的弯曲推广，其矩阵形式依赖局部几何。
+
+#### 显式计算与度量依赖
+
+复结构可通过雅可比矩阵 $ A = [\mathrm{d}f_u \ \mathrm{d}f_v] $ 和法向量叉积矩阵 $ \hat{N} $ 显式求解：
+
+$$
+J = (A^T A)^{-1} A^T \hat{N} A
+$$
+
+**关键步骤**：
+
+1. **度量矩阵**：$ A^T A $ 是诱导度量 $ g $ 的坐标表示。
+2. **叉积矩阵**：
+
+   $$
+   \hat{N} = \begin{bmatrix} 0 & -N_z & N_y \\ N_z & 0 & -N_x \\ -N_y & N_x & 0 \end{bmatrix}
+   $$
+
+3. **方程意义**：$ A J = \hat{N} A $ 确保参数域旋转与 $ \mathbb{R}^3 $ 叉积旋转一致。
+
+#### 共形浸入的判定
+
+浸入 $ f $ 是共形（保角）的充要条件为：
+
+$$
+J = J_{\mathbb{R}^2}
+$$
+
+此时曲面仅允许局部伸缩，角度保持不变。
+
+
+$$
+\mathrm{d}f(JX) = N \times \mathrm{d}f(X) \Rightarrow J = (A^T A)^{-1} A^T \hat{N} A
+$$
+
+##### Hodge star on 1-forms
+
+对于浸入曲面 $f: M \to \mathbb{R}^3$ 上的 1-形式 $\alpha$，其Hodge star运算定义为：
+
+$$
+(\star_f \alpha)(X) = \alpha(\mathcal{J}_f X)
+$$
+
+其中：
+
+* $X$ 是 $ T_p M$ 中的任意切向量。
+* $\mathcal{J}_f$ 就是你前面定义的曲面上的复结构（局部90度旋转）：
+
+  $$
+  \mathrm{d}f(\mathcal{J}_f X) = N \times \mathrm{d}f(X)
+  $$
+
+**几何理解**：
+
+* 在 $\mathbb{R}^2$ 中，$\star$ 对 1-形式相当于把向量旋转 $90^\circ$。
+* 在曲面 $M$ 上，$\star_f$ 就通过局部法向量来确定“哪边是左，哪边是右”，从而将切向量场沿着面内旋转 $90^\circ$，再用 $\alpha$ 取值。
+
+###### 与其他阶霍奇星的统一性
+
+- **0-形式**：$ \star_f \phi = \phi \, \mathrm{d}A $
+- **1-形式**：$ \star_f \alpha(X) = \alpha(\mathcal{J}_f X) $
+- **2-形式**：$ \star_f (\phi \, \mathrm{d}A) = \phi $
+
+#### Metric, Area Form, and Complex Structure
+
+在曲面上，黎曼度规 $ g(X,Y) $ 可以分解为**面积形式 $ \mathrm{d}A $** 和**复结构 $ J $** 的组合：
+
+$$
+g(X, Y) = \mathrm{d}A(X, JY)
+$$
+
+其中：
+- $ \mathrm{d}A $ 是曲面的有向面积2-形式（$ \mathrm{d}A(X,Y) = \|X \times Y\| $）。
+- $ J $ 是切空间中的90度旋转算子（复结构），满足 $ J^2 = -\text{Id} $。
+
+##### 二维平面（$ \mathbb{R}^2 $）中的类比
+
+在平面上，Metric、Cross和Complex Structure $ J $ 满足类似关系：
+
+$$
+X \cdot Y = X \times (JY)
+$$
+
+**推导**：
+
+1. 设 $ X = (x_1, x_2) $，$ Y = (y_1, y_2) $，平面复结构 $ J = \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix} $。
+2. 计算 $ JY = (-y_2, y_1) $。
+3. 叉积 $ X \times (JY) = x_1 y_1 + x_2 y_2 = X \cdot Y $。
+
+**几何意义**：  
+- 左边 $ X \cdot Y $ 是向量的点积（度量内积）。  
+- 右边 $ X \times (JY) $ 通过旋转 $ Y $ 后与 $ X $ 叉积，结果等于点积。  
+- **本质**：点积与叉积通过复结构 $ J $ 联系起来。
+
+#### 曲面上的Sharp（♯）与Flat（♭）算子
+
+在曲面 $ f: M \to \mathbb{R}^3 $ 上，**诱导度量 $ g $** 允许我们在**向量场**和**1-形式**之间转换：  
+- **Flat（♭）**：将向量场 $ X $ 转换为对应的1-形式 $ X^b $。  
+- **Sharp（♯）**：将1-形式 $ \alpha $ 转换为对应的向量场 $ \alpha^\# $。  
+
+##### Flat 算子（♭）
+
+对向量场 $ X $，定义其对应的1-形式 $ X^b $ 为：  
+
+$$
+X^b(Y) := g(X, Y) = \langle \mathrm{d}f(X), \mathrm{d}f(Y) \rangle_{\mathbb{R}^3}
+$$  
+
+##### Sharp 算子（♯）
+
+对1-形式 $ \alpha $，定义其对应的向量场 $ \alpha^\# $ 为：  
+
+$$
+g(\alpha^\#, Y) := \alpha(Y), \quad \forall Y
+$$  
