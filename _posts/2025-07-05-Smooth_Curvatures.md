@@ -1,7 +1,7 @@
 ---
 layout: post
-title: DDG Curvatures
-\mathrm{d}Ate: 2025-07- 10:27:00
+title: DDG Smooth Curvatures
+\mathrm{d}Ate: 2025-07-05 10:27:00
 tags: Geometry
 categories: DDG
 giscus_comments: true
