@@ -245,6 +245,9 @@
       "coordinates": [
         104,
         35
+      ],
+      "mapRegions": [
+        "TWN"
       ]
     }
   ],

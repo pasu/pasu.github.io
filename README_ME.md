@@ -17,6 +17,8 @@ For each future status update:
 
 ### Status history
 
+- **10 October 2026 — China map display:** At Peter's request, China's map entry includes Taiwan in its highlighted region. The China object in travel.json uses `mapRegions: ["TWN"]` to include the corresponding Natural Earth geometry. Selecting either geometry shows the China entry; the country count remains 15. This display preference does not assert a separate visit to Taiwan.
+
 - **10 October 2026 — China, Belgium, and personal gallery:** Peter confirmed a return to China in summer 2026 and that Belgium was visited, not only a transit stop. travel.json now records 15 visited countries and no transit-only countries. China has no city details because none were supplied. The map defaults to World so China is visible. Removed all three Wikimedia reference photos. Added the Delft office photo as an undated personal photograph and the locally supplied Vatican City photo as a 2025 travel photograph after visual inspection. Gallery photos are independent of map year filters, and `year` is optional. Keep all five personal images local; do not infer a date or publish the child's name from the office filename. The symbolic illustration is retained: its broad graphics/running/travel themes still fit.
 
 - **10 October 2026 — concise travel section:** Peter requested keeping My travel map without the detailed travel routes. Removed the year-by-year itinerary prose from the Me page, retaining the short travel introduction, interactive map, country/year data, and photo gallery. The route history recorded in this README remains maintenance context, not public page content. The symbolic illustration remains unchanged because the underlying interests are unchanged.
@@ -752,7 +754,7 @@ description: Curriculum vitae of Guowei (Peter) Lu.
       }
       if (geography) {
         geography.features.forEach(feature => {
-          const country = countries.find(entry => entry.iso === feature.properties.iso);
+          const country = countries.find(entry => entry.iso === feature.properties.iso || (entry.mapRegions || []).includes(feature.properties.iso));
           const polygons = feature.geometry.type === 'Polygon' ? [feature.geometry.coordinates] : feature.geometry.coordinates;
           const pathData = polygons.map(polygon => polygon.map(ring => ring.map((point, index) => {
             const [x, y] = project(point);
@@ -788,7 +790,6 @@ description: Curriculum vitae of Guowei (Peter) Lu.
     console.warn(error);
   });
 })();
-
 ```
 
 ### assets/json/travel.json
@@ -1041,6 +1042,9 @@ description: Curriculum vitae of Guowei (Peter) Lu.
       "coordinates": [
         104,
         35
+      ],
+      "mapRegions": [
+        "TWN"
       ]
     }
   ],
@@ -1091,7 +1095,6 @@ description: Curriculum vitae of Guowei (Peter) Lu.
     }
   ]
 }
-
 ```
 
 ### purgecss.config.js

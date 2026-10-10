@@ -103,7 +103,7 @@
       }
       if (geography) {
         geography.features.forEach(feature => {
-          const country = countries.find(entry => entry.iso === feature.properties.iso);
+          const country = countries.find(entry => entry.iso === feature.properties.iso || (entry.mapRegions || []).includes(feature.properties.iso));
           const polygons = feature.geometry.type === 'Polygon' ? [feature.geometry.coordinates] : feature.geometry.coordinates;
           const pathData = polygons.map(polygon => polygon.map(ring => ring.map((point, index) => {
             const [x, y] = project(point);
