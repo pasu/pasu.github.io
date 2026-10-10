@@ -17,6 +17,13 @@ For each future status update:
 
 ### Status history
 
+- **10 October 2026 — family section removed:** Peter requested removing the entire A life with room for other people section. Do not restore it in future page updates unless requested.
+
+
+- **10 October 2026 — shorter personal page:** Peter requested removing “The abilities I keep developing”, “Running, music, and a different rhythm”, and “Travel: curiosity outside the screen”. Removed those sections and retained only a short introduction under “My travel map”, followed by the existing map and gallery. Keep these topics brief rather than restoring the long prose in future edits.
+
+- **10 October 2026 — modest contribution section:** Peter asked for “What I contribute” to be humble and neat. Shortened it to collaborative rendering work, technical notes as a learning practice, and links to publications/CV. Keep detailed paper descriptions and awards on the About page rather than repeating them in this personal section.
+
 - **10 October 2026 — office photo removed:** Peter removed the Delft office photograph and requested its removal from travel.json. Removed the gallery entry and the public office-photo description. Four local personal travel photos remain. Earlier office-photo references in this history are historical only; do not restore the entry without Peter's request.
 
 - **10 October 2026 — China highlight follow-up:** Combined the CHN and TWN outlines into one CHN MultiPolygon in the local world-countries.geojson so both areas receive the same fill directly. Added the repository's content-hash cache-busting filter to the travel JSON, map geometry, and JavaScript URLs. When rebuilding the map data from Natural Earth, reproduce this geometry grouping before publication. The live site's current asset version could not be verified through the web tool; the local fix requires a successful commit/push/deployment to appear online.
@@ -242,39 +249,13 @@ My professional background also includes working in SuperMap’s R&D department 
 
 ### What I contribute
 
-Research is collaborative. Two milestones in my work with colleagues are **Sheared Polygonal Texture Filtering**, presented at Graphics Interface 2024, and **Iterative Lightmap Update for Scene Editing**, accepted to Pacific Graphics 2025.
+I work with colleagues on rendering methods, including texture filtering and lightmap updates. I also use technical notes to work through ideas and check my understanding.
 
-The texture-filtering work explores how to filter textures accurately over quadrilateral footprints while keeping computation efficient. Its applications include normal filtering, soft shadow mapping, and glint rendering. Our paper received the **Best Computer Graphics Student Paper award at GI 2024**. I value this as a concrete result of careful work with other people.
+You can find our papers in the [publications section]({{ '/' | relative_url }}#publications), and my background in my [CV]({{ '/cv/' | relative_url }}).
 
-My learning has also taken me through discrete differential geometry, exterior calculus, rendering, 3D GIS, and explainable AI. I have explored these subjects through technical notes, using explanation as a way to check my own understanding. That work is part of my background, even as this website now focuses on my research and personal story.
+## My travel map
 
-For the formal record, see my [publications]({{ '/' | relative_url }}#publications) and [CV]({{ '/cv/' | relative_url }}).
-
-### The abilities I keep developing
-
-My work sits across several kinds of thinking: mathematical reasoning, implementation, visual judgement, and explanation. I enjoy the process of moving between them. A mathematical expression can become an algorithm; an image can reveal a problem in that algorithm; writing can expose something I have not yet understood.
-
-I also like connections that reach outside the immediate technical task. Ideas about dimensions, frequency, and representation have given me ways to think about music, emotion, and difficult questions. Those connections are ways to explore rather than proofs that everything has a mathematical answer.
-
-I want to keep improving my foundations in mathematics, physics, and optimisation. I’m interested in AI as something that can become useful in a real workflow: a tool that helps people learn, create, or solve a problem. There is plenty I still want to learn.
-
-### Running, music, and a different rhythm
-
-“I imagine things and render. I listen to music while running.” That small line on my homepage captures two sides of me surprisingly well.
-
-Running and music belong together in my life. Music also gives me a way to recognise feelings that are difficult to explain directly. I wonder whether a song can translate something complicated inside us into a form we can hear and share.
-
-I want room for reading beyond technical subjects, too. Books I have wanted to explore include *Other Rivers*, *A Brief History of Intelligence*, and *A Biography of the Pixel*. They are reading interests, not a list of books I claim to have finished.
-
-### Travel: curiosity outside the screen
-
-Travel is part of my life beyond research. Over three summers, my journeys have taken me from Delft through cities in central Europe, into the Swiss Alps and Italy, and north to Scandinavia. Trains connect much of this story: a trip becomes a sequence of places rather than a single destination.
-
-In summer 2026, I also went back to China.
-
-#### My travel map
-
-The countries in my 2024–2026 travel history, including Belgium and my return to China in summer 2026. Choose a year, then select a highlighted country or its name to explore the destinations. Switch to the Europe view for a closer look at my European visits.
+I enjoy exploring new places. This map shows my visits across Europe and my return to China in summer 2026. Select a year or country to see more.
 
 <div id="me-travel" data-travel-url="{{ '/assets/json/travel.json' | relative_url | bust_file_cache }}" data-map-url="{{ '/assets/json/world-countries.geojson' | relative_url | bust_file_cache }}" data-base-url="{{ '/' | relative_url }}">
   <div class="me-map-controls">
@@ -285,7 +266,7 @@ The countries in my 2024–2026 travel history, including Belgium and my return 
   <svg id="me-travel-map" viewBox="0 0 900 620" role="group" aria-label="Visited countries map"></svg>
   <p class="me-map-legend"><span class="me-legend-visited"></span> Visited <span class="me-legend-transit"></span> Transit · Small countries use location markers.</p>
   <div id="me-country-list" class="me-country-list" aria-label="Countries in the selected journey"></div>
-  <p id="me-country-detail" class="me-country-detail" aria-live="polite">Select a country to see its destinations.</p>
+  <p id="me-country-detail" class="me-country-detail" aria-live="polite"></p>
   <p class="me-map-credit">Country outlines: <a href="https://www.naturalearthdata.com/">Natural Earth</a>, public domain. Overview boundaries are simplified.</p>
 </div>
 
@@ -296,12 +277,6 @@ My photographs capture travel and everyday moments—from European cities and Al
 <div id="me-photo-gallery" class="me-photo-gallery"></div>
 <noscript>The interactive map and gallery require JavaScript. My travels have taken me through central Europe, the Swiss Alps and Italy, and Scandinavia.</noscript>
 <script src="{{ '/assets/js/personal-travel.js' | relative_url | bust_file_cache }}" defer></script>
-
-### A life with room for other people
-
-I want a better balance between work and life, and more time for my child’s education. That matters to the picture of who I am. Research takes a lot of attention, but so do the people and experiences I want to be present for.
-
-I care about useful work, learning, and creativity. I also want a life in which travel, running, music, reading, and family are given real time. This page is a way of keeping those priorities visible alongside academic milestones.
 
 ## How Codex sees me
 
@@ -328,7 +303,6 @@ These are interpretations of the available material, rather than verified person
 </div>
 
 </div>
-
 ```
 
 ### _pages/about.md
@@ -730,7 +704,7 @@ description: Curriculum vitae of Guowei (Peter) Lu.
       const visited = countries.filter(country => country.status === 'visited');
       const transit = countries.filter(country => country.status === 'transit');
       summary.textContent = `${visited.length} visited countries${transit.length ? ` · ${transit.length} transit country` : ''} · ${year.value === 'all' ? '2024–2026' : year.value}`;
-      detail.textContent = 'Select a country to see its destinations. Destinations are listed across all recorded years.';
+      detail.textContent = '';
       list.replaceChildren();
       map.replaceChildren();
       const world = view.value === 'world';
@@ -789,7 +763,6 @@ description: Curriculum vitae of Guowei (Peter) Lu.
     console.warn(error);
   });
 })();
-
 ```
 
 ### assets/json/travel.json

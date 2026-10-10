@@ -74,7 +74,7 @@
       const visited = countries.filter(country => country.status === 'visited');
       const transit = countries.filter(country => country.status === 'transit');
       summary.textContent = `${visited.length} visited countries${transit.length ? ` · ${transit.length} transit country` : ''} · ${year.value === 'all' ? '2024–2026' : year.value}`;
-      detail.textContent = 'Select a country to see its destinations. Destinations are listed across all recorded years.';
+      detail.textContent = '';
       list.replaceChildren();
       map.replaceChildren();
       const world = view.value === 'world';
