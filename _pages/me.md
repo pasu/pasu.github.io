@@ -82,7 +82,7 @@ In summer 2026, I also went back to China.
 
 The countries in my 2024–2026 travel history, including Belgium and my return to China in summer 2026. Choose a year, then select a highlighted country or its name to explore the destinations. Switch to the Europe view for a closer look at my European visits.
 
-<div id="me-travel" data-travel-url="{{ '/assets/json/travel.json' | relative_url }}" data-map-url="{{ '/assets/json/world-countries.geojson' | relative_url }}" data-base-url="{{ '/' | relative_url }}">
+<div id="me-travel" data-travel-url="{{ '/assets/json/travel.json' | relative_url | bust_file_cache }}" data-map-url="{{ '/assets/json/world-countries.geojson' | relative_url | bust_file_cache }}" data-base-url="{{ '/' | relative_url }}">
   <div class="me-map-controls">
     <label for="me-travel-year">Journey <select id="me-travel-year"><option value="all">All years</option></select></label>
     <label for="me-map-view">Map <select id="me-map-view"><option value="world">World</option><option value="europe">Europe</option></select></label>
@@ -101,7 +101,7 @@ My photographs bring together travel, family, and everyday moments—from Venice
 
 <div id="me-photo-gallery" class="me-photo-gallery"></div>
 <noscript>The interactive map and gallery require JavaScript. My travels have taken me through central Europe, the Swiss Alps and Italy, and Scandinavia.</noscript>
-<script src="{{ '/assets/js/personal-travel.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/personal-travel.js' | relative_url | bust_file_cache }}" defer></script>
 
 ### A life with room for other people
 
