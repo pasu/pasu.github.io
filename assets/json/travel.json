@@ -1,0 +1,82 @@
+{
+  "updated": "2026-10-10",
+  "source": "Travel history supplied by Peter: summers 2024, 2025 and 2026.",
+  "countries": [
+    { "iso": "NLD", "name": "Netherlands", "status": "visited", "years": [2024, 2025, 2026], "places": ["Delft", "Amsterdam"], "coordinates": [4.36, 52.01] },
+    { "iso": "DEU", "name": "Germany", "status": "visited", "years": [2024, 2026], "places": ["Hamburg", "Berlin", "Dresden", "Cologne", "Düsseldorf", "Munich", "Garmisch-Partenkirchen"], "coordinates": [10.45, 51.16] },
+    { "iso": "CZE", "name": "Czechia", "status": "visited", "years": [2024], "places": ["Prague"], "coordinates": [14.42, 50.08] },
+    { "iso": "AUT", "name": "Austria", "status": "visited", "years": [2024], "places": ["Vienna", "Salzburg"], "coordinates": [14.55, 47.52] },
+    { "iso": "FRA", "name": "France", "status": "visited", "years": [2025], "places": ["Disneyland Paris", "Lyon"], "coordinates": [2.21, 46.23] },
+    { "iso": "CHE", "name": "Switzerland", "status": "visited", "years": [2025], "places": ["Geneva", "Lausanne", "Montreux", "Interlaken", "Grindelwald"], "coordinates": [8.23, 46.82] },
+    { "iso": "ITA", "name": "Italy", "status": "visited", "years": [2025], "places": ["Milan", "Venice", "Florence", "Pisa", "Rome"], "coordinates": [12.57, 42.83] },
+    { "iso": "VAT", "name": "Vatican City", "status": "visited", "years": [2025], "places": ["Vatican City"], "coordinates": [12.45, 41.90] },
+    { "iso": "SVK", "name": "Slovakia", "status": "visited", "years": [2026], "places": ["Bratislava"], "coordinates": [17.11, 48.15] },
+    { "iso": "HUN", "name": "Hungary", "status": "visited", "years": [2026], "places": ["Budapest"], "coordinates": [19.04, 47.50] },
+    { "iso": "NOR", "name": "Norway", "status": "visited", "years": [2026], "places": ["Bergen", "Oslo"], "coordinates": [8.47, 60.47] },
+    { "iso": "SWE", "name": "Sweden", "status": "visited", "years": [2026], "places": ["Stockholm"], "coordinates": [15.0, 62.0] },
+    { "iso": "DNK", "name": "Denmark", "status": "visited", "years": [2026], "places": ["Copenhagen"], "coordinates": [10.0, 56.0] },
+    { "iso": "BEL", "name": "Belgium", "status": "transit", "years": [2025], "places": ["Antwerp (transfer)", "Brussels (transfer)"], "coordinates": [4.47, 50.50] }
+  ],
+  "photos": [
+    {
+      "src": "assets/img/me/travel/italty_venice_01.jpg",
+      "title": "Venice · sunset on the water",
+      "year": 2025,
+      "alt": "A motorboat crossing the water beneath golden sunset clouds in Venice.",
+      "kind": "My travel photograph",
+      "credit": "Guowei Lu",
+      "source": "assets/img/me/travel/italty_venice_01.jpg"
+    },
+    {
+      "src": "assets/img/me/travel/switzerland_grindelwald_01.jpg",
+      "title": "Grindelwald · an Alpine pasture",
+      "year": 2025,
+      "alt": "A brown-and-white cow standing in a grassy Alpine pasture with mountains and clouds behind it.",
+      "kind": "My travel photograph",
+      "credit": "Guowei Lu",
+      "source": "assets/img/me/travel/switzerland_grindelwald_01.jpg"
+    },
+    {
+      "src": "assets/img/me/travel/switzerland_Montreux_01.jpg",
+      "title": "Montreux · a sailboat on the lake",
+      "year": 2025,
+      "alt": "A sailboat on blue lake water near Montreux, with a mountain range in the distance.",
+      "kind": "My travel photograph",
+      "credit": "Guowei Lu",
+      "source": "assets/img/me/travel/switzerland_Montreux_01.jpg"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Kehrwieder_Speicherstadt_Hamburg_Germany_2013-05-24_10-35-17.jpg/960px-Kehrwieder_Speicherstadt_Hamburg_Germany_2013-05-24_10-35-17.jpg",
+      "title": "Hamburg · waterways and warehouses",
+      "year": 2024,
+      "alt": "Canal and brick warehouses in Hamburg's Speicherstadt.",
+      "kind": "Destination reference photo",
+      "credit": "Hansueli Krapf",
+      "source": "https://commons.wikimedia.org/wiki/File:Kehrwieder_Speicherstadt_Hamburg_Germany_2013-05-24_10-35-17.jpg",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Grindelwald_from_Eiger.jpg",
+      "title": "Grindelwald · the Alpine landscape",
+      "year": 2025,
+      "alt": "View over the Grindelwald valley from the Eiger.",
+      "kind": "Destination reference photo",
+      "credit": "Stan Shebs",
+      "source": "https://commons.wikimedia.org/wiki/File:Grindelwald_from_Eiger.jpg",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+    },
+    {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Bergen_bryggen_panorama.jpg/960px-Bergen_bryggen_panorama.jpg",
+      "title": "Bergen · a northern waterfront",
+      "year": 2026,
+      "alt": "Panoramic view of colourful Bryggen waterfront buildings in Bergen.",
+      "kind": "Destination reference photo",
+      "credit": "Pål S. Schaathun",
+      "source": "https://commons.wikimedia.org/wiki/File:Bergen_bryggen_panorama.jpg",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+    }
+  ]
+}

@@ -19,3 +19,5 @@ Hello, I am Guowei, you can also call me Peter. I’m a PhD student at [CGV](htt
 I got my MSc with honours in Computer Science (Informatica), Game and Media Technology programme from Utrecht University in the summer of 2020.
 
 Next to my studies, I worked as a 3D GIS engineer in R&D department at SuperMap, focusing on productions related to virtual earth and map.
+
+[More about me — my work, interests, and life beyond research]({{ '/me/' | relative_url }}).
