@@ -17,6 +17,8 @@ For each future status update:
 
 ### Status history
 
+- **10 October 2026 — visually reviewed gallery captions:** Inspected all 24 local photographs and replaced numbered or generic titles with short place-first titles describing visible subjects. Updated alt descriptions to match the images. Future titles should follow “Place · brief visible detail”, without inventing personal memories or identifying people from appearance.
+
 - **10 October 2026 — family section removed:** Peter requested removing the entire A life with room for other people section. Do not restore it in future page updates unless requested.
 
 
@@ -1024,145 +1026,145 @@ description: Curriculum vitae of Guowei (Peter) Lu.
   "photos": [
     {
       "src": "assets/img/me/travel/austria_salzburg_01.jpg",
-      "title": "Salzburg · 01",
-      "alt": "Personal photograph from Salzburg.",
+      "title": "Salzburg · palace gardens",
+      "alt": "Formal flower beds and a fountain in a palace garden, with buildings and a hilltop fortress beyond.",
       "kind": "travel",
       "year": 2024
     },
     {
       "src": "assets/img/me/travel/china_beijing_forestry_university.jpg",
-      "title": "Beijing · Forestry University",
-      "alt": "Personal photograph from Beijing.",
+      "title": "Beijing · a tree-lined campus",
+      "alt": "A person sitting on a broad campus avenue shaded by tall green trees.",
       "kind": "travel",
       "year": 2026
     },
     {
       "src": "assets/img/me/travel/czech_prague_charles_bridge.jpg",
-      "title": "Prague · Charles Bridge",
-      "alt": "Personal photograph from Prague.",
+      "title": "Prague · Charles Bridge at sunset",
+      "alt": "An elevated view of Charles Bridge filled with pedestrians, with sunlight over the river.",
       "kind": "travel",
       "year": 2024
     },
     {
       "src": "assets/img/me/travel/france_paris_01.jpg",
-      "title": "Paris · 01",
-      "alt": "Personal photograph from Paris.",
+      "title": "Paris · Notre-Dame by the Seine",
+      "alt": "Notre-Dame cathedral beside the Seine, beneath a textured cloudy sky.",
       "kind": "travel",
       "year": 2025
     },
     {
       "src": "assets/img/me/travel/france_paris_02.jpg",
-      "title": "Paris · 02",
-      "alt": "Personal photograph from Paris.",
+      "title": "Paris · a moment with art",
+      "alt": "A visitor standing in a museum gallery beside framed paintings.",
       "kind": "travel",
       "year": 2025
     },
     {
       "src": "assets/img/me/travel/germany_koln_01.jpg",
-      "title": "Cologne · 01",
-      "alt": "Personal photograph from Cologne.",
+      "title": "Cologne · beneath the cathedral",
+      "alt": "Visitors on the steps below the towering Gothic facade of Cologne Cathedral.",
       "kind": "travel",
       "year": 2024
     },
     {
       "src": "assets/img/me/travel/germany_munich_eibsee.jpg",
-      "title": "Eibsee · near Munich",
-      "alt": "Personal photograph from Munich.",
+      "title": "Eibsee · clear water, cloudy skies",
+      "alt": "Turquoise lake water with wooded shores and mountains beneath large white clouds.",
       "kind": "travel",
       "year": 2026
     },
     {
       "src": "assets/img/me/travel/hungary_budapest_01.jpg",
-      "title": "Budapest · 01",
-      "alt": "Personal photograph from Budapest.",
+      "title": "Budapest · Parliament after dark",
+      "alt": "The illuminated Hungarian Parliament building reflected in dark river water.",
       "kind": "travel",
       "year": 2026
     },
     {
       "src": "assets/img/me/travel/italty_florence_01.jpg",
-      "title": "Florence · 01",
-      "alt": "Personal photograph from Florence.",
+      "title": "Florence · rooftops beside the Duomo",
+      "alt": "The dome and marble exterior of Florence Cathedral above red-roofed city buildings.",
       "kind": "travel",
       "year": 2025
     },
     {
       "src": "assets/img/me/travel/italty_milan_01.jpg",
-      "title": "Milan · 01",
-      "alt": "Personal photograph from Milan.",
+      "title": "Milan · the cathedral square",
+      "alt": "The ornate facade of Milan Cathedral overlooking a busy square.",
       "kind": "travel",
       "year": 2025
     },
     {
       "src": "assets/img/me/travel/italty_venice_01.jpg",
-      "title": "Venice · sunset on the water",
+      "title": "Venice · golden light on the water",
       "year": 2025,
       "alt": "A motorboat crossing the water beneath golden sunset clouds in Venice.",
       "kind": "travel"
     },
     {
       "src": "assets/img/me/travel/italty_venice_02.jpg",
-      "title": "Venice · 02",
-      "alt": "Personal photograph from Venice.",
+      "title": "Venice · a gondola on the lagoon",
+      "alt": "A gondola and its passengers on open water, with waterfront buildings in the distance.",
       "kind": "travel",
       "year": 2025
     },
     {
       "src": "assets/img/me/travel/netherlands_delft_compus.jpg",
-      "title": "Delft · campus",
-      "alt": "Personal photograph from Delft.",
+      "title": "Delft · campus from above",
+      "alt": "An elevated view across campus buildings, green spaces, and the city under an overcast sky.",
       "kind": "travel"
     },
     {
       "src": "assets/img/me/travel/netherlands_delft_office.jpg",
-      "title": "Delft · office",
-      "alt": "Personal photograph from Delft.",
+      "title": "Delft · small desk companions",
+      "alt": "A hand holding small animal figurines beside a window overlooking green trees.",
       "kind": "travel"
     },
     {
       "src": "assets/img/me/travel/netherlands_hague_circus.jpg",
-      "title": "The Hague · circus",
-      "alt": "Personal photograph from The Hague.",
+      "title": "The Hague · circus in the spotlight",
+      "alt": "Acrobatic performers on an ornate stage beneath bright beams of theatre light.",
       "kind": "travel"
     },
     {
       "src": "assets/img/me/travel/norway_bergen_01.jpg",
-      "title": "Bergen · 01",
-      "alt": "Personal photograph from Bergen.",
+      "title": "Bergen · colourful waterfront",
+      "alt": "Colourful waterfront buildings and boats below a misty wooded hillside.",
       "kind": "travel",
       "year": 2026
     },
     {
       "src": "assets/img/me/travel/norway_oslo_01.jpg",
-      "title": "Oslo · 01",
-      "alt": "Personal photograph from Oslo.",
+      "title": "Oslo · sculpture under summer skies",
+      "alt": "A tall carved stone column surrounded by sculptures and visitors beneath a blue sky.",
       "kind": "travel",
       "year": 2026
     },
     {
       "src": "assets/img/me/travel/slovakia_bratislava_01.jpg",
-      "title": "Bratislava · 01",
-      "alt": "Personal photograph from Bratislava.",
+      "title": "Bratislava · river beyond the ruins",
+      "alt": "A broad river and wooded landscape viewed over weathered stone ruins.",
       "kind": "travel",
       "year": 2026
     },
     {
       "src": "assets/img/me/travel/sweden_stockholm_01.jpg",
-      "title": "Stockholm · 01",
-      "alt": "Personal photograph from Stockholm.",
+      "title": "Stockholm · evening by the water",
+      "alt": "People silhouetted on a waterfront platform beneath a softly coloured evening sky.",
       "kind": "travel",
       "year": 2026
     },
     {
       "src": "assets/img/me/travel/switzerland_grindelwald_01.jpg",
-      "title": "Grindelwald · an Alpine pasture",
+      "title": "Grindelwald · a cow in the Alps",
       "year": 2025,
-      "alt": "A brown-and-white cow standing in a grassy Alpine pasture with mountains and clouds behind it.",
+      "alt": "A brown-and-white cow in a grassy Alpine pasture, with mountains and clouds behind it.",
       "kind": "travel"
     },
     {
       "src": "assets/img/me/travel/switzerland_grindelwald_02.jpg",
-      "title": "Grindelwald · 02",
-      "alt": "Personal photograph from Grindelwald.",
+      "title": "Grindelwald · peaks above the valley",
+      "alt": "Snow-covered mountain peaks above green slopes and an Alpine valley.",
       "kind": "travel",
       "year": 2025
     },
@@ -1170,26 +1172,25 @@ description: Curriculum vitae of Guowei (Peter) Lu.
       "src": "assets/img/me/travel/switzerland_Montreux_01.jpg",
       "title": "Montreux · a sailboat on the lake",
       "year": 2025,
-      "alt": "A sailboat on blue lake water near Montreux, with a mountain range in the distance.",
+      "alt": "A sailboat on blue lake water, with a mountain range in the distance.",
       "kind": "travel"
     },
     {
       "src": "assets/img/me/travel/vatican_city_01.jpg",
-      "title": "Vatican City · 01",
-      "alt": "Personal photograph from Vatican City.",
+      "title": "Vatican City · the museum entrance",
+      "alt": "The Vatican Museums entrance with sculpted figures and the inscription Musei Vaticani.",
       "kind": "travel",
       "year": 2025
     },
     {
       "src": "assets/img/me/travel/vatican_city_saint_peter_01.jpg",
-      "title": "Vatican City - inside Saint Peters",
+      "title": "Vatican City · marble and mosaics",
       "year": 2025,
-      "alt": "An ornate doorway framed by marble columns, with a religious mosaic above it and patterned marble flooring.",
+      "alt": "An ornate doorway framed by marble columns, with a religious mosaic above and patterned marble flooring below.",
       "kind": "travel"
     }
   ]
 }
-
 ```
 
 ### purgecss.config.js
