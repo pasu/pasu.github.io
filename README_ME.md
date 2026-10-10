@@ -30,6 +30,8 @@ Earlier discussions were not available in the creation chat. The draft therefore
 
 ## Files and integration
 
+**CV PDF:** Peter supplied `0_resume.pdf` in the repository root on 10 October 2026. `_pages/cv.md` uses the standard page layout with an embedded PDF and an open/download link to `/0_resume.pdf`, resolved through `relative_url`. This PDF is the source of truth for the CV page; replace the root file to update it. The old `assets/pdf/resume.pdf` and JSON resume are not used by this page. The CV PDF has not been used to revise biographical prose or the illustration. Preserve it when moving the project to another computer.
+
 **10 October 2026 — blog retirement:** Peter removed the `_posts` content and associated images and requested a clean site without the Blog page. `_pages/blog.md` was removed; homepage latest-posts markup and personal-page/dropdown blog links were removed. Pagination, latest posts, related blog posts, and archives are disabled. `_posts/` and `cn/` are excluded from Jekyll output, preserving any remaining archived material or Chinese source files without publishing pages with missing images. Historical references below to the deleted posts are provenance only; recover them from Git history if needed. Do not restore the blog unless Peter requests it.
 
 - `_pages/me.md`: canonical page source; Jekyll/al-folio page layout, permalink `/me/`, navbar title `Me`, order 6.
@@ -324,6 +326,26 @@ These are interpretations of the available material, rather than verified person
 </div>
 
 </div>
+
+```
+
+### _pages/cv.md
+
+```liquid
+---
+layout: page
+permalink: /cv/
+title: CV
+nav: true
+nav_order: 5
+description: Curriculum vitae of Guowei (Peter) Lu.
+---
+
+[Open or download my CV (PDF)]({{ '/0_resume.pdf' | relative_url }})
+
+<object data="{{ '/0_resume.pdf' | relative_url }}" type="application/pdf" width="100%" height="1000" style="height: 80vh; min-height: 600px;" aria-label="Curriculum vitae of Guowei Lu">
+  <p>Your browser cannot display this PDF inline. <a href="{{ '/0_resume.pdf' | relative_url }}">Open or download my CV</a>.</p>
+</object>
 
 ```
 
