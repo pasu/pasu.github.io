@@ -76,36 +76,16 @@ I want room for reading beyond technical subjects, too. Books I have wanted to e
 
 Travel is part of my life beyond research. Over three summers, my journeys have taken me from Delft through cities in central Europe, into the Swiss Alps and Italy, and north to Scandinavia. Trains connect much of this story: a trip becomes a sequence of places rather than a single destination.
 
-#### 2024 · A summer through central Europe
-
-In August 2024, I travelled from **Delft to Hamburg, Berlin, Dresden, Prague, Vienna, Salzburg, and Cologne**, before returning to Delft. The journey connected Germany, Czechia, and Austria over a little more than two weeks.
-
-**The route:** Delft → Hamburg → Berlin → Dresden → Prague → Vienna → Salzburg → Cologne → Delft.
-
-#### 2025 · From Disneyland to the Alps and Italy
-
-In August 2025, my journey began with **Disneyland Paris**, then continued through **Lyon, Geneva, Lausanne, and Montreux**. From Montreux, the route followed the **GoldenPass to Interlaken**, then continued to **Grindelwald** in the Swiss Alps.
-
-The second half took me through **Milan, Venice, Florence, and Pisa**, ending in **Rome and Vatican City** before a flight back to Amsterdam. This trip brought very different settings into one journey: a theme park, lakes and mountains, and Italian cities.
-
-**The route:** Delft → Disneyland Paris → Lyon → Geneva → Lausanne → Montreux → Interlaken → Grindelwald → Milan → Venice → Florence → Pisa → Rome and Vatican City → Amsterdam.
-
-#### 2026 · Central Europe, then north
-
-In July and August 2026, I travelled from **Delft through Düsseldorf, Munich, Bratislava, and Budapest**, including a day trip to **Garmisch-Partenkirchen**. From Budapest, the journey turned north to **Bergen, Oslo, Stockholm, and Copenhagen**, before returning to Delft.
-
-**The route:** Delft → Düsseldorf → Munich, with Garmisch-Partenkirchen → Bratislava → Budapest → Bergen → Oslo → Stockholm → Copenhagen → Delft.
-
-These routes tell you where I have been. I also want this space to hold what I remember: a place, a conversation, an unexpected moment, or a photograph with a story behind it. Those details will make the travel story more personal than a list of stops.
+In summer 2026, I also went back to China.
 
 #### My travel map
 
-The countries in my 2024–2026 travel history, including the Netherlands as my starting point. Belgium is shown separately as a transit stop. Choose a year, then select a highlighted country or its name to explore the destinations.
+The countries in my 2024–2026 travel history, including Belgium and my return to China in summer 2026. Choose a year, then select a highlighted country or its name to explore the destinations. Switch to the Europe view for a closer look at my European visits.
 
 <div id="me-travel" data-travel-url="{{ '/assets/json/travel.json' | relative_url }}" data-map-url="{{ '/assets/json/world-countries.geojson' | relative_url }}" data-base-url="{{ '/' | relative_url }}">
   <div class="me-map-controls">
     <label for="me-travel-year">Journey <select id="me-travel-year"><option value="all">All years</option></select></label>
-    <label for="me-map-view">Map <select id="me-map-view"><option value="europe">Europe</option><option value="world">World</option></select></label>
+    <label for="me-map-view">Map <select id="me-map-view"><option value="world">World</option><option value="europe">Europe</option></select></label>
   </div>
   <p id="me-travel-summary" aria-live="polite">Loading travel history…</p>
   <svg id="me-travel-map" viewBox="0 0 900 620" role="group" aria-label="Visited countries map"></svg>
@@ -117,10 +97,10 @@ The countries in my 2024–2026 travel history, including the Netherlands as my 
 
 #### Photo gallery
 
-My photographs from Venice, Grindelwald, and Montreux bring a few moments from my 2025 journey into this page. The gallery also includes credited destination reference images, labelled separately. Select a photo to open the full image.
+My photographs bring together travel, family, and everyday moments—from Venice, the Swiss Alps, and Vatican City to the office in Delft. This gallery is independent of the map’s year filter. Select a photo to open the full image.
 
 <div id="me-photo-gallery" class="me-photo-gallery"></div>
-<noscript>The interactive map and gallery require JavaScript. My travel routes are listed above.</noscript>
+<noscript>The interactive map and gallery require JavaScript. My travels have taken me through central Europe, the Swiss Alps and Italy, and Scandinavia.</noscript>
 <script src="{{ '/assets/js/personal-travel.js' | relative_url }}" defer></script>
 
 ### A life with room for other people

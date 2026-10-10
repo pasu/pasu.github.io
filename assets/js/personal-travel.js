@@ -36,7 +36,7 @@
   }
   function renderGallery(photos) {
     gallery.replaceChildren();
-    const visible = photos.filter(photo => year.value === 'all' || photo.year === Number(year.value));
+    const visible = photos;
     visible.forEach(photo => {
       const figure = element('figure', '', 'me-photo');
       const link = safeLink('', assetURL(photo.src));
@@ -53,7 +53,7 @@
       figure.append(link);
       const caption = element('figcaption');
       caption.append(element('strong', photo.title));
-      caption.append(element('p', `${photo.year} journey · ${photo.kind} · displayed crop`));
+      caption.append(element('p', `${photo.year ? `${photo.year} · ` : ''}${photo.kind} · displayed crop`));
       const credit = element('p');
       credit.append(safeLink(photo.credit, assetURL(photo.source)));
       if (photo.license && photo.licenseUrl) {
@@ -63,7 +63,7 @@
       figure.append(caption);
       gallery.append(figure);
     });
-    if (!visible.length) gallery.append(element('p', 'No photographs added for this journey yet.'));
+    if (!visible.length) gallery.append(element('p', 'No personal photographs added yet.'));
   }
   readJSON(root.dataset.travelUrl).then(async travel => {
     const years = [...new Set(travel.countries.flatMap(country => country.years))].sort();
@@ -87,7 +87,7 @@
       map.setAttribute('viewBox', world ? '0 0 900 450' : '0 0 900 620');
       const project = ([lon, lat]) => world ? [(lon + 180) * 2.5, (90 - lat) * 2.5] : [(lon + 20) * (900 / 60), (73 - lat) * (620 / 39)];
       function select(country) {
-        detail.textContent = `${country.name}${country.status === 'transit' ? ' (transit)' : ''} · ${country.years.join(', ')} — ${country.places.join(', ')}`;
+        detail.textContent = `${country.name}${country.status === 'transit' ? ' (transit)' : ''} · ${country.years.join(', ')}${country.places.length ? ` — ${country.places.join(', ')}` : ''}`;
       }
       function interactive(node, country) {
         node.setAttribute('tabindex', '0');

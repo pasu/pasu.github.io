@@ -17,6 +17,10 @@ For each future status update:
 
 ### Status history
 
+- **10 October 2026 — China, Belgium, and personal gallery:** Peter confirmed a return to China in summer 2026 and that Belgium was visited, not only a transit stop. travel.json now records 15 visited countries and no transit-only countries. China has no city details because none were supplied. The map defaults to World so China is visible. Removed all three Wikimedia reference photos. Added the Delft office photo as an undated personal photograph and the locally supplied Vatican City photo as a 2025 travel photograph after visual inspection. Gallery photos are independent of map year filters, and `year` is optional. Keep all five personal images local; do not infer a date or publish the child's name from the office filename. The symbolic illustration is retained: its broad graphics/running/travel themes still fit.
+
+- **10 October 2026 — concise travel section:** Peter requested keeping My travel map without the detailed travel routes. Removed the year-by-year itinerary prose from the Me page, retaining the short travel introduction, interactive map, country/year data, and photo gallery. The route history recorded in this README remains maintenance context, not public page content. The symbolic illustration remains unchanged because the underlying interests are unchanged.
+
 - **10 October 2026 — personal page after blog removal:** Revised the short biography, contributions, music/family prose, and Codex perspective to describe the current research-and-personal site. Past technical notes remain historical background; no wording implies they are still published here. The existing illustration remains appropriate because its subjects—graphics, geometry, running, and travel—are unchanged by removing the blog.
 
 - **10 October 2026 — baseline:** Personal page based on Peter's existing website and writing; travel history for 2024–2026 supplied directly by Peter; three personal 2025 photographs added from Venice, Grindelwald, and Montreux. Current symbolic illustration: `assets/img/me/curiosity-and-journeys.png`; exact original prompt is in the illustration provenance section below.
@@ -259,36 +263,16 @@ I want room for reading beyond technical subjects, too. Books I have wanted to e
 
 Travel is part of my life beyond research. Over three summers, my journeys have taken me from Delft through cities in central Europe, into the Swiss Alps and Italy, and north to Scandinavia. Trains connect much of this story: a trip becomes a sequence of places rather than a single destination.
 
-#### 2024 · A summer through central Europe
-
-In August 2024, I travelled from **Delft to Hamburg, Berlin, Dresden, Prague, Vienna, Salzburg, and Cologne**, before returning to Delft. The journey connected Germany, Czechia, and Austria over a little more than two weeks.
-
-**The route:** Delft → Hamburg → Berlin → Dresden → Prague → Vienna → Salzburg → Cologne → Delft.
-
-#### 2025 · From Disneyland to the Alps and Italy
-
-In August 2025, my journey began with **Disneyland Paris**, then continued through **Lyon, Geneva, Lausanne, and Montreux**. From Montreux, the route followed the **GoldenPass to Interlaken**, then continued to **Grindelwald** in the Swiss Alps.
-
-The second half took me through **Milan, Venice, Florence, and Pisa**, ending in **Rome and Vatican City** before a flight back to Amsterdam. This trip brought very different settings into one journey: a theme park, lakes and mountains, and Italian cities.
-
-**The route:** Delft → Disneyland Paris → Lyon → Geneva → Lausanne → Montreux → Interlaken → Grindelwald → Milan → Venice → Florence → Pisa → Rome and Vatican City → Amsterdam.
-
-#### 2026 · Central Europe, then north
-
-In July and August 2026, I travelled from **Delft through Düsseldorf, Munich, Bratislava, and Budapest**, including a day trip to **Garmisch-Partenkirchen**. From Budapest, the journey turned north to **Bergen, Oslo, Stockholm, and Copenhagen**, before returning to Delft.
-
-**The route:** Delft → Düsseldorf → Munich, with Garmisch-Partenkirchen → Bratislava → Budapest → Bergen → Oslo → Stockholm → Copenhagen → Delft.
-
-These routes tell you where I have been. I also want this space to hold what I remember: a place, a conversation, an unexpected moment, or a photograph with a story behind it. Those details will make the travel story more personal than a list of stops.
+In summer 2026, I also went back to China.
 
 #### My travel map
 
-The countries in my 2024–2026 travel history, including the Netherlands as my starting point. Belgium is shown separately as a transit stop. Choose a year, then select a highlighted country or its name to explore the destinations.
+The countries in my 2024–2026 travel history, including Belgium and my return to China in summer 2026. Choose a year, then select a highlighted country or its name to explore the destinations. Switch to the Europe view for a closer look at my European visits.
 
 <div id="me-travel" data-travel-url="{{ '/assets/json/travel.json' | relative_url }}" data-map-url="{{ '/assets/json/world-countries.geojson' | relative_url }}" data-base-url="{{ '/' | relative_url }}">
   <div class="me-map-controls">
     <label for="me-travel-year">Journey <select id="me-travel-year"><option value="all">All years</option></select></label>
-    <label for="me-map-view">Map <select id="me-map-view"><option value="europe">Europe</option><option value="world">World</option></select></label>
+    <label for="me-map-view">Map <select id="me-map-view"><option value="world">World</option><option value="europe">Europe</option></select></label>
   </div>
   <p id="me-travel-summary" aria-live="polite">Loading travel history…</p>
   <svg id="me-travel-map" viewBox="0 0 900 620" role="group" aria-label="Visited countries map"></svg>
@@ -300,10 +284,10 @@ The countries in my 2024–2026 travel history, including the Netherlands as my 
 
 #### Photo gallery
 
-My photographs from Venice, Grindelwald, and Montreux bring a few moments from my 2025 journey into this page. The gallery also includes credited destination reference images, labelled separately. Select a photo to open the full image.
+My photographs bring together travel, family, and everyday moments—from Venice, the Swiss Alps, and Vatican City to the office in Delft. This gallery is independent of the map’s year filter. Select a photo to open the full image.
 
 <div id="me-photo-gallery" class="me-photo-gallery"></div>
-<noscript>The interactive map and gallery require JavaScript. My travel routes are listed above.</noscript>
+<noscript>The interactive map and gallery require JavaScript. My travels have taken me through central Europe, the Swiss Alps and Italy, and Scandinavia.</noscript>
 <script src="{{ '/assets/js/personal-travel.js' | relative_url }}" defer></script>
 
 ### A life with room for other people
@@ -547,7 +531,7 @@ layout: default
     </a>
     <div>
       <h4><a href="https://publications.graphics.tudelft.nl/papers/827">Iterative Lightmap Updates for Scene Editing</a></h4>
-      <p class="publication-authors"><em>Guowei Lu, Christoph Peters, <strong>Petr Kellnhofer</strong>, Elmar Eisemann</em></p>
+      <p class="publication-authors"><em><strong>Guowei Lu</strong>, Christoph Peters, Petr Kellnhofer, Elmar Eisemann</em></p>
       <p>Pacific Graphics 2025</p>
       <div class="publication-links">
         <a href="https://dx.doi.org/10.2312/pg.20251293">PDF</a>
@@ -562,7 +546,7 @@ layout: default
     </a>
     <div>
       <h4><a href="https://publications.graphics.tudelft.nl/papers/25">Sheared Polygonal Texture Filtering</a></h4>
-      <p class="publication-authors"><em>Guowei Lu, Jerry Guo, <strong>Petr Kellnhofer</strong>, Elmar Eisemann</em></p>
+      <p class="publication-authors"><em><strong>Guowei Lu</strong>, Jerry Guo, Petr Kellnhofer, Elmar Eisemann</em></p>
       <p>Graphics Interface 2024</p>
       <p><a href="https://graphicsinterface.org/awards/michael-a-j-sweeney-award/"><strong>Michael A. J. Sweeney Award (Best Student Paper)</strong></a></p>
       <div class="publication-links">
@@ -701,7 +685,7 @@ description: Curriculum vitae of Guowei (Peter) Lu.
   }
   function renderGallery(photos) {
     gallery.replaceChildren();
-    const visible = photos.filter(photo => year.value === 'all' || photo.year === Number(year.value));
+    const visible = photos;
     visible.forEach(photo => {
       const figure = element('figure', '', 'me-photo');
       const link = safeLink('', assetURL(photo.src));
@@ -718,7 +702,7 @@ description: Curriculum vitae of Guowei (Peter) Lu.
       figure.append(link);
       const caption = element('figcaption');
       caption.append(element('strong', photo.title));
-      caption.append(element('p', `${photo.year} journey · ${photo.kind} · displayed crop`));
+      caption.append(element('p', `${photo.year ? `${photo.year} · ` : ''}${photo.kind} · displayed crop`));
       const credit = element('p');
       credit.append(safeLink(photo.credit, assetURL(photo.source)));
       if (photo.license && photo.licenseUrl) {
@@ -728,7 +712,7 @@ description: Curriculum vitae of Guowei (Peter) Lu.
       figure.append(caption);
       gallery.append(figure);
     });
-    if (!visible.length) gallery.append(element('p', 'No photographs added for this journey yet.'));
+    if (!visible.length) gallery.append(element('p', 'No personal photographs added yet.'));
   }
   readJSON(root.dataset.travelUrl).then(async travel => {
     const years = [...new Set(travel.countries.flatMap(country => country.years))].sort();
@@ -752,7 +736,7 @@ description: Curriculum vitae of Guowei (Peter) Lu.
       map.setAttribute('viewBox', world ? '0 0 900 450' : '0 0 900 620');
       const project = ([lon, lat]) => world ? [(lon + 180) * 2.5, (90 - lat) * 2.5] : [(lon + 20) * (900 / 60), (73 - lat) * (620 / 39)];
       function select(country) {
-        detail.textContent = `${country.name}${country.status === 'transit' ? ' (transit)' : ''} · ${country.years.join(', ')} — ${country.places.join(', ')}`;
+        detail.textContent = `${country.name}${country.status === 'transit' ? ' (transit)' : ''} · ${country.years.join(', ')}${country.places.length ? ` — ${country.places.join(', ')}` : ''}`;
       }
       function interactive(node, country) {
         node.setAttribute('tabindex', '0');
@@ -814,20 +798,251 @@ description: Curriculum vitae of Guowei (Peter) Lu.
   "updated": "2026-10-10",
   "source": "Travel history supplied by Peter: summers 2024, 2025 and 2026.",
   "countries": [
-    { "iso": "NLD", "name": "Netherlands", "status": "visited", "years": [2024, 2025, 2026], "places": ["Delft", "Amsterdam"], "coordinates": [4.36, 52.01] },
-    { "iso": "DEU", "name": "Germany", "status": "visited", "years": [2024, 2026], "places": ["Hamburg", "Berlin", "Dresden", "Cologne", "Düsseldorf", "Munich", "Garmisch-Partenkirchen"], "coordinates": [10.45, 51.16] },
-    { "iso": "CZE", "name": "Czechia", "status": "visited", "years": [2024], "places": ["Prague"], "coordinates": [14.42, 50.08] },
-    { "iso": "AUT", "name": "Austria", "status": "visited", "years": [2024], "places": ["Vienna", "Salzburg"], "coordinates": [14.55, 47.52] },
-    { "iso": "FRA", "name": "France", "status": "visited", "years": [2025], "places": ["Disneyland Paris", "Lyon"], "coordinates": [2.21, 46.23] },
-    { "iso": "CHE", "name": "Switzerland", "status": "visited", "years": [2025], "places": ["Geneva", "Lausanne", "Montreux", "Interlaken", "Grindelwald"], "coordinates": [8.23, 46.82] },
-    { "iso": "ITA", "name": "Italy", "status": "visited", "years": [2025], "places": ["Milan", "Venice", "Florence", "Pisa", "Rome"], "coordinates": [12.57, 42.83] },
-    { "iso": "VAT", "name": "Vatican City", "status": "visited", "years": [2025], "places": ["Vatican City"], "coordinates": [12.45, 41.90] },
-    { "iso": "SVK", "name": "Slovakia", "status": "visited", "years": [2026], "places": ["Bratislava"], "coordinates": [17.11, 48.15] },
-    { "iso": "HUN", "name": "Hungary", "status": "visited", "years": [2026], "places": ["Budapest"], "coordinates": [19.04, 47.50] },
-    { "iso": "NOR", "name": "Norway", "status": "visited", "years": [2026], "places": ["Bergen", "Oslo"], "coordinates": [8.47, 60.47] },
-    { "iso": "SWE", "name": "Sweden", "status": "visited", "years": [2026], "places": ["Stockholm"], "coordinates": [15.0, 62.0] },
-    { "iso": "DNK", "name": "Denmark", "status": "visited", "years": [2026], "places": ["Copenhagen"], "coordinates": [10.0, 56.0] },
-    { "iso": "BEL", "name": "Belgium", "status": "transit", "years": [2025], "places": ["Antwerp (transfer)", "Brussels (transfer)"], "coordinates": [4.47, 50.50] }
+    {
+      "iso": "NLD",
+      "name": "Netherlands",
+      "status": "visited",
+      "years": [
+        2024,
+        2025,
+        2026
+      ],
+      "places": [
+        "Delft",
+        "Amsterdam"
+      ],
+      "coordinates": [
+        4.36,
+        52.01
+      ]
+    },
+    {
+      "iso": "DEU",
+      "name": "Germany",
+      "status": "visited",
+      "years": [
+        2024,
+        2026
+      ],
+      "places": [
+        "Hamburg",
+        "Berlin",
+        "Dresden",
+        "Cologne",
+        "Düsseldorf",
+        "Munich",
+        "Garmisch-Partenkirchen"
+      ],
+      "coordinates": [
+        10.45,
+        51.16
+      ]
+    },
+    {
+      "iso": "CZE",
+      "name": "Czechia",
+      "status": "visited",
+      "years": [
+        2024
+      ],
+      "places": [
+        "Prague"
+      ],
+      "coordinates": [
+        14.42,
+        50.08
+      ]
+    },
+    {
+      "iso": "AUT",
+      "name": "Austria",
+      "status": "visited",
+      "years": [
+        2024
+      ],
+      "places": [
+        "Vienna",
+        "Salzburg"
+      ],
+      "coordinates": [
+        14.55,
+        47.52
+      ]
+    },
+    {
+      "iso": "FRA",
+      "name": "France",
+      "status": "visited",
+      "years": [
+        2025
+      ],
+      "places": [
+        "Disneyland Paris",
+        "Lyon"
+      ],
+      "coordinates": [
+        2.21,
+        46.23
+      ]
+    },
+    {
+      "iso": "CHE",
+      "name": "Switzerland",
+      "status": "visited",
+      "years": [
+        2025
+      ],
+      "places": [
+        "Geneva",
+        "Lausanne",
+        "Montreux",
+        "Interlaken",
+        "Grindelwald"
+      ],
+      "coordinates": [
+        8.23,
+        46.82
+      ]
+    },
+    {
+      "iso": "ITA",
+      "name": "Italy",
+      "status": "visited",
+      "years": [
+        2025
+      ],
+      "places": [
+        "Milan",
+        "Venice",
+        "Florence",
+        "Pisa",
+        "Rome"
+      ],
+      "coordinates": [
+        12.57,
+        42.83
+      ]
+    },
+    {
+      "iso": "VAT",
+      "name": "Vatican City",
+      "status": "visited",
+      "years": [
+        2025
+      ],
+      "places": [
+        "Vatican City"
+      ],
+      "coordinates": [
+        12.45,
+        41.9
+      ]
+    },
+    {
+      "iso": "SVK",
+      "name": "Slovakia",
+      "status": "visited",
+      "years": [
+        2026
+      ],
+      "places": [
+        "Bratislava"
+      ],
+      "coordinates": [
+        17.11,
+        48.15
+      ]
+    },
+    {
+      "iso": "HUN",
+      "name": "Hungary",
+      "status": "visited",
+      "years": [
+        2026
+      ],
+      "places": [
+        "Budapest"
+      ],
+      "coordinates": [
+        19.04,
+        47.5
+      ]
+    },
+    {
+      "iso": "NOR",
+      "name": "Norway",
+      "status": "visited",
+      "years": [
+        2026
+      ],
+      "places": [
+        "Bergen",
+        "Oslo"
+      ],
+      "coordinates": [
+        8.47,
+        60.47
+      ]
+    },
+    {
+      "iso": "SWE",
+      "name": "Sweden",
+      "status": "visited",
+      "years": [
+        2026
+      ],
+      "places": [
+        "Stockholm"
+      ],
+      "coordinates": [
+        15.0,
+        62.0
+      ]
+    },
+    {
+      "iso": "DNK",
+      "name": "Denmark",
+      "status": "visited",
+      "years": [
+        2026
+      ],
+      "places": [
+        "Copenhagen"
+      ],
+      "coordinates": [
+        10.0,
+        56.0
+      ]
+    },
+    {
+      "iso": "BEL",
+      "name": "Belgium",
+      "status": "visited",
+      "years": [
+        2025
+      ],
+      "places": [
+        "Antwerp (transfer)",
+        "Brussels (transfer)"
+      ],
+      "coordinates": [
+        4.47,
+        50.5
+      ]
+    },
+    {
+      "iso": "CHN",
+      "name": "China",
+      "status": "visited",
+      "years": [
+        2026
+      ],
+      "places": [],
+      "coordinates": [
+        104,
+        35
+      ]
+    }
   ],
   "photos": [
     {
@@ -858,37 +1073,21 @@ description: Curriculum vitae of Guowei (Peter) Lu.
       "source": "assets/img/me/travel/switzerland_Montreux_01.jpg"
     },
     {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Kehrwieder_Speicherstadt_Hamburg_Germany_2013-05-24_10-35-17.jpg/960px-Kehrwieder_Speicherstadt_Hamburg_Germany_2013-05-24_10-35-17.jpg",
-      "title": "Hamburg · waterways and warehouses",
-      "year": 2024,
-      "alt": "Canal and brick warehouses in Hamburg's Speicherstadt.",
-      "kind": "Destination reference photo",
-      "credit": "Hansueli Krapf",
-      "source": "https://commons.wikimedia.org/wiki/File:Kehrwieder_Speicherstadt_Hamburg_Germany_2013-05-24_10-35-17.jpg",
-      "license": "CC BY-SA 3.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      "src": "assets/img/me/travel/netherlands_delft_joey_office.jpg",
+      "title": "Delft - a moment in the office",
+      "alt": "A child sitting beside an office whiteboard covered in drawings and equations.",
+      "kind": "My personal photograph",
+      "credit": "Guowei Lu",
+      "source": "assets/img/me/travel/netherlands_delft_joey_office.jpg"
     },
     {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Grindelwald_from_Eiger.jpg",
-      "title": "Grindelwald · the Alpine landscape",
+      "src": "assets/img/me/travel/vatican_city_saint_peter_01.jpg",
+      "title": "Vatican City - inside Saint Peters",
       "year": 2025,
-      "alt": "View over the Grindelwald valley from the Eiger.",
-      "kind": "Destination reference photo",
-      "credit": "Stan Shebs",
-      "source": "https://commons.wikimedia.org/wiki/File:Grindelwald_from_Eiger.jpg",
-      "license": "CC BY-SA 3.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
-    },
-    {
-      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Bergen_bryggen_panorama.jpg/960px-Bergen_bryggen_panorama.jpg",
-      "title": "Bergen · a northern waterfront",
-      "year": 2026,
-      "alt": "Panoramic view of colourful Bryggen waterfront buildings in Bergen.",
-      "kind": "Destination reference photo",
-      "credit": "Pål S. Schaathun",
-      "source": "https://commons.wikimedia.org/wiki/File:Bergen_bryggen_panorama.jpg",
-      "license": "CC BY-SA 3.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      "alt": "An ornate doorway framed by marble columns, with a religious mosaic above it and patterned marble flooring.",
+      "kind": "My travel photograph",
+      "credit": "Guowei Lu",
+      "source": "assets/img/me/travel/vatican_city_saint_peter_01.jpg"
     }
   ]
 }
