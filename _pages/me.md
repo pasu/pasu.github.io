@@ -4,7 +4,7 @@ title: Me
 permalink: /me/
 description: Guowei (Peter) Lu — graphics researcher, engineer, runner, and curious traveller.
 nav: true
-nav_order: 6
+nav_order: 1
 ---
 
 <link rel="stylesheet" href="{{ '/assets/css/personal-story.css' | relative_url }}">
@@ -54,7 +54,7 @@ The texture-filtering work explores how to filter textures accurately over quadr
 
 My learning has also taken me through discrete differential geometry, exterior calculus, rendering, 3D GIS, and explainable AI. I have explored these subjects through technical notes, using explanation as a way to check my own understanding. That work is part of my background, even as this website now focuses on my research and personal story.
 
-For the formal record, see my [publications]({{ '/publications/' | relative_url }}) and [CV]({{ '/cv/' | relative_url }}).
+For the formal record, see my [publications]({{ '/' | relative_url }}#publications) and [CV]({{ '/cv/' | relative_url }}).
 
 ### The abilities I keep developing
 
@@ -149,7 +149,7 @@ These are interpretations of the available material, rather than verified person
 
 **What I hope you remember:** I care about understanding, making, and sharing—and about staying curious enough to keep growing outside my work.
 
-[See my research]({{ '/publications/' | relative_url }}) · [View my CV]({{ '/cv/' | relative_url }})
+[See my research]({{ '/' | relative_url }}#publications) · [View my CV]({{ '/cv/' | relative_url }})
 
 </div>
 

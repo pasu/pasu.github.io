@@ -30,11 +30,15 @@ Earlier discussions were not available in the creation chat. The draft therefore
 
 ## Files and integration
 
+**2024 publication added, 10 October 2026:** The homepage Publications section lists 2025 followed by 2024. The 2024 entry is Sheared Polygonal Texture Filtering, with Peter's supplied animated GIF, authors, Graphics Interface 2024 venue, Michael A. J. Sweeney Award (Best Student Paper) link, DOI labelled PDF, and project page. Metadata and award were verified against the TU Delft project page and Graphics Interface award page. Preserve these entries when updating the homepage.
+
+**Homepage publications and navigation, 10 October 2026:** Navigation is About → Me → CV. The separate `_pages/publications.md` page was removed. Publications are now a section at `/#publications` on `_pages/about.md`, styled by `assets/css/home-publications.css`. Peter supplied the 2025 Iterative Lightmap Updates for Scene Editing entry, image, authors, DOI link labelled PDF, and project link. The title and authors were checked against the TU Delft project page. Personal-page research links point to this homepage section. Keep navigation orders Me=1 and CV=2; About is added by the header layout. The preview image is externally hosted at Peter's supplied URL; browser rendering of it was not verified by the web tool.
+
 **CV PDF:** Peter supplied `0_resume.pdf` in the repository root on 10 October 2026. `_pages/cv.md` uses the standard page layout with an embedded PDF and an open/download link to `/0_resume.pdf`, resolved through `relative_url`. This PDF is the source of truth for the CV page; replace the root file to update it. The old `assets/pdf/resume.pdf` and JSON resume are not used by this page. The CV PDF has not been used to revise biographical prose or the illustration. Preserve it when moving the project to another computer.
 
 **10 October 2026 — blog retirement:** Peter removed the `_posts` content and associated images and requested a clean site without the Blog page. `_pages/blog.md` was removed; homepage latest-posts markup and personal-page/dropdown blog links were removed. Pagination, latest posts, related blog posts, and archives are disabled. `_posts/` and `cn/` are excluded from Jekyll output, preserving any remaining archived material or Chinese source files without publishing pages with missing images. Historical references below to the deleted posts are provenance only; recover them from Git history if needed. Do not restore the blog unless Peter requests it.
 
-- `_pages/me.md`: canonical page source; Jekyll/al-folio page layout, permalink `/me/`, navbar title `Me`, order 6.
+- `_pages/me.md`: canonical page source; Jekyll/al-folio page layout, permalink `/me/`, navbar title `Me`, order 1.
 - `assets/css/personal-story.css`: scoped styling; uses existing theme variables for light/dark modes, responsive text and imagery, keyboard focus indicators.
 - `assets/img/me/curiosity-and-journeys.png`: original AI-generated symbolic illustration, 1774 × 887 pixels. It is not a portrait or a photograph of a completed trip.
 - `_pages/about.md`: a link to `/me/` added at the end; existing homepage retained.
@@ -176,7 +180,7 @@ title: Me
 permalink: /me/
 description: Guowei (Peter) Lu — graphics researcher, engineer, runner, and curious traveller.
 nav: true
-nav_order: 6
+nav_order: 1
 ---
 
 <link rel="stylesheet" href="{{ '/assets/css/personal-story.css' | relative_url }}">
@@ -226,7 +230,7 @@ The texture-filtering work explores how to filter textures accurately over quadr
 
 My learning has also taken me through discrete differential geometry, exterior calculus, rendering, 3D GIS, and explainable AI. I have explored these subjects through technical notes, using explanation as a way to check my own understanding. That work is part of my background, even as this website now focuses on my research and personal story.
 
-For the formal record, see my [publications]({{ '/publications/' | relative_url }}) and [CV]({{ '/cv/' | relative_url }}).
+For the formal record, see my [publications]({{ '/' | relative_url }}#publications) and [CV]({{ '/cv/' | relative_url }}).
 
 ### The abilities I keep developing
 
@@ -321,11 +325,77 @@ These are interpretations of the available material, rather than verified person
 
 **What I hope you remember:** I care about understanding, making, and sharing—and about staying curious enough to keep growing outside my work.
 
-[See my research]({{ '/publications/' | relative_url }}) · [View my CV]({{ '/cv/' | relative_url }})
+[See my research]({{ '/' | relative_url }}#publications) · [View my CV]({{ '/cv/' | relative_url }})
 
 </div>
 
 </div>
+
+```
+
+### _pages/about.md
+
+```liquid
+---
+layout: about
+title: About
+permalink: /
+subtitle: I imagine things and render🎨. I listen to music while running🏃.
+
+profile:
+  align: right
+  image: prof_pic.jpg
+  address:
+
+news: true # includes a list of news items
+selected_papers: false # includes a list of papers marked as "selected={true}"
+social: false # includes social icons at the bottom of the page
+---
+
+Hello, I am Guowei, you can also call me Peter. I’m a PhD student at [CGV](https://graphics.tudelft.nl/). My research focuses primarily on real-time rendering, realistic material, global illumination and VR. In addition, I am interested in differentiable/neural rendering.
+
+I got my MSc with honours in Computer Science (Informatica), Game and Media Technology programme from Utrecht University in the summer of 2020.
+
+Next to my studies, I worked as a 3D GIS engineer in R&D department at SuperMap, focusing on productions related to virtual earth and map.
+
+[More about me — my work, interests, and life beyond research]({{ '/me/' | relative_url }}).
+
+<link rel="stylesheet" href="{{ '/assets/css/home-publications.css' | relative_url }}">
+
+<section class="home-publications" aria-labelledby="publications">
+  <h2 id="publications">Publications</h2>
+  <h3 class="publication-year">2025</h3>
+  <article class="home-publication">
+    <a class="publication-preview" href="https://publications.graphics.tudelft.nl/papers/827" aria-label="Project page for Iterative Lightmap Updates for Scene Editing">
+      <img src="https://kellnhofer.xyz/projects/2025_pg-gi.png" alt="Preview of Iterative Lightmap Updates for Scene Editing" loading="lazy" decoding="async">
+    </a>
+    <div>
+      <h4><a href="https://publications.graphics.tudelft.nl/papers/827">Iterative Lightmap Updates for Scene Editing</a></h4>
+      <p class="publication-authors"><em>Guowei Lu, Christoph Peters, <strong>Petr Kellnhofer</strong>, Elmar Eisemann</em></p>
+      <p>Pacific Graphics 2025</p>
+      <div class="publication-links">
+        <a href="https://dx.doi.org/10.2312/pg.20251293">PDF</a>
+        <a href="https://publications.graphics.tudelft.nl/papers/827">Project Page</a>
+      </div>
+    </div>
+  </article>
+  <h3 class="publication-year">2024</h3>
+  <article class="home-publication">
+    <a class="publication-preview" href="https://publications.graphics.tudelft.nl/papers/25" aria-label="Project page for Sheared Polygonal Texture Filtering">
+      <img src="https://kellnhofer.xyz/projects/2024_sheared-filtering.gif" alt="Animated preview of Sheared Polygonal Texture Filtering" loading="lazy" decoding="async">
+    </a>
+    <div>
+      <h4><a href="https://publications.graphics.tudelft.nl/papers/25">Sheared Polygonal Texture Filtering</a></h4>
+      <p class="publication-authors"><em>Guowei Lu, Jerry Guo, <strong>Petr Kellnhofer</strong>, Elmar Eisemann</em></p>
+      <p>Graphics Interface 2024</p>
+      <p><a href="https://graphicsinterface.org/awards/michael-a-j-sweeney-award/"><strong>Michael A. J. Sweeney Award (Best Student Paper)</strong></a></p>
+      <div class="publication-links">
+        <a href="https://doi.org/10.1145/3670947.3670952">PDF</a>
+        <a href="https://publications.graphics.tudelft.nl/papers/25">Project Page</a>
+      </div>
+    </div>
+  </article>
+</section>
 
 ```
 
@@ -337,7 +407,7 @@ layout: page
 permalink: /cv/
 title: CV
 nav: true
-nav_order: 5
+nav_order: 2
 description: Curriculum vitae of Guowei (Peter) Lu.
 ---
 
@@ -346,6 +416,23 @@ description: Curriculum vitae of Guowei (Peter) Lu.
 <object data="{{ '/0_resume.pdf' | relative_url }}" type="application/pdf" width="100%" height="1000" style="height: 80vh; min-height: 600px;" aria-label="Curriculum vitae of Guowei Lu">
   <p>Your browser cannot display this PDF inline. <a href="{{ '/0_resume.pdf' | relative_url }}">Open or download my CV</a>.</p>
 </object>
+
+```
+
+### assets/css/home-publications.css
+
+```css
+.home-publications { clear: both; padding-top: 2rem; }
+.home-publications #publications { scroll-margin-top: 6rem; }
+.home-publications .publication-year { font-size: 1.15rem; margin: 1.5rem 0 1rem; }
+.home-publication { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 1.4rem; padding: 1rem 0; border-top: 1px solid var(--global-divider-color); }
+.home-publication img { display: block; width: 100%; height: auto; border-radius: .4rem; }
+.home-publication h4 { font-size: 1.2rem; line-height: 1.4; margin: 0 0 .6rem; }
+.home-publication p { margin-bottom: .6rem; }
+.home-publication .publication-authors { font-size: .95rem; }
+.home-publication .publication-links { display: flex; flex-wrap: wrap; gap: .6rem; }
+.home-publication .publication-links a { border: 1px solid var(--global-theme-color); border-radius: .3rem; padding: .2rem .6rem; font-size: .85rem; }
+@media (max-width: 575px) { .home-publication { grid-template-columns: 1fr; } .home-publication .publication-preview { max-width: 300px; } }
 
 ```
 
