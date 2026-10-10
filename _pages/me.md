@@ -34,7 +34,7 @@ nav_order: 6
 
 I’m **Guowei Lu**, also known as **Peter**. I work in computer graphics, with a background in research and 3D GIS engineering. I’m drawn to the meeting point of mathematics, code, and images: how light behaves, how surfaces are represented, and how an idea becomes something we can see.
 
-Outside that work, I run while listening to music, write to make sense of what I’m learning, and make room for travel and family. I want to understand difficult things deeply, build things that are useful, and keep enough curiosity for the world beyond my work.
+Outside that work, I run while listening to music and make room for travel and family. I want to understand difficult things deeply, build things that are useful, and keep enough curiosity for the world beyond my work.
 
 ## The longer story
 
@@ -52,7 +52,7 @@ Research is collaborative. Two milestones in my work with colleagues are **Shear
 
 The texture-filtering work explores how to filter textures accurately over quadrilateral footprints while keeping computation efficient. Its applications include normal filtering, soft shadow mapping, and glint rendering. Our paper received the **Best Computer Graphics Student Paper award at GI 2024**. I value this as a concrete result of careful work with other people.
 
-There is another, quieter kind of contribution in my writing. I have written learning notes on topics such as discrete differential geometry, exterior calculus, rendering, 3D GIS, and explainable AI. Writing is part of learning: breaking an idea down, following its connections, and leaving a trail I can return to.
+My learning has also taken me through discrete differential geometry, exterior calculus, rendering, 3D GIS, and explainable AI. I have explored these subjects through technical notes, using explanation as a way to check my own understanding. That work is part of my background, even as this website now focuses on my research and personal story.
 
 For the formal record, see my [publications]({{ '/publications/' | relative_url }}) and [CV]({{ '/cv/' | relative_url }}).
 
@@ -60,7 +60,7 @@ For the formal record, see my [publications]({{ '/publications/' | relative_url 
 
 My work sits across several kinds of thinking: mathematical reasoning, implementation, visual judgement, and explanation. I enjoy the process of moving between them. A mathematical expression can become an algorithm; an image can reveal a problem in that algorithm; writing can expose something I have not yet understood.
 
-I also like connections that reach outside the immediate technical task. In my reflections, I have used ideas about dimensions, frequency, and representation to think about music, emotion, and difficult questions. Those connections are ways to explore rather than proofs that everything has a mathematical answer.
+I also like connections that reach outside the immediate technical task. Ideas about dimensions, frequency, and representation have given me ways to think about music, emotion, and difficult questions. Those connections are ways to explore rather than proofs that everything has a mathematical answer.
 
 I want to keep improving my foundations in mathematics, physics, and optimisation. I’m interested in AI as something that can become useful in a real workflow: a tool that helps people learn, create, or solve a problem. There is plenty I still want to learn.
 
@@ -68,7 +68,7 @@ I want to keep improving my foundations in mathematics, physics, and optimisatio
 
 “I imagine things and render. I listen to music while running.” That small line on my homepage captures two sides of me surprisingly well.
 
-Running and music belong together in my life. Music also gives me a way to recognise feelings that are difficult to explain directly. In my writing, I have wondered whether a song can translate something complicated inside us into a form we can hear and share.
+Running and music belong together in my life. Music also gives me a way to recognise feelings that are difficult to explain directly. I wonder whether a song can translate something complicated inside us into a form we can hear and share.
 
 I want room for reading beyond technical subjects, too. Books I have wanted to explore include *Other Rivers*, *A Brief History of Intelligence*, and *A Biography of the Pixel*. They are reading interests, not a list of books I claim to have finished.
 
@@ -125,7 +125,7 @@ My photographs from Venice, Grindelwald, and Montreux bring a few moments from m
 
 ### A life with room for other people
 
-In my reflections, I have written about wanting a better balance between work and life, and more time for my child’s education. That matters to the picture of who I am. Research takes a lot of attention, but so do the people and experiences I want to be present for.
+I want a better balance between work and life, and more time for my child’s education. That matters to the picture of who I am. Research takes a lot of attention, but so do the people and experiences I want to be present for.
 
 I care about useful work, learning, and creativity. I also want a life in which travel, running, music, reading, and family are given real time. This page is a way of keeping those priorities visible alongside academic milestones.
 
@@ -133,13 +133,13 @@ I care about useful work, learning, and creativity. I also want a life in which 
 
 <aside class="me-perspective" markdown="1">
 
-**An outside perspective, based on the writing and work available on this site.**
+**An outside perspective, based on Peter’s research, earlier writing, and the personal details he has shared.**
 
-My impression of Peter is of someone who wants to look beneath the surface. His sustained learning notes suggest patience with difficult ideas, and his rendering research and engineering background connect that curiosity with implementation.
+My impression of Peter is of someone who wants to look beneath the surface. The technical notes he previously wrote suggest patience with difficult ideas, and his rendering research and engineering background connect that curiosity with implementation.
 
-The strength that stands out to me is his movement between abstract and concrete thinking: equations and images, research and tools, technical questions and personal reflections. His writing about music also suggests an interest in experiences that cannot be captured by technical achievement alone.
+The strength that stands out to me is his movement between abstract and concrete thinking: equations and images, research and tools, technical questions and personal reflections. His interest in music and the photographs from his travels also give a sense of the life beyond his technical work.
 
-His reflections acknowledge limited time, unfinished learning, and the pull between work and family. To me, that makes the portrait more human. The most useful thing to remember is the combination: a researcher and builder who also wants to remain a curious person, a runner, a listener, a traveller, and a parent.
+He has acknowledged limited time, unfinished learning, and the pull between work and family. To me, that makes the portrait more human. The most useful thing to remember is the combination: a researcher and builder who also wants to remain a curious person, a runner, a listener, a traveller, and a parent.
 
 These are interpretations of the available material, rather than verified personality traits or a complete account of his life.
 
