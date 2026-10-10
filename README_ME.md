@@ -65,6 +65,8 @@ The page includes a short biography, full story, research contributions, develop
 
 ## JSON travel map and photo gallery
 
+**Current photo schema, 10 October 2026:** Peter requested simple `kind: "travel"` for the photo entries, without `credit` or `source` (the image link uses `src` directly). All current gallery photographs are his own local files. New files in `assets/img/me/travel/` have been registered, preserving exact filenames, including spelling/casing. Titles and alt text identify locations without inventing what happened in the photos. Known trip years follow the supplied itineraries; everyday Netherlands photos have no inferred year. Gallery code no longer requires credit/source fields. This schema supersedes earlier descriptions of credit fields and reference photos in the handoff history.
+
 Added on 10 October 2026:
 
 - `assets/json/travel.json` is the editable source for countries and gallery photos.
@@ -108,9 +110,8 @@ Example gallery entry:
   "title": "Bergen · my memory of the waterfront",
   "year": 2026,
   "alt": "Describe what is actually visible in this photograph.",
-  "kind": "My travel photograph",
-  "credit": "Guowei Lu",
-  "source": "assets/img/me/travel/norway_bergen_01.png"
+  "kind": "travel"
+
 }
 ```
 
@@ -290,7 +291,7 @@ The countries in my 2024–2026 travel history, including Belgium and my return 
 
 #### Photo gallery
 
-My photographs capture moments from Venice, the Swiss Alps, and Vatican City. This gallery is independent of the map’s year filter and can also include everyday moments. Select a photo to open the full image.
+My photographs capture travel and everyday moments—from European cities and Alpine landscapes to Beijing and life in the Netherlands. This gallery is independent of the map’s year filter. Select a photo to open the full image.
 
 <div id="me-photo-gallery" class="me-photo-gallery"></div>
 <noscript>The interactive map and gallery require JavaScript. My travels have taken me through central Europe, the Swiss Alps and Italy, and Scandinavia.</noscript>
@@ -327,6 +328,7 @@ These are interpretations of the available material, rather than verified person
 </div>
 
 </div>
+
 ```
 
 ### _pages/about.md
@@ -701,19 +703,13 @@ description: Curriculum vitae of Guowei (Peter) Lu.
       image.decoding = 'async';
       image.addEventListener('error', () => {
         image.hidden = true;
-        link.append(element('span', 'Photo unavailable. Open the source below.', 'me-photo-unavailable'));
+        link.append(element('span', 'Photo unavailable. Select to open the image directly.', 'me-photo-unavailable'));
       }, { once: true });
       link.append(image);
       figure.append(link);
       const caption = element('figcaption');
       caption.append(element('strong', photo.title));
       caption.append(element('p', `${photo.year ? `${photo.year} · ` : ''}${photo.kind} · displayed crop`));
-      const credit = element('p');
-      credit.append(safeLink(photo.credit, assetURL(photo.source)));
-      if (photo.license && photo.licenseUrl) {
-        credit.append(document.createTextNode(' · '), safeLink(photo.license, photo.licenseUrl));
-      }
-      caption.append(credit);
       figure.append(caption);
       gallery.append(figure);
     });
@@ -793,6 +789,7 @@ description: Curriculum vitae of Guowei (Peter) Lu.
     console.warn(error);
   });
 })();
+
 ```
 
 ### assets/json/travel.json
@@ -999,8 +996,8 @@ description: Curriculum vitae of Guowei (Peter) Lu.
         "Stockholm"
       ],
       "coordinates": [
-        15.0,
-        62.0
+        15,
+        62
       ]
     },
     {
@@ -1014,8 +1011,8 @@ description: Curriculum vitae of Guowei (Peter) Lu.
         "Copenhagen"
       ],
       "coordinates": [
-        10.0,
-        56.0
+        10,
+        56
       ]
     },
     {
@@ -1053,43 +1050,173 @@ description: Curriculum vitae of Guowei (Peter) Lu.
   ],
   "photos": [
     {
+      "src": "assets/img/me/travel/austria_salzburg_01.jpg",
+      "title": "Salzburg · 01",
+      "alt": "Personal photograph from Salzburg.",
+      "kind": "travel",
+      "year": 2024
+    },
+    {
+      "src": "assets/img/me/travel/china_beijing_forestry_university.jpg",
+      "title": "Beijing · Forestry University",
+      "alt": "Personal photograph from Beijing.",
+      "kind": "travel",
+      "year": 2026
+    },
+    {
+      "src": "assets/img/me/travel/czech_prague_charles_bridge.jpg",
+      "title": "Prague · Charles Bridge",
+      "alt": "Personal photograph from Prague.",
+      "kind": "travel",
+      "year": 2024
+    },
+    {
+      "src": "assets/img/me/travel/france_paris_01.jpg",
+      "title": "Paris · 01",
+      "alt": "Personal photograph from Paris.",
+      "kind": "travel",
+      "year": 2025
+    },
+    {
+      "src": "assets/img/me/travel/france_paris_02.jpg",
+      "title": "Paris · 02",
+      "alt": "Personal photograph from Paris.",
+      "kind": "travel",
+      "year": 2025
+    },
+    {
+      "src": "assets/img/me/travel/germany_koln_01.jpg",
+      "title": "Cologne · 01",
+      "alt": "Personal photograph from Cologne.",
+      "kind": "travel",
+      "year": 2024
+    },
+    {
+      "src": "assets/img/me/travel/germany_munich_eibsee.jpg",
+      "title": "Eibsee · near Munich",
+      "alt": "Personal photograph from Munich.",
+      "kind": "travel",
+      "year": 2026
+    },
+    {
+      "src": "assets/img/me/travel/hungary_budapest_01.jpg",
+      "title": "Budapest · 01",
+      "alt": "Personal photograph from Budapest.",
+      "kind": "travel",
+      "year": 2026
+    },
+    {
+      "src": "assets/img/me/travel/italty_florence_01.jpg",
+      "title": "Florence · 01",
+      "alt": "Personal photograph from Florence.",
+      "kind": "travel",
+      "year": 2025
+    },
+    {
+      "src": "assets/img/me/travel/italty_milan_01.jpg",
+      "title": "Milan · 01",
+      "alt": "Personal photograph from Milan.",
+      "kind": "travel",
+      "year": 2025
+    },
+    {
       "src": "assets/img/me/travel/italty_venice_01.jpg",
       "title": "Venice · sunset on the water",
       "year": 2025,
       "alt": "A motorboat crossing the water beneath golden sunset clouds in Venice.",
-      "kind": "My travel photograph",
-      "credit": "Guowei Lu",
-      "source": "assets/img/me/travel/italty_venice_01.jpg"
+      "kind": "travel"
+    },
+    {
+      "src": "assets/img/me/travel/italty_venice_02.jpg",
+      "title": "Venice · 02",
+      "alt": "Personal photograph from Venice.",
+      "kind": "travel",
+      "year": 2025
+    },
+    {
+      "src": "assets/img/me/travel/netherlands_delft_compus.jpg",
+      "title": "Delft · campus",
+      "alt": "Personal photograph from Delft.",
+      "kind": "travel"
+    },
+    {
+      "src": "assets/img/me/travel/netherlands_delft_office.jpg",
+      "title": "Delft · office",
+      "alt": "Personal photograph from Delft.",
+      "kind": "travel"
+    },
+    {
+      "src": "assets/img/me/travel/netherlands_hague_circus.jpg",
+      "title": "The Hague · circus",
+      "alt": "Personal photograph from The Hague.",
+      "kind": "travel"
+    },
+    {
+      "src": "assets/img/me/travel/norway_bergen_01.jpg",
+      "title": "Bergen · 01",
+      "alt": "Personal photograph from Bergen.",
+      "kind": "travel",
+      "year": 2026
+    },
+    {
+      "src": "assets/img/me/travel/norway_oslo_01.jpg",
+      "title": "Oslo · 01",
+      "alt": "Personal photograph from Oslo.",
+      "kind": "travel",
+      "year": 2026
+    },
+    {
+      "src": "assets/img/me/travel/slovakia_bratislava_01.jpg",
+      "title": "Bratislava · 01",
+      "alt": "Personal photograph from Bratislava.",
+      "kind": "travel",
+      "year": 2026
+    },
+    {
+      "src": "assets/img/me/travel/sweden_stockholm_01.jpg",
+      "title": "Stockholm · 01",
+      "alt": "Personal photograph from Stockholm.",
+      "kind": "travel",
+      "year": 2026
     },
     {
       "src": "assets/img/me/travel/switzerland_grindelwald_01.jpg",
       "title": "Grindelwald · an Alpine pasture",
       "year": 2025,
       "alt": "A brown-and-white cow standing in a grassy Alpine pasture with mountains and clouds behind it.",
-      "kind": "My travel photograph",
-      "credit": "Guowei Lu",
-      "source": "assets/img/me/travel/switzerland_grindelwald_01.jpg"
+      "kind": "travel"
+    },
+    {
+      "src": "assets/img/me/travel/switzerland_grindelwald_02.jpg",
+      "title": "Grindelwald · 02",
+      "alt": "Personal photograph from Grindelwald.",
+      "kind": "travel",
+      "year": 2025
     },
     {
       "src": "assets/img/me/travel/switzerland_Montreux_01.jpg",
       "title": "Montreux · a sailboat on the lake",
       "year": 2025,
       "alt": "A sailboat on blue lake water near Montreux, with a mountain range in the distance.",
-      "kind": "My travel photograph",
-      "credit": "Guowei Lu",
-      "source": "assets/img/me/travel/switzerland_Montreux_01.jpg"
+      "kind": "travel"
+    },
+    {
+      "src": "assets/img/me/travel/vatican_city_01.jpg",
+      "title": "Vatican City · 01",
+      "alt": "Personal photograph from Vatican City.",
+      "kind": "travel",
+      "year": 2025
     },
     {
       "src": "assets/img/me/travel/vatican_city_saint_peter_01.jpg",
       "title": "Vatican City - inside Saint Peters",
       "year": 2025,
       "alt": "An ornate doorway framed by marble columns, with a religious mosaic above it and patterned marble flooring.",
-      "kind": "My travel photograph",
-      "credit": "Guowei Lu",
-      "source": "assets/img/me/travel/vatican_city_saint_peter_01.jpg"
+      "kind": "travel"
     }
   ]
 }
+
 ```
 
 ### purgecss.config.js

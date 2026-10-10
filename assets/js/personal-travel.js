@@ -47,19 +47,13 @@
       image.decoding = 'async';
       image.addEventListener('error', () => {
         image.hidden = true;
-        link.append(element('span', 'Photo unavailable. Open the source below.', 'me-photo-unavailable'));
+        link.append(element('span', 'Photo unavailable. Select to open the image directly.', 'me-photo-unavailable'));
       }, { once: true });
       link.append(image);
       figure.append(link);
       const caption = element('figcaption');
       caption.append(element('strong', photo.title));
       caption.append(element('p', `${photo.year ? `${photo.year} · ` : ''}${photo.kind} · displayed crop`));
-      const credit = element('p');
-      credit.append(safeLink(photo.credit, assetURL(photo.source)));
-      if (photo.license && photo.licenseUrl) {
-        credit.append(document.createTextNode(' · '), safeLink(photo.license, photo.licenseUrl));
-      }
-      caption.append(credit);
       figure.append(caption);
       gallery.append(figure);
     });
