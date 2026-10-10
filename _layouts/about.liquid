@@ -29,7 +29,7 @@ layout: default
       30vw, 95vw"{% endcapture %}
           {%
             include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
-            cache_bust=true
+            cache_bust=true responsive=false
           %}
         {% endif %}
         {% if page.profile.more_info %}
@@ -46,6 +46,11 @@ layout: default
         <a href="{{ '/news/' | relative_url }}" style="color: inherit">News</a>
       </h2>
       {% include news.liquid limit=true %}
+    {% endif %}
+
+    <!-- Homepage publications follow News -->
+    {% if page.home_publications %}
+      {% include home_publications.liquid %}
     {% endif %}
 
     <!-- Selected papers -->

@@ -30,9 +30,16 @@ Earlier discussions were not available in the creation chat. The draft therefore
 
 ## Files and integration
 
+**Profile image fix, 10 October 2026:** The homepage uses the existing `assets/img/prof_pic.jpg` directly. `_includes/figure.liquid` accepts `responsive=false` to omit generated WebP srcsets, and `_layouts/about.liquid` passes that option for the profile image. This prevents the browser requesting unavailable `prof_pic-480.webp` variants while leaving responsive-image behaviour unchanged for other figure includes. No duplicate or generated profile asset is required.
+
+**Publication preview size, 10 October 2026:** Homepage publication previews are 120px wide on desktop and capped at 120px on mobile, with their original aspect ratios preserved. Styling is in assets/css/home-publications.css.
+
+
+**News order and local previews, 10 October 2026:** The homepage renders introduction → News → Publications. Publication markup now lives in `_includes/home_publications.liquid`, included by `_layouts/about.liquid` after the News block when `page.home_publications` is true. `_pages/about.md` contains the introduction and enables both sections. Preview images use local `assets/img/projects/2025_pg-gi.png` and `assets/img/projects/2024_sheared-filtering.gif` through `relative_url`; the GIF remains animated. These files replace the earlier externally hosted previews. Include both images and the new Liquid include when committing or transferring the site.
+
 **2024 publication added, 10 October 2026:** The homepage Publications section lists 2025 followed by 2024. The 2024 entry is Sheared Polygonal Texture Filtering, with Peter's supplied animated GIF, authors, Graphics Interface 2024 venue, Michael A. J. Sweeney Award (Best Student Paper) link, DOI labelled PDF, and project page. Metadata and award were verified against the TU Delft project page and Graphics Interface award page. Preserve these entries when updating the homepage.
 
-**Homepage publications and navigation, 10 October 2026:** Navigation is About → Me → CV. The separate `_pages/publications.md` page was removed. Publications are now a section at `/#publications` on `_pages/about.md`, styled by `assets/css/home-publications.css`. Peter supplied the 2025 Iterative Lightmap Updates for Scene Editing entry, image, authors, DOI link labelled PDF, and project link. The title and authors were checked against the TU Delft project page. Personal-page research links point to this homepage section. Keep navigation orders Me=1 and CV=2; About is added by the header layout. The preview image is externally hosted at Peter's supplied URL; browser rendering of it was not verified by the web tool.
+**Homepage publications and navigation, 10 October 2026:** Navigation is About → Me → CV. The separate `_pages/publications.md` page was removed. Publications are now a section at `/#publications` on `_pages/about.md`, styled by `assets/css/home-publications.css`. Peter supplied the 2025 Iterative Lightmap Updates for Scene Editing entry, image, authors, DOI link labelled PDF, and project link. The title and authors were checked against the TU Delft project page. Personal-page research links point to this homepage section. Keep navigation orders Me=1 and CV=2; About is added by the header layout. Preview images were subsequently switched to local assets; see the local previews update above.
 
 **CV PDF:** Peter supplied `0_resume.pdf` in the repository root on 10 October 2026. `_pages/cv.md` uses the standard page layout with an embedded PDF and an open/download link to `/0_resume.pdf`, resolved through `relative_url`. This PDF is the source of truth for the CV page; replace the root file to update it. The old `assets/pdf/resume.pdf` and JSON resume are not used by this page. The CV PDF has not been used to revise biographical prose or the illustration. Preserve it when moving the project to another computer.
 
@@ -348,6 +355,7 @@ profile:
   address:
 
 news: true # includes a list of news items
+home_publications: true # publication entries render after News
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
 ---
@@ -360,6 +368,174 @@ Next to my studies, I worked as a 3D GIS engineer in R&D department at SuperMap,
 
 [More about me — my work, interests, and life beyond research]({{ '/me/' | relative_url }}).
 
+```
+
+### _layouts/about.liquid
+
+```liquid
+---
+layout: default
+---
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      {% if site.title == 'blank' %}
+        <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
+        {{ site.last_name }}
+      {% else %}
+        {{ site.title }}
+      {% endif %}
+    </h1>
+    <p class="desc">{{ page.subtitle }}</p>
+  </header>
+
+  <article>
+    {% if page.profile %}
+      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
+        {% if page.profile.image %}
+          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+          {% if page.profile.image_circular %}
+            {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
+          {% else %}
+            {% assign profile_image_class = 'img-fluid z-depth-1
+      rounded' %}
+          {% endif %}
+          {% capture sizes %}(min-width: {{site.max_width}}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
+      30vw, 95vw"{% endcapture %}
+          {%
+            include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
+            cache_bust=true responsive=false
+          %}
+        {% endif %}
+        {% if page.profile.more_info %}
+          <div class="more-info">{{ page.profile.more_info }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="clearfix">{{ content }}</div>
+
+    <!-- News -->
+    {% if page.news and site.announcements.enabled %}
+      <h2>
+        <a href="{{ '/news/' | relative_url }}" style="color: inherit">News</a>
+      </h2>
+      {% include news.liquid limit=true %}
+    {% endif %}
+
+    <!-- Homepage publications follow News -->
+    {% if page.home_publications %}
+      {% include home_publications.liquid %}
+    {% endif %}
+
+    <!-- Selected papers -->
+    {% if page.selected_papers %}
+      <h2>
+        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
+      </h2>
+      {% include selected_papers.liquid %}
+    {% endif %}
+
+    <!-- Social -->
+    {% if page.social %}
+      <div class="social">
+        <div class="contact-icons">{% include social.liquid %}</div>
+
+        <div class="contact-note">{{ site.contact_note }}</div>
+      </div>
+    {% endif %}
+  </article>
+</div>
+
+```
+
+### _includes/figure.liquid
+
+```liquid
+{% assign img_path = include.path | remove: '.jpg' | remove: '.jpeg' | remove: '.png' | remove: '.tiff' | remove: '.gif' %}
+
+<figure
+  {% if include.slot %}
+    slot="{{ include.slot }}"
+  {% endif %}
+>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
+    {% if site.imagemagick.enabled and include.responsive != false %}
+      <source
+        class="responsive-img-srcset"
+        srcset="{% for i in site.imagemagick.widths %}{{ img_path | relative_url }}-{{ i }}.webp {{i}}w,{% endfor %}"
+        {% if include.sizes %}
+          sizes="{{include.sizes}}"
+        {% else %}
+          sizes="95vw"
+        {% endif %}
+        type="image/webp"
+      >
+    {% endif %}
+    <img
+      src="{% if include.cache_bust %}{{ include.path | relative_url | bust_file_cache }}{% else %}{{ include.path | relative_url }}{% endif %}"
+      {% if include.class %}
+        class="{{ include.class }}"
+      {% endif %}
+      {% if include.width %}
+        width="{{ include.width }}"
+      {% else %}
+        width="100%"
+      {% endif %}
+      {% if include.height %}
+        height="{{ include.height }}"
+      {% else %}
+        height="auto"
+      {% endif %}
+      {% if include['min-width'] or include['min-height'] or include['max-width'] or include['max-height'] %}
+        style="
+          {% if include['min-width'] %}
+            min-width: {{ include.min-width }};
+          {% endif %}
+          {% if include['min-height'] %}
+            min-height: {{ include.min-height }};
+          {% endif %}
+          {% if include['max-width'] %}
+            max-width: {{ include.max-width }};
+          {% endif %}
+          {% if include['max-height'] %}
+            max-height: {{ include.max-height }};
+          {% endif %}
+        "
+      {% endif %}
+      {% if include.alt %}
+        alt="{{ include.alt }}"
+      {% endif %}
+      {% if include.title %}
+        title="{{ include.title }}"
+      {% endif %}
+      {% if include.zoomable %}
+        data-zoomable
+      {% endif %}
+      {% if include.loading %}
+        loading="{{ include.loading }}"
+      {% elsif site.lazy_loading_images %}
+        loading="lazy"
+      {% endif %}
+      onerror="this.onerror=null; $('.responsive-img-srcset').remove();"
+    >
+  </picture>
+
+  {% if include.caption %}
+    <figcaption class="caption">{{ include.caption }}</figcaption>
+  {% endif %}
+</figure>
+
+```
+
+### _includes/home_publications.liquid
+
+```liquid
 <link rel="stylesheet" href="{{ '/assets/css/home-publications.css' | relative_url }}">
 
 <section class="home-publications" aria-labelledby="publications">
@@ -367,7 +543,7 @@ Next to my studies, I worked as a 3D GIS engineer in R&D department at SuperMap,
   <h3 class="publication-year">2025</h3>
   <article class="home-publication">
     <a class="publication-preview" href="https://publications.graphics.tudelft.nl/papers/827" aria-label="Project page for Iterative Lightmap Updates for Scene Editing">
-      <img src="https://kellnhofer.xyz/projects/2025_pg-gi.png" alt="Preview of Iterative Lightmap Updates for Scene Editing" loading="lazy" decoding="async">
+      <img src="{{ '/assets/img/projects/2025_pg-gi.png' | relative_url }}" alt="Preview of Iterative Lightmap Updates for Scene Editing" loading="lazy" decoding="async">
     </a>
     <div>
       <h4><a href="https://publications.graphics.tudelft.nl/papers/827">Iterative Lightmap Updates for Scene Editing</a></h4>
@@ -382,7 +558,7 @@ Next to my studies, I worked as a 3D GIS engineer in R&D department at SuperMap,
   <h3 class="publication-year">2024</h3>
   <article class="home-publication">
     <a class="publication-preview" href="https://publications.graphics.tudelft.nl/papers/25" aria-label="Project page for Sheared Polygonal Texture Filtering">
-      <img src="https://kellnhofer.xyz/projects/2024_sheared-filtering.gif" alt="Animated preview of Sheared Polygonal Texture Filtering" loading="lazy" decoding="async">
+      <img src="{{ '/assets/img/projects/2024_sheared-filtering.gif' | relative_url }}" alt="Animated preview of Sheared Polygonal Texture Filtering" loading="lazy" decoding="async">
     </a>
     <div>
       <h4><a href="https://publications.graphics.tudelft.nl/papers/25">Sheared Polygonal Texture Filtering</a></h4>
@@ -425,14 +601,14 @@ description: Curriculum vitae of Guowei (Peter) Lu.
 .home-publications { clear: both; padding-top: 2rem; }
 .home-publications #publications { scroll-margin-top: 6rem; }
 .home-publications .publication-year { font-size: 1.15rem; margin: 1.5rem 0 1rem; }
-.home-publication { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 1.4rem; padding: 1rem 0; border-top: 1px solid var(--global-divider-color); }
+.home-publication { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 1.2rem; padding: 1rem 0; border-top: 1px solid var(--global-divider-color); }
 .home-publication img { display: block; width: 100%; height: auto; border-radius: .4rem; }
 .home-publication h4 { font-size: 1.2rem; line-height: 1.4; margin: 0 0 .6rem; }
 .home-publication p { margin-bottom: .6rem; }
 .home-publication .publication-authors { font-size: .95rem; }
 .home-publication .publication-links { display: flex; flex-wrap: wrap; gap: .6rem; }
 .home-publication .publication-links a { border: 1px solid var(--global-theme-color); border-radius: .3rem; padding: .2rem .6rem; font-size: .85rem; }
-@media (max-width: 575px) { .home-publication { grid-template-columns: 1fr; } .home-publication .publication-preview { max-width: 300px; } }
+@media (max-width: 575px) { .home-publication { grid-template-columns: 1fr; } .home-publication .publication-preview { max-width: 120px; } }
 
 ```
 
