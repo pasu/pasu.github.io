@@ -97,7 +97,7 @@ The countries in my 2024–2026 travel history, including Belgium and my return 
 
 #### Photo gallery
 
-My photographs bring together travel, family, and everyday moments—from Venice, the Swiss Alps, and Vatican City to the office in Delft. This gallery is independent of the map’s year filter. Select a photo to open the full image.
+My photographs capture moments from Venice, the Swiss Alps, and Vatican City. This gallery is independent of the map’s year filter and can also include everyday moments. Select a photo to open the full image.
 
 <div id="me-photo-gallery" class="me-photo-gallery"></div>
 <noscript>The interactive map and gallery require JavaScript. My travels have taken me through central Europe, the Swiss Alps and Italy, and Scandinavia.</noscript>

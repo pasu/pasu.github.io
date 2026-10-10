@@ -17,6 +17,8 @@ For each future status update:
 
 ### Status history
 
+- **10 October 2026 — office photo removed:** Peter removed the Delft office photograph and requested its removal from travel.json. Removed the gallery entry and the public office-photo description. Four local personal travel photos remain. Earlier office-photo references in this history are historical only; do not restore the entry without Peter's request.
+
 - **10 October 2026 — China highlight follow-up:** Combined the CHN and TWN outlines into one CHN MultiPolygon in the local world-countries.geojson so both areas receive the same fill directly. Added the repository's content-hash cache-busting filter to the travel JSON, map geometry, and JavaScript URLs. When rebuilding the map data from Natural Earth, reproduce this geometry grouping before publication. The live site's current asset version could not be verified through the web tool; the local fix requires a successful commit/push/deployment to appear online.
 
 - **10 October 2026 — China map display:** At Peter's request, China's map entry includes Taiwan in its highlighted region. The China object in travel.json uses `mapRegions: ["TWN"]` to include the corresponding Natural Earth geometry. Selecting either geometry shows the China entry; the country count remains 15. This display preference does not assert a separate visit to Taiwan.
@@ -288,7 +290,7 @@ The countries in my 2024–2026 travel history, including Belgium and my return 
 
 #### Photo gallery
 
-My photographs bring together travel, family, and everyday moments—from Venice, the Swiss Alps, and Vatican City to the office in Delft. This gallery is independent of the map’s year filter. Select a photo to open the full image.
+My photographs capture moments from Venice, the Swiss Alps, and Vatican City. This gallery is independent of the map’s year filter and can also include everyday moments. Select a photo to open the full image.
 
 <div id="me-photo-gallery" class="me-photo-gallery"></div>
 <noscript>The interactive map and gallery require JavaScript. My travels have taken me through central Europe, the Swiss Alps and Italy, and Scandinavia.</noscript>
@@ -1076,14 +1078,6 @@ description: Curriculum vitae of Guowei (Peter) Lu.
       "kind": "My travel photograph",
       "credit": "Guowei Lu",
       "source": "assets/img/me/travel/switzerland_Montreux_01.jpg"
-    },
-    {
-      "src": "assets/img/me/travel/netherlands_delft_joey_office.jpg",
-      "title": "Delft - a moment in the office",
-      "alt": "A child sitting beside an office whiteboard covered in drawings and equations.",
-      "kind": "My personal photograph",
-      "credit": "Guowei Lu",
-      "source": "assets/img/me/travel/netherlands_delft_joey_office.jpg"
     },
     {
       "src": "assets/img/me/travel/vatican_city_saint_peter_01.jpg",
