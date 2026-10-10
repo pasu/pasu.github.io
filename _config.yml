@@ -125,10 +125,13 @@ permalink: /blog/:year/:title/
 
 # Pagination
 pagination:
-  enabled: true
+  enabled: false
+
+latest_posts:
+  enabled: false
 
 related_blog_posts:
-  enabled: true
+  enabled: false
   max_related: 5
 
 # Giscus comments (RECOMMENDED)
@@ -194,6 +197,8 @@ kramdown:
 # Includes & excludes
 include: ["_pages"]
 exclude:
+  - _posts/
+  - cn/
   - bin/
   - CONTRIBUTING.md
   - CUSTOMIZE.md
@@ -259,7 +264,7 @@ jekyll-minifier:
 # -----------------------------------------------------------------------------
 
 jekyll-archives:
-  enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
+  enabled: [] # Blog removed; do not generate empty archive pages.
   layouts:
     year: archive-year
     tag: archive-tag

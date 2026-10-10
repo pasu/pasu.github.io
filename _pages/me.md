@@ -52,9 +52,9 @@ Research is collaborative. Two milestones in my work with colleagues are **Shear
 
 The texture-filtering work explores how to filter textures accurately over quadrilateral footprints while keeping computation efficient. Its applications include normal filtering, soft shadow mapping, and glint rendering. Our paper received the **Best Computer Graphics Student Paper award at GI 2024**. I value this as a concrete result of careful work with other people.
 
-There is another, quieter kind of contribution in this website. My notes explore topics such as discrete differential geometry, exterior calculus, rendering, 3D GIS, and explainable AI. Writing them is part of learning: breaking an idea down, following its connections, and leaving a trail that I or another reader can return to.
+There is another, quieter kind of contribution in my writing. I have written learning notes on topics such as discrete differential geometry, exterior calculus, rendering, 3D GIS, and explainable AI. Writing is part of learning: breaking an idea down, following its connections, and leaving a trail I can return to.
 
-For the formal record, see my [publications]({{ '/publications/' | relative_url }}) and [CV]({{ '/cv/' | relative_url }}). For the thinking in progress, visit the [blog]({{ '/blog/' | relative_url }}).
+For the formal record, see my [publications]({{ '/publications/' | relative_url }}) and [CV]({{ '/cv/' | relative_url }}).
 
 ### The abilities I keep developing
 
@@ -149,7 +149,7 @@ These are interpretations of the available material, rather than verified person
 
 **What I hope you remember:** I care about understanding, making, and sharing—and about staying curious enough to keep growing outside my work.
 
-[Explore my writing]({{ '/blog/' | relative_url }}) · [See my research]({{ '/publications/' | relative_url }})
+[See my research]({{ '/publications/' | relative_url }}) · [View my CV]({{ '/cv/' | relative_url }})
 
 </div>
 

@@ -2,6 +2,24 @@
 
 Prepared 10 October 2026 for Guowei (Peter) Lu. This file is the handoff to continue the work in another Codex chat or on another computer. The existing template README.md is preserved.
 
+## Ongoing status and illustration updates
+
+Peter requested this workflow on 10 October 2026: when he asks Codex to update his status, save the new information in this file and update the personal illustration to reflect his evolving life and interests.
+
+For each future status update:
+
+1. Read this handoff and the current canonical page. Use the new information Peter supplies; do not invent missing details or infer completed milestones from plans.
+2. Update relevant page prose and travel/gallery JSON when applicable. Save a dated status-history entry in this README summarising what changed and its source. Preserve earlier entries as history, while making the current page reflect the latest confirmed status.
+3. Review the existing symbolic illustration and its generation prompt. Generate or edit the illustration to reflect meaningful changes in Peter's work, interests, travel, or life priorities. If the update has no meaningful visual consequence, retain the image and record why. Follow the applicable imagegen skill and use the built-in image tool; inspect the current image before editing it.
+4. Save a refreshed illustration as a new version, such as `assets/img/me/curiosity-and-journeys-2026-11-01.png`, using the actual update date and a sequence suffix when needed. Preserve previous versions. Update the page's image path, actual dimensions, alt text, and caption. Keep it clearly labelled as an AI-generated symbolic illustration, rather than a likeness or documentary photograph.
+5. Record the exact new prompt, generation date, asset path, and brief explanation of the visual changes in this README. The original prompt below remains historical provenance; clearly identify the current image and prompt when a newer version exists.
+6. Refresh recovery snapshots, verify referenced files and data, and run available appropriate checks. Save locally; deployment follows the user's publishing instructions for that session.
+
+### Status history
+
+- **10 October 2026 — baseline:** Personal page based on Peter's existing website and writing; travel history for 2024–2026 supplied directly by Peter; three personal 2025 photographs added from Venice, Grindelwald, and Montreux. Current symbolic illustration: `assets/img/me/curiosity-and-journeys.png`; exact original prompt is in the illustration provenance section below.
+- **10 October 2026 — maintenance preference:** Peter asked for future status updates to be saved in this file and reflected in updated versions of the personal illustration. No new biographical status was supplied with this preference, so the existing illustration remains current.
+
 ## Intent and voice
 
 Peter requested a new page on https://pasu.github.io/ that is more personal than a resume: short and full introductions, hobbies, talents, contributions, travel, and Codex's opinion of him, with imagery and no arbitrary length limit. Write warm, concrete prose. Keep personal life visible alongside professional work. Avoid inflated praise, invented memories, and unsupported achievements.
@@ -10,13 +28,15 @@ Earlier discussions were not available in the creation chat. The draft therefore
 
 ## Files and integration
 
+**10 October 2026 — blog retirement:** Peter removed the `_posts` content and associated images and requested a clean site without the Blog page. `_pages/blog.md` was removed; homepage latest-posts markup and personal-page/dropdown blog links were removed. Pagination, latest posts, related blog posts, and archives are disabled. `_posts/` and `cn/` are excluded from Jekyll output, preserving any remaining archived material or Chinese source files without publishing pages with missing images. Historical references below to the deleted posts are provenance only; recover them from Git history if needed. Do not restore the blog unless Peter requests it.
+
 - `_pages/me.md`: canonical page source; Jekyll/al-folio page layout, permalink `/me/`, navbar title `Me`, order 6.
 - `assets/css/personal-story.css`: scoped styling; uses existing theme variables for light/dark modes, responsive text and imagery, keyboard focus indicators.
 - `assets/img/me/curiosity-and-journeys.png`: original AI-generated symbolic illustration, 1774 × 887 pixels. It is not a portrait or a photograph of a completed trip.
 - `_pages/about.md`: a link to `/me/` added at the end; existing homepage retained.
 - `README_ME.md`: this handoff and recovery snapshots. Keep it excluded from Jekyll output.
 
-The page includes a short biography, full story, research contributions, developing abilities, running/music/reading, travel, family priorities, and an outside perspective. It links to the existing blog, publications, and CV. The travel map and gallery use a small vanilla JavaScript file; no additional packages are required.
+The page includes a short biography, full story, research contributions, developing abilities, running/music/reading, travel, family priorities, and an outside perspective. It links to the existing publications and CV. The travel map and gallery use a small vanilla JavaScript file; no additional packages are required.
 
 ## JSON travel map and photo gallery
 
@@ -127,7 +147,7 @@ JEKYLL_ENV=production bundle exec jekyll build --lsi
 
 On PowerShell, set `$env:JEKYLL_ENV = 'production'` before the build command. Use the normal project dependency setup on the destination computer.
 
-Verify desktop/mobile layouts, light/dark modes, the Me navbar link, homepage link, section anchors, local image, and blog/publications/CV links. Inspect all prose with Peter when adding new biographical details.
+Verify desktop/mobile layouts, light/dark modes, the Me navbar link, homepage link, section anchors, local image, and publications/CV links. Inspect all prose with Peter when adding new biographical details.
 
 The configured `.github/workflows/deploy.yml` builds on pushes to main/master and deploys `_site`. The creation task makes local source changes only; it does not claim the new page is already online. Review the intended diff before committing/pushing. Preserve unrelated uncommitted work.
 
@@ -200,9 +220,9 @@ Research is collaborative. Two milestones in my work with colleagues are **Shear
 
 The texture-filtering work explores how to filter textures accurately over quadrilateral footprints while keeping computation efficient. Its applications include normal filtering, soft shadow mapping, and glint rendering. Our paper received the **Best Computer Graphics Student Paper award at GI 2024**. I value this as a concrete result of careful work with other people.
 
-There is another, quieter kind of contribution in this website. My notes explore topics such as discrete differential geometry, exterior calculus, rendering, 3D GIS, and explainable AI. Writing them is part of learning: breaking an idea down, following its connections, and leaving a trail that I or another reader can return to.
+There is another, quieter kind of contribution in my writing. I have written learning notes on topics such as discrete differential geometry, exterior calculus, rendering, 3D GIS, and explainable AI. Writing is part of learning: breaking an idea down, following its connections, and leaving a trail I can return to.
 
-For the formal record, see my [publications]({{ '/publications/' | relative_url }}) and [CV]({{ '/cv/' | relative_url }}). For the thinking in progress, visit the [blog]({{ '/blog/' | relative_url }}).
+For the formal record, see my [publications]({{ '/publications/' | relative_url }}) and [CV]({{ '/cv/' | relative_url }}).
 
 ### The abilities I keep developing
 
@@ -297,7 +317,7 @@ These are interpretations of the available material, rather than verified person
 
 **What I hope you remember:** I care about understanding, making, and sharing—and about staying curious enough to keep growing outside my work.
 
-[Explore my writing]({{ '/blog/' | relative_url }}) · [See my research]({{ '/publications/' | relative_url }})
+[See my research]({{ '/publications/' | relative_url }}) · [View my CV]({{ '/cv/' | relative_url }})
 
 </div>
 
