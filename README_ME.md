@@ -1096,6 +1096,14 @@ description: Curriculum vitae of Guowei (Peter) Lu.
       "memory": ""
     },
     {
+      "src": "assets/img/me/travel/italty_pisa_01.jpg",
+      "title": "Pisa · a playful pose by the tower",
+      "year": 2025,
+      "alt": "A child balancing on a stone post with one leg raised, with the Leaning Tower of Pisa behind him.",
+      "kind": "travel",
+      "memory": ""
+    },
+    {
       "src": "assets/img/me/travel/italty_venice_01.jpg",
       "title": "Venice · golden light on the water",
       "year": 2025,
