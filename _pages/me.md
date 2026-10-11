@@ -11,17 +11,17 @@ nav_order: 1
 
 <div class="personal-story" markdown="1">
 
-*This page was generated with AI assistance and edited by me. The illustration is AI-generated; the gallery photographs are my own.*
-
 <div class="me-intro">
-  <p class="me-eyebrow">A personal introduction · Guowei / Peter</p>
-  <h2 class="me-headline">I imagine things.<br>I try to understand them.<br>Then I build.</h2>
-  <p class="me-deck">Light, geometry, code, music, and the world outside the screen.</p>
+  <p class="me-eyebrow">Guowei / Peter · Beyond work</p>
+  <h2 class="me-headline">Footprints &amp; memories.</h2>
+  <p class="me-deck">Places I’ve been. Moments I’ve kept. A little of my life in this world.</p>
 </div>
+
+<p class="me-ai-note">This page was written and arranged with AI assistance. The illustration is AI-generated; the gallery photographs are my own.</p>
 
 <figure class="me-hero">
   <img src="{{ '/assets/img/me/curiosity-and-journeys.png' | relative_url }}" alt="An illustrated canal path connecting a runner, geometric surfaces, light, a train, and distant mountains." width="1774" height="887" fetchpriority="high">
-  <figcaption>An AI-generated illustration of the interests that meet here: rendering, geometry, running, and travel.</figcaption>
+  <figcaption>An imagined landscape of light, geometry, running, and journeys.</figcaption>
 </figure>
 
 <nav class="me-contents" aria-label="On this page">
@@ -32,7 +32,7 @@ nav_order: 1
 
 ## My travel map
 
-I enjoy exploring new places. This map shows my visits across Europe and my return to China in summer 2026. Select a year or country to see more.
+From Delft, across Europe, and back to China. These are my recorded footprints—a way to remember where I’ve been, with room for the places still to come.
 
 <div id="me-travel" data-travel-url="{{ '/assets/json/travel.json' | relative_url | bust_file_cache }}" data-map-url="{{ '/assets/json/world-countries.geojson' | relative_url | bust_file_cache }}" data-base-url="{{ '/' | relative_url }}">
   <div class="me-map-controls">
@@ -47,33 +47,29 @@ I enjoy exploring new places. This map shows my visits across Europe and my retu
   <p class="me-map-credit">Country outlines: <a href="https://www.naturalearthdata.com/">Natural Earth</a>, public domain. Overview boundaries are simplified.</p>
 </div>
 
-#### Photo gallery
+## Photo gallery
 
-My photographs capture travel and everyday moments—from European cities and Alpine landscapes to Beijing and life in the Netherlands. This gallery is independent of the map’s year filter. Select a photo to open the full image.
+Some memories belong to a journey; others are close to home. Here are the moments I’ve chosen to keep. Select a photograph to see it in full.
 
 <div id="me-photo-gallery" class="me-photo-gallery"></div>
-<noscript>The interactive map and gallery require JavaScript. My travels have taken me through central Europe, the Swiss Alps and Italy, and Scandinavia.</noscript>
+<noscript>The interactive map and gallery require JavaScript. My recorded travels include Europe and China.</noscript>
 <script src="{{ '/assets/js/personal-travel.js' | relative_url | bust_file_cache }}" defer></script>
 
 ## How Codex sees me
 
 <aside class="me-perspective" markdown="1">
 
-**An outside perspective, based on Peter’s research, earlier writing, and the personal details he has shared.**
+**A small portrait in words, written by AI.**
 
-My impression of Peter is of someone who wants to look beneath the surface. The technical notes he previously wrote suggest patience with difficult ideas, and his rendering research and engineering background connect that curiosity with implementation.
+From Peter’s research and the details he has shared, I see curiosity expressed through both understanding and making. He works with light and geometry; his photographs leave room for landscapes, cities, and small everyday things.
 
-The strength that stands out to me is his movement between abstract and concrete thinking: equations and images, research and tools, technical questions and personal reflections. His interest in music and the photographs from his travels also give a sense of the life beyond his technical work.
-
-He has acknowledged limited time, unfinished learning, and the pull between work and family. To me, that makes the portrait more human. The most useful thing to remember is the combination: a researcher and builder who also wants to remain a curious person, a runner, a listener, a traveller, and a parent.
-
-These are interpretations of the available material, rather than verified personality traits or a complete account of his life.
+This is my impression, based on the material available to me. Peter’s own memories—and whatever he chooses to add next—will tell more than I can.
 
 </aside>
 
 <div class="me-closing" markdown="1">
 
-**What I hope you remember:** I care about understanding, making, and sharing—and about staying curious enough to keep growing outside my work.
+An ongoing collection, with room for more.
 
 [See my research]({{ '/' | relative_url }}#publications) · [View my CV]({{ '/cv/' | relative_url }})
 

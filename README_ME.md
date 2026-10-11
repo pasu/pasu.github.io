@@ -17,6 +17,8 @@ For each future status update:
 
 ### Status history
 
+- **11 October 2026 — creative direction:** Peter entrusted the Me page to Codex while asking to preserve the map and photo gallery as footprints and memories. Reframed the page around “Footprints & memories”, shortened the AI perspective, kept a visible AI disclosure, and retained the existing symbolic illustration because no new biographical status was supplied. Photographs now display their original proportions in two columns (one on mobile), with place-first titles, optional memories, and dates. Map changes no longer recreate the independent gallery. Keep About as the professional introduction; do not invent recollections. Travel data and the requested China geometry grouping remain unchanged.
+
 - **11 October 2026 — AI disclosure:** Peter requested identifying Me as AI-generated. Added a visible note at the top that the page was generated with AI assistance and edited by Peter, the illustration is AI-generated, and the gallery photographs are his own. Preserve this disclosure during future updates.
 
 - **11 October 2026 — photo memories:** Peter accepted adding short personal memories to photos. Each photo now has an optional `memory` string, initially empty. The gallery displays a nonempty memory beneath its title; empty memories show no placeholder. Peter can write one sentence about why the moment matters. Do not invent those recollections.
@@ -224,17 +226,17 @@ nav_order: 1
 
 <div class="personal-story" markdown="1">
 
-*This page was generated with AI assistance and edited by me. The illustration is AI-generated; the gallery photographs are my own.*
-
 <div class="me-intro">
-  <p class="me-eyebrow">A personal introduction · Guowei / Peter</p>
-  <h2 class="me-headline">I imagine things.<br>I try to understand them.<br>Then I build.</h2>
-  <p class="me-deck">Light, geometry, code, music, and the world outside the screen.</p>
+  <p class="me-eyebrow">Guowei / Peter · Beyond work</p>
+  <h2 class="me-headline">Footprints &amp; memories.</h2>
+  <p class="me-deck">Places I’ve been. Moments I’ve kept. A little of my life in this world.</p>
 </div>
+
+<p class="me-ai-note">This page was written and arranged with AI assistance. The illustration is AI-generated; the gallery photographs are my own.</p>
 
 <figure class="me-hero">
   <img src="{{ '/assets/img/me/curiosity-and-journeys.png' | relative_url }}" alt="An illustrated canal path connecting a runner, geometric surfaces, light, a train, and distant mountains." width="1774" height="887" fetchpriority="high">
-  <figcaption>An AI-generated illustration of the interests that meet here: rendering, geometry, running, and travel.</figcaption>
+  <figcaption>An imagined landscape of light, geometry, running, and journeys.</figcaption>
 </figure>
 
 <nav class="me-contents" aria-label="On this page">
@@ -245,7 +247,7 @@ nav_order: 1
 
 ## My travel map
 
-I enjoy exploring new places. This map shows my visits across Europe and my return to China in summer 2026. Select a year or country to see more.
+From Delft, across Europe, and back to China. These are my recorded footprints—a way to remember where I’ve been, with room for the places still to come.
 
 <div id="me-travel" data-travel-url="{{ '/assets/json/travel.json' | relative_url | bust_file_cache }}" data-map-url="{{ '/assets/json/world-countries.geojson' | relative_url | bust_file_cache }}" data-base-url="{{ '/' | relative_url }}">
   <div class="me-map-controls">
@@ -260,33 +262,29 @@ I enjoy exploring new places. This map shows my visits across Europe and my retu
   <p class="me-map-credit">Country outlines: <a href="https://www.naturalearthdata.com/">Natural Earth</a>, public domain. Overview boundaries are simplified.</p>
 </div>
 
-#### Photo gallery
+## Photo gallery
 
-My photographs capture travel and everyday moments—from European cities and Alpine landscapes to Beijing and life in the Netherlands. This gallery is independent of the map’s year filter. Select a photo to open the full image.
+Some memories belong to a journey; others are close to home. Here are the moments I’ve chosen to keep. Select a photograph to see it in full.
 
 <div id="me-photo-gallery" class="me-photo-gallery"></div>
-<noscript>The interactive map and gallery require JavaScript. My travels have taken me through central Europe, the Swiss Alps and Italy, and Scandinavia.</noscript>
+<noscript>The interactive map and gallery require JavaScript. My recorded travels include Europe and China.</noscript>
 <script src="{{ '/assets/js/personal-travel.js' | relative_url | bust_file_cache }}" defer></script>
 
 ## How Codex sees me
 
 <aside class="me-perspective" markdown="1">
 
-**An outside perspective, based on Peter’s research, earlier writing, and the personal details he has shared.**
+**A small portrait in words, written by AI.**
 
-My impression of Peter is of someone who wants to look beneath the surface. The technical notes he previously wrote suggest patience with difficult ideas, and his rendering research and engineering background connect that curiosity with implementation.
+From Peter’s research and the details he has shared, I see curiosity expressed through both understanding and making. He works with light and geometry; his photographs leave room for landscapes, cities, and small everyday things.
 
-The strength that stands out to me is his movement between abstract and concrete thinking: equations and images, research and tools, technical questions and personal reflections. His interest in music and the photographs from his travels also give a sense of the life beyond his technical work.
-
-He has acknowledged limited time, unfinished learning, and the pull between work and family. To me, that makes the portrait more human. The most useful thing to remember is the combination: a researcher and builder who also wants to remain a curious person, a runner, a listener, a traveller, and a parent.
-
-These are interpretations of the available material, rather than verified personality traits or a complete account of his life.
+This is my impression, based on the material available to me. Peter’s own memories—and whatever he chooses to add next—will tell more than I can.
 
 </aside>
 
 <div class="me-closing" markdown="1">
 
-**What I hope you remember:** I care about understanding, making, and sharing—and about staying curious enough to keep growing outside my work.
+An ongoing collection, with room for more.
 
 [See my research]({{ '/' | relative_url }}#publications) · [View my CV]({{ '/cv/' | relative_url }})
 
@@ -575,6 +573,7 @@ description: Curriculum vitae of Guowei (Peter) Lu.
 .personal-story .me-eyebrow { font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--me-accent); }
 .personal-story .me-headline { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.16; letter-spacing: -.035em; margin: .7rem 0 1rem; font-weight: 700; }
 .personal-story .me-deck { font-size: 1.12rem; color: var(--global-text-color-light); }
+.personal-story .me-ai-note { font-size: .8rem; line-height: 1.6; color: var(--global-text-color-light); margin-bottom: 1.5rem; }
 .personal-story .me-hero { margin: 0 0 1.7rem; }
 .personal-story .me-hero img { width: 100%; height: auto; display: block; border-radius: 1rem; }
 .personal-story figcaption { margin-top: .7rem; color: var(--global-text-color-light); font-size: .8rem; line-height: 1.5; }
@@ -604,15 +603,16 @@ description: Curriculum vitae of Guowei (Peter) Lu.
 .personal-story .me-country-button { background: var(--global-bg-color); color: var(--global-theme-color); border: 1px solid var(--global-divider-color); padding: .3rem .65rem; border-radius: .5rem; cursor: pointer; font: inherit; font-size: .85rem; }
 .personal-story .me-country-button.me-transit { color: var(--global-text-color-light); }
 .personal-story button:focus-visible, .personal-story select:focus-visible { outline: 2px solid var(--global-theme-color); outline-offset: 3px; }
-.personal-story .me-country-detail { min-height: 4rem; font-size: .9rem; }
-.personal-story .me-photo-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
-.personal-story .me-photo { margin: 0; min-width: 0; }
-.personal-story .me-photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: .6rem; }
+.personal-story .me-country-detail { font-size: .9rem; }
+.personal-story .me-country-detail:empty { display: none; }
+.personal-story .me-photo-gallery { columns: 2; column-gap: 1.4rem; }
+.personal-story .me-photo { margin: 0 0 1.8rem; min-width: 0; break-inside: avoid; }
+.personal-story .me-photo img { display: block; width: 100%; height: auto; border-radius: .6rem; }
 .personal-story .me-photo strong { color: var(--global-text-color); display: block; }
 .personal-story .me-photo p { margin: .3rem 0; }
 .personal-story .me-photo .me-photo-memory { color: var(--global-text-color); font-size: .9rem; line-height: 1.6; }
 .personal-story .me-photo-unavailable { display: block; padding: 2rem 1rem; background: var(--global-code-bg-color); }
-@media (max-width: 640px) { .personal-story .me-photo-gallery { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .personal-story .me-photo-gallery { columns: 1; } }
 ```
 
 ### assets/js/personal-travel.js
@@ -676,13 +676,14 @@ description: Curriculum vitae of Guowei (Peter) Lu.
       if (photo.memory && photo.memory.trim()) {
         caption.append(element('p', photo.memory.trim(), 'me-photo-memory'));
       }
-      caption.append(element('p', `${photo.year ? `${photo.year} · ` : ''}${photo.kind} · displayed crop`));
+      if (photo.year) caption.append(element('p', String(photo.year)));
       figure.append(caption);
       gallery.append(figure);
     });
     if (!visible.length) gallery.append(element('p', 'No personal photographs added yet.'));
   }
   readJSON(root.dataset.travelUrl).then(async travel => {
+    renderGallery(travel.photos);
     const years = [...new Set(travel.countries.flatMap(country => country.years))].sort();
     years.forEach(value => {
       const option = element('option', String(value));
@@ -745,13 +746,12 @@ description: Curriculum vitae of Guowei (Peter) Lu.
         button.addEventListener('click', () => select(country));
         list.append(button);
       });
-      renderGallery(travel.photos);
     }
     year.addEventListener('change', render);
     view.addEventListener('change', render);
     render();
   }).catch(error => {
-    summary.textContent = 'Travel map unavailable. The journeys are listed in the text above.';
+    summary.textContent = 'Travel map unavailable. Please try again later.';
     gallery.append(element('p', 'Photo gallery unavailable. Please try again later.'));
     console.warn(error);
   });

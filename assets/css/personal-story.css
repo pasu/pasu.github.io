@@ -3,6 +3,7 @@
 .personal-story .me-eyebrow { font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--me-accent); }
 .personal-story .me-headline { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.16; letter-spacing: -.035em; margin: .7rem 0 1rem; font-weight: 700; }
 .personal-story .me-deck { font-size: 1.12rem; color: var(--global-text-color-light); }
+.personal-story .me-ai-note { font-size: .8rem; line-height: 1.6; color: var(--global-text-color-light); margin-bottom: 1.5rem; }
 .personal-story .me-hero { margin: 0 0 1.7rem; }
 .personal-story .me-hero img { width: 100%; height: auto; display: block; border-radius: 1rem; }
 .personal-story figcaption { margin-top: .7rem; color: var(--global-text-color-light); font-size: .8rem; line-height: 1.5; }
@@ -32,12 +33,13 @@
 .personal-story .me-country-button { background: var(--global-bg-color); color: var(--global-theme-color); border: 1px solid var(--global-divider-color); padding: .3rem .65rem; border-radius: .5rem; cursor: pointer; font: inherit; font-size: .85rem; }
 .personal-story .me-country-button.me-transit { color: var(--global-text-color-light); }
 .personal-story button:focus-visible, .personal-story select:focus-visible { outline: 2px solid var(--global-theme-color); outline-offset: 3px; }
-.personal-story .me-country-detail { min-height: 4rem; font-size: .9rem; }
-.personal-story .me-photo-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
-.personal-story .me-photo { margin: 0; min-width: 0; }
-.personal-story .me-photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: .6rem; }
+.personal-story .me-country-detail { font-size: .9rem; }
+.personal-story .me-country-detail:empty { display: none; }
+.personal-story .me-photo-gallery { columns: 2; column-gap: 1.4rem; }
+.personal-story .me-photo { margin: 0 0 1.8rem; min-width: 0; break-inside: avoid; }
+.personal-story .me-photo img { display: block; width: 100%; height: auto; border-radius: .6rem; }
 .personal-story .me-photo strong { color: var(--global-text-color); display: block; }
 .personal-story .me-photo p { margin: .3rem 0; }
 .personal-story .me-photo .me-photo-memory { color: var(--global-text-color); font-size: .9rem; line-height: 1.6; }
 .personal-story .me-photo-unavailable { display: block; padding: 2rem 1rem; background: var(--global-code-bg-color); }
-@media (max-width: 640px) { .personal-story .me-photo-gallery { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .personal-story .me-photo-gallery { columns: 1; } }

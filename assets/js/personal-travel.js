@@ -56,13 +56,14 @@
       if (photo.memory && photo.memory.trim()) {
         caption.append(element('p', photo.memory.trim(), 'me-photo-memory'));
       }
-      caption.append(element('p', `${photo.year ? `${photo.year} · ` : ''}${photo.kind} · displayed crop`));
+      if (photo.year) caption.append(element('p', String(photo.year)));
       figure.append(caption);
       gallery.append(figure);
     });
     if (!visible.length) gallery.append(element('p', 'No personal photographs added yet.'));
   }
   readJSON(root.dataset.travelUrl).then(async travel => {
+    renderGallery(travel.photos);
     const years = [...new Set(travel.countries.flatMap(country => country.years))].sort();
     years.forEach(value => {
       const option = element('option', String(value));
@@ -125,13 +126,12 @@
         button.addEventListener('click', () => select(country));
         list.append(button);
       });
-      renderGallery(travel.photos);
     }
     year.addEventListener('change', render);
     view.addEventListener('change', render);
     render();
   }).catch(error => {
-    summary.textContent = 'Travel map unavailable. The journeys are listed in the text above.';
+    summary.textContent = 'Travel map unavailable. Please try again later.';
     gallery.append(element('p', 'Photo gallery unavailable. Please try again later.'));
     console.warn(error);
   });
