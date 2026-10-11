@@ -17,6 +17,12 @@ For each future status update:
 
 ### Status history
 
+- **11 October 2026 — English hover memories:** At Peter’s request, memories are now displayed in English over the photographs on hover rather than below them. `memory` preserves his Chinese original; `memory_en` holds the English translation used by the page. Keyboard focus reveals the overlay, Escape dismisses it, and a Read memory button supports touch. Long text scrolls within the photograph. Future memories need an English translation to display. This entry supersedes the earlier below-caption display instructions.
+
+
+- **11 October 2026 — first personal recollections:** Peter supplied Chinese memories for Beijing Forestry University and Salzburg. Saved both verbatim in the corresponding photo memory fields, including his punctuation and wording. They appear beneath the photographs; do not shorten, translate, or rewrite them without his request. The existing illustration is retained because these recollections enrich the photographs rather than change his current status.
+
+
 - **11 October 2026 — creative direction:** Peter entrusted the Me page to Codex while asking to preserve the map and photo gallery as footprints and memories. Reframed the page around “Footprints & memories”, shortened the AI perspective, kept a visible AI disclosure, and retained the existing symbolic illustration because no new biographical status was supplied. Photographs now display their original proportions in two columns (one on mobile), with place-first titles, optional memories, and dates. Map changes no longer recreate the independent gallery. Keep About as the professional introduction; do not invent recollections. Travel data and the requested China geometry grouping remain unchanged.
 
 - **11 October 2026 — AI disclosure:** Peter requested identifying Me as AI-generated. Added a visible note at the top that the page was generated with AI assistance and edited by Peter, the illustration is AI-generated, and the gallery photographs are his own. Preserve this disclosure during future updates.
@@ -84,7 +90,7 @@ The page includes a short biography, full story, research contributions, develop
 
 ### Try a photo memory
 
-In `assets/json/travel.json`, find a photo and fill in its `memory` field with one short sentence in your own words. You might describe why you stopped to take the picture, a small detail you noticed, or what you want to remember. English or Chinese text is supported. Leave it as `"memory": ""` to show only the title. Memories appear under the corresponding photo title after deployment; no public editing form is needed. Keep `kind: "travel"` and use `src` for the image path.
+In `assets/json/travel.json`, find a photo and fill in its `memory` field with a recollection in your own words, as short or long as you wish. You might describe why you stopped to take the picture, a small detail you noticed, or what you want to remember. English or Chinese text is supported. Leave it as `"memory": ""` to show only the title. Keep the original in `memory` and add its English translation in `memory_en`. English memories appear over the corresponding photograph on hover or keyboard focus, with a Read memory button for touch, after deployment; no public editing form is needed. Keep `kind: "travel"` and use `src` for the image path.
 
 **Current photo schema, 10 October 2026:** Peter requested simple `kind: "travel"` for the photo entries, without `credit` or `source` (the image link uses `src` directly). All current gallery photographs are his own local files. New files in `assets/img/me/travel/` have been registered, preserving exact filenames, including spelling/casing. Titles and alt text identify locations without inventing what happened in the photos. Known trip years follow the supplied itineraries; everyday Netherlands photos have no inferred year. Gallery code no longer requires credit/source fields. This schema supersedes earlier descriptions of credit fields and reference photos in the handoff history.
 
@@ -163,7 +169,7 @@ Live source checked: https://pasu.github.io/. Do not republish hotel bookings, e
 
 ## Questions for future refinements
 
-Peter answered the travel question on 10 October 2026 by supplying itineraries for 2024, 2025, and 2026, and later supplied three personal travel photographs. The page now describes those routes as travel history and includes his photographs. He has not yet supplied specific travel memories or further privacy preferences. Invite corrections naturally; do not block routine page maintenance. Useful additions include a favourite travel memory, more photographs with captions, running experiences, music that matters to him, and his current research/employment status. Do not turn suggested topics into asserted facts.
+Peter answered the travel question on 10 October 2026 by supplying itineraries for 2024, 2025, and 2026, and later supplied three personal travel photographs. The page now describes those routes as travel history and includes his photographs. He supplied personal recollections for Beijing Forestry University and Salzburg on 11 October 2026; these are preserved verbatim in the gallery data. Further privacy preferences have not been supplied. Invite corrections naturally; do not block routine page maintenance. Useful additions include a favourite travel memory, more photographs with captions, running experiences, music that matters to him, and his current research/employment status. Do not turn suggested topics into asserted facts.
 
 ### Travel context to preserve
 
@@ -264,7 +270,7 @@ From Delft, across Europe, and back to China. These are my recorded footprints�
 
 ## Photo gallery
 
-Some memories belong to a journey; others are close to home. Here are the moments I’ve chosen to keep. Select a photograph to see it in full.
+Some memories belong to a journey; others are close to home. Here are the moments I’ve chosen to keep. Hover over a photograph to read its memory in English, or use “Read memory” on touch screens. Select a photograph to see it in full.
 
 <div id="me-photo-gallery" class="me-photo-gallery"></div>
 <noscript>The interactive map and gallery require JavaScript. My recorded travels include Europe and China.</noscript>
@@ -610,7 +616,15 @@ description: Curriculum vitae of Guowei (Peter) Lu.
 .personal-story .me-photo img { display: block; width: 100%; height: auto; border-radius: .6rem; }
 .personal-story .me-photo strong { color: var(--global-text-color); display: block; }
 .personal-story .me-photo p { margin: .3rem 0; }
-.personal-story .me-photo .me-photo-memory { color: var(--global-text-color); font-size: .9rem; line-height: 1.6; }
+.personal-story .me-photo-frame { position: relative; border-radius: .6rem; }
+.personal-story .me-photo .me-photo-memory { position: absolute; inset: 0; padding: 1.2rem 1.2rem 3.5rem; border-radius: .6rem; background: rgba(15, 20, 25, .9); color: #fff; font-size: .9rem; line-height: 1.7; overflow-y: auto; visibility: hidden; opacity: 0; transition: opacity .18s ease; }
+.personal-story .me-photo-frame:hover .me-photo-memory,
+.personal-story .me-photo-frame:focus-within .me-photo-memory,
+.personal-story .me-photo-frame.me-memory-open .me-photo-memory { visibility: visible; opacity: 1; }
+.personal-story .me-photo-frame.me-memory-dismissed .me-photo-memory { visibility: hidden; opacity: 0; }
+.personal-story .me-memory-toggle { position: absolute; bottom: .6rem; right: .6rem; z-index: 1; padding: .3rem .65rem; border: 1px solid rgba(255,255,255,.6); border-radius: 1rem; color: #fff; background: rgba(15,20,25,.85); font-size: .75rem; cursor: pointer; }
+@media (hover: none) { .personal-story .me-photo-frame:hover:not(:focus-within):not(.me-memory-open) .me-photo-memory { visibility: hidden; opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .personal-story .me-photo-memory { transition: none; } }
 .personal-story .me-photo-unavailable { display: block; padding: 2rem 1rem; background: var(--global-code-bg-color); }
 @media (max-width: 640px) { .personal-story .me-photo-gallery { columns: 1; } }
 ```
@@ -657,7 +671,7 @@ description: Curriculum vitae of Guowei (Peter) Lu.
   function renderGallery(photos) {
     gallery.replaceChildren();
     const visible = photos;
-    visible.forEach(photo => {
+    visible.forEach((photo, index) => {
       const figure = element('figure', '', 'me-photo');
       const link = safeLink('', assetURL(photo.src));
       const image = element('img');
@@ -670,12 +684,41 @@ description: Curriculum vitae of Guowei (Peter) Lu.
         link.append(element('span', 'Photo unavailable. Select to open the image directly.', 'me-photo-unavailable'));
       }, { once: true });
       link.append(image);
-      figure.append(link);
+      const frame = element('div', '', 'me-photo-frame');
+      frame.append(link);
+      if (photo.memory_en && photo.memory_en.trim()) {
+        const memory = element('div', photo.memory_en.trim(), 'me-photo-memory');
+        memory.id = `me-memory-${index}`;
+        memory.lang = 'en';
+        memory.tabIndex = 0;
+        link.setAttribute('aria-describedby', memory.id);
+        const toggle = element('button', 'Read memory', 'me-memory-toggle');
+        toggle.type = 'button';
+        toggle.setAttribute('aria-controls', memory.id);
+        toggle.setAttribute('aria-expanded', 'false');
+        const close = () => {
+          frame.classList.remove('me-memory-open');
+          frame.classList.add('me-memory-dismissed');
+          toggle.setAttribute('aria-expanded', 'false');
+        };
+        toggle.addEventListener('click', () => {
+          frame.classList.remove('me-memory-dismissed');
+          const open = frame.classList.toggle('me-memory-open');
+          toggle.setAttribute('aria-expanded', String(open));
+        });
+        frame.addEventListener('keydown', event => { if (event.key === 'Escape') close(); });
+        frame.addEventListener('mouseleave', () => frame.classList.remove('me-memory-dismissed'));
+        frame.addEventListener('focusout', event => {
+          if (!frame.contains(event.relatedTarget)) {
+            frame.classList.remove('me-memory-open', 'me-memory-dismissed');
+            toggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+        frame.append(memory, toggle);
+      }
+      figure.append(frame);
       const caption = element('figcaption');
       caption.append(element('strong', photo.title));
-      if (photo.memory && photo.memory.trim()) {
-        caption.append(element('p', photo.memory.trim(), 'me-photo-memory'));
-      }
       if (photo.year) caption.append(element('p', String(photo.year)));
       figure.append(caption);
       gallery.append(figure);
@@ -1021,7 +1064,8 @@ description: Curriculum vitae of Guowei (Peter) Lu.
       "alt": "Formal flower beds and a fountain in a palace garden, with buildings and a hilltop fortress beyond.",
       "kind": "travel",
       "year": 2024,
-      "memory": ""
+      "memory": "萨尔茨堡是曾经的主要测试数据，今天第一次来到这座城市，却又一种重游旧地的错觉。路过的每个角落，耳边似乎还回荡着当年与同事们讨论的声音，然而回首间，一切已然无踪。时光荏苒，不似少年游。",
+      "memory_en": "Salzburg was once one of our main test datasets. Today is my first visit to the city, yet it feels strangely like returning to somewhere I have been before. At every corner, I almost hear the voices of colleagues discussing our work all those years ago. But when I turn to look, every trace is gone. Time slips by; it is no longer a journey through youth."
     },
     {
       "src": "assets/img/me/travel/china_beijing_forestry_university.jpg",
@@ -1029,7 +1073,8 @@ description: Curriculum vitae of Guowei (Peter) Lu.
       "alt": "A person sitting on a broad campus avenue shaded by tall green trees.",
       "kind": "travel",
       "year": 2026,
-      "memory": ""
+      "memory": "重返母校，不知道哪一步会触发某个记忆碎片，可当你沉浸其中准备看得真切时，下一步又不由分说的将你拉回现实。这种记忆与现实的混叠让人失落，终不似，少年游。可能就是这种感觉吧。而每个人的不似也各不相同却也说不清楚了，唯有背后的树林默默的见证无数人的四年。",
+      "memory_en": "Returning to my alma mater, I never know which step will stir a fragment of memory. But just as I lose myself in it, hoping to see it clearly, the next step pulls me back into the present without asking. This mingling of memory and reality leaves a sense of loss: it is no longer a journey through youth. Perhaps that is the feeling. What has changed is different for each of us, and hard to put into words. Only the trees behind us bear silent witness to the four years of so many lives."
     },
     {
       "src": "assets/img/me/travel/czech_prague_charles_bridge.jpg",

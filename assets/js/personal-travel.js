@@ -37,7 +37,7 @@
   function renderGallery(photos) {
     gallery.replaceChildren();
     const visible = photos;
-    visible.forEach(photo => {
+    visible.forEach((photo, index) => {
       const figure = element('figure', '', 'me-photo');
       const link = safeLink('', assetURL(photo.src));
       const image = element('img');
@@ -50,12 +50,41 @@
         link.append(element('span', 'Photo unavailable. Select to open the image directly.', 'me-photo-unavailable'));
       }, { once: true });
       link.append(image);
-      figure.append(link);
+      const frame = element('div', '', 'me-photo-frame');
+      frame.append(link);
+      if (photo.memory_en && photo.memory_en.trim()) {
+        const memory = element('div', photo.memory_en.trim(), 'me-photo-memory');
+        memory.id = `me-memory-${index}`;
+        memory.lang = 'en';
+        memory.tabIndex = 0;
+        link.setAttribute('aria-describedby', memory.id);
+        const toggle = element('button', 'Read memory', 'me-memory-toggle');
+        toggle.type = 'button';
+        toggle.setAttribute('aria-controls', memory.id);
+        toggle.setAttribute('aria-expanded', 'false');
+        const close = () => {
+          frame.classList.remove('me-memory-open');
+          frame.classList.add('me-memory-dismissed');
+          toggle.setAttribute('aria-expanded', 'false');
+        };
+        toggle.addEventListener('click', () => {
+          frame.classList.remove('me-memory-dismissed');
+          const open = frame.classList.toggle('me-memory-open');
+          toggle.setAttribute('aria-expanded', String(open));
+        });
+        frame.addEventListener('keydown', event => { if (event.key === 'Escape') close(); });
+        frame.addEventListener('mouseleave', () => frame.classList.remove('me-memory-dismissed'));
+        frame.addEventListener('focusout', event => {
+          if (!frame.contains(event.relatedTarget)) {
+            frame.classList.remove('me-memory-open', 'me-memory-dismissed');
+            toggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+        frame.append(memory, toggle);
+      }
+      figure.append(frame);
       const caption = element('figcaption');
       caption.append(element('strong', photo.title));
-      if (photo.memory && photo.memory.trim()) {
-        caption.append(element('p', photo.memory.trim(), 'me-photo-memory'));
-      }
       if (photo.year) caption.append(element('p', String(photo.year)));
       figure.append(caption);
       gallery.append(figure);
