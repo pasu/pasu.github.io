@@ -36,7 +36,12 @@
   }
   function renderGallery(photos) {
     gallery.replaceChildren();
-    const visible = photos;
+    const visible = [...photos];
+    // Shuffle a copy so the maintained JSON order stays intact.
+    for (let index = visible.length - 1; index > 0; index--) {
+      const other = Math.floor(Math.random() * (index + 1));
+      [visible[index], visible[other]] = [visible[other], visible[index]];
+    }
     visible.forEach((photo, index) => {
       const figure = element('figure', '', 'me-photo');
       const link = safeLink('', assetURL(photo.src));
@@ -58,29 +63,15 @@
         memory.lang = 'en';
         memory.tabIndex = 0;
         link.setAttribute('aria-describedby', memory.id);
-        const toggle = element('button', 'Read memory', 'me-memory-toggle');
-        toggle.type = 'button';
-        toggle.setAttribute('aria-controls', memory.id);
-        toggle.setAttribute('aria-expanded', 'false');
-        const close = () => {
-          frame.classList.remove('me-memory-open');
-          frame.classList.add('me-memory-dismissed');
-          toggle.setAttribute('aria-expanded', 'false');
-        };
-        toggle.addEventListener('click', () => {
-          frame.classList.remove('me-memory-dismissed');
-          const open = frame.classList.toggle('me-memory-open');
-          toggle.setAttribute('aria-expanded', String(open));
-        });
+        const close = () => frame.classList.add('me-memory-dismissed');
         frame.addEventListener('keydown', event => { if (event.key === 'Escape') close(); });
         frame.addEventListener('mouseleave', () => frame.classList.remove('me-memory-dismissed'));
         frame.addEventListener('focusout', event => {
           if (!frame.contains(event.relatedTarget)) {
-            frame.classList.remove('me-memory-open', 'me-memory-dismissed');
-            toggle.setAttribute('aria-expanded', 'false');
+            frame.classList.remove('me-memory-dismissed');
           }
         });
-        frame.append(memory, toggle);
+        frame.append(memory);
       }
       figure.append(frame);
       const caption = element('figcaption');

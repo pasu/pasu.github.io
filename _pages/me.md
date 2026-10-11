@@ -49,7 +49,7 @@ From Delft, across Europe, and back to China. These are my recorded footprints�
 
 ## Photo gallery
 
-Some memories belong to a journey; others are close to home. Here are the moments I’ve chosen to keep. Hover over a photograph to read its memory in English, or use “Read memory” on touch screens. Select a photograph to see it in full.
+Some memories belong to a journey; others are close to home. Here are the moments I’ve chosen to keep. Hover over a photograph to read its memory in English. Select a photograph to see it in full.
 
 <div id="me-photo-gallery" class="me-photo-gallery"></div>
 <noscript>The interactive map and gallery require JavaScript. My recorded travels include Europe and China.</noscript>

@@ -17,6 +17,12 @@ For each future status update:
 
 ### Status history
 
+- **11 October 2026 — hover-only memory presentation:** Peter requested the English memory as a hover popup, without a visible memory label. Removed the Read memory button; memories remain hidden until photo hover or keyboard focus, and Escape dismisses them. Photo captions retain only the place-first title and date. Chinese originals and English translations remain in the JSON. This supersedes the earlier touch-button instructions.
+
+
+- **11 October 2026 — random gallery order:** Peter requested randomly ordered photographs. The gallery now uses a Fisher–Yates shuffle on a copy of the photo list at page load. JSON order is preserved, every photograph appears once, and map filters do not reshuffle the gallery.
+
+
 - **11 October 2026 — English hover memories:** At Peter’s request, memories are now displayed in English over the photographs on hover rather than below them. `memory` preserves his Chinese original; `memory_en` holds the English translation used by the page. Keyboard focus reveals the overlay, Escape dismisses it, and a Read memory button supports touch. Long text scrolls within the photograph. Future memories need an English translation to display. This entry supersedes the earlier below-caption display instructions.
 
 
@@ -90,7 +96,7 @@ The page includes a short biography, full story, research contributions, develop
 
 ### Try a photo memory
 
-In `assets/json/travel.json`, find a photo and fill in its `memory` field with a recollection in your own words, as short or long as you wish. You might describe why you stopped to take the picture, a small detail you noticed, or what you want to remember. English or Chinese text is supported. Leave it as `"memory": ""` to show only the title. Keep the original in `memory` and add its English translation in `memory_en`. English memories appear over the corresponding photograph on hover or keyboard focus, with a Read memory button for touch, after deployment; no public editing form is needed. Keep `kind: "travel"` and use `src` for the image path.
+In `assets/json/travel.json`, find a photo and fill in its `memory` field with a recollection in your own words, as short or long as you wish. You might describe why you stopped to take the picture, a small detail you noticed, or what you want to remember. English or Chinese text is supported. Leave it as `"memory": ""` to show only the title. Keep the original in `memory` and add its English translation in `memory_en`. English memories appear over the corresponding photograph on hover or keyboard focus, after deployment; no public editing form is needed. Keep `kind: "travel"` and use `src` for the image path.
 
 **Current photo schema, 10 October 2026:** Peter requested simple `kind: "travel"` for the photo entries, without `credit` or `source` (the image link uses `src` directly). All current gallery photographs are his own local files. New files in `assets/img/me/travel/` have been registered, preserving exact filenames, including spelling/casing. Titles and alt text identify locations without inventing what happened in the photos. Known trip years follow the supplied itineraries; everyday Netherlands photos have no inferred year. Gallery code no longer requires credit/source fields. This schema supersedes earlier descriptions of credit fields and reference photos in the handoff history.
 
@@ -270,7 +276,7 @@ From Delft, across Europe, and back to China. These are my recorded footprints�
 
 ## Photo gallery
 
-Some memories belong to a journey; others are close to home. Here are the moments I’ve chosen to keep. Hover over a photograph to read its memory in English, or use “Read memory” on touch screens. Select a photograph to see it in full.
+Some memories belong to a journey; others are close to home. Here are the moments I’ve chosen to keep. Hover over a photograph to read its memory in English. Select a photograph to see it in full.
 
 <div id="me-photo-gallery" class="me-photo-gallery"></div>
 <noscript>The interactive map and gallery require JavaScript. My recorded travels include Europe and China.</noscript>
@@ -617,13 +623,11 @@ description: Curriculum vitae of Guowei (Peter) Lu.
 .personal-story .me-photo strong { color: var(--global-text-color); display: block; }
 .personal-story .me-photo p { margin: .3rem 0; }
 .personal-story .me-photo-frame { position: relative; border-radius: .6rem; }
-.personal-story .me-photo .me-photo-memory { position: absolute; inset: 0; padding: 1.2rem 1.2rem 3.5rem; border-radius: .6rem; background: rgba(15, 20, 25, .9); color: #fff; font-size: .9rem; line-height: 1.7; overflow-y: auto; visibility: hidden; opacity: 0; transition: opacity .18s ease; }
+.personal-story .me-photo .me-photo-memory { position: absolute; inset: 0; padding: 1.2rem; border-radius: .6rem; background: rgba(15, 20, 25, .9); color: #fff; font-size: .9rem; line-height: 1.7; overflow-y: auto; visibility: hidden; opacity: 0; transition: opacity .18s ease; }
 .personal-story .me-photo-frame:hover .me-photo-memory,
-.personal-story .me-photo-frame:focus-within .me-photo-memory,
-.personal-story .me-photo-frame.me-memory-open .me-photo-memory { visibility: visible; opacity: 1; }
+.personal-story .me-photo-frame:focus-within .me-photo-memory { visibility: visible; opacity: 1; }
 .personal-story .me-photo-frame.me-memory-dismissed .me-photo-memory { visibility: hidden; opacity: 0; }
-.personal-story .me-memory-toggle { position: absolute; bottom: .6rem; right: .6rem; z-index: 1; padding: .3rem .65rem; border: 1px solid rgba(255,255,255,.6); border-radius: 1rem; color: #fff; background: rgba(15,20,25,.85); font-size: .75rem; cursor: pointer; }
-@media (hover: none) { .personal-story .me-photo-frame:hover:not(:focus-within):not(.me-memory-open) .me-photo-memory { visibility: hidden; opacity: 0; } }
+@media (hover: none) { .personal-story .me-photo-frame:hover:not(:focus-within) .me-photo-memory { visibility: hidden; opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { .personal-story .me-photo-memory { transition: none; } }
 .personal-story .me-photo-unavailable { display: block; padding: 2rem 1rem; background: var(--global-code-bg-color); }
 @media (max-width: 640px) { .personal-story .me-photo-gallery { columns: 1; } }
@@ -670,7 +674,12 @@ description: Curriculum vitae of Guowei (Peter) Lu.
   }
   function renderGallery(photos) {
     gallery.replaceChildren();
-    const visible = photos;
+    const visible = [...photos];
+    // Shuffle a copy so the maintained JSON order stays intact.
+    for (let index = visible.length - 1; index > 0; index--) {
+      const other = Math.floor(Math.random() * (index + 1));
+      [visible[index], visible[other]] = [visible[other], visible[index]];
+    }
     visible.forEach((photo, index) => {
       const figure = element('figure', '', 'me-photo');
       const link = safeLink('', assetURL(photo.src));
@@ -692,29 +701,15 @@ description: Curriculum vitae of Guowei (Peter) Lu.
         memory.lang = 'en';
         memory.tabIndex = 0;
         link.setAttribute('aria-describedby', memory.id);
-        const toggle = element('button', 'Read memory', 'me-memory-toggle');
-        toggle.type = 'button';
-        toggle.setAttribute('aria-controls', memory.id);
-        toggle.setAttribute('aria-expanded', 'false');
-        const close = () => {
-          frame.classList.remove('me-memory-open');
-          frame.classList.add('me-memory-dismissed');
-          toggle.setAttribute('aria-expanded', 'false');
-        };
-        toggle.addEventListener('click', () => {
-          frame.classList.remove('me-memory-dismissed');
-          const open = frame.classList.toggle('me-memory-open');
-          toggle.setAttribute('aria-expanded', String(open));
-        });
+        const close = () => frame.classList.add('me-memory-dismissed');
         frame.addEventListener('keydown', event => { if (event.key === 'Escape') close(); });
         frame.addEventListener('mouseleave', () => frame.classList.remove('me-memory-dismissed'));
         frame.addEventListener('focusout', event => {
           if (!frame.contains(event.relatedTarget)) {
-            frame.classList.remove('me-memory-open', 'me-memory-dismissed');
-            toggle.setAttribute('aria-expanded', 'false');
+            frame.classList.remove('me-memory-dismissed');
           }
         });
-        frame.append(memory, toggle);
+        frame.append(memory);
       }
       figure.append(frame);
       const caption = element('figcaption');
