@@ -23,34 +23,10 @@ nav_order: 1
 </figure>
 
 <nav class="me-contents" aria-label="On this page">
-  <a href="#in-a-few-words">The short version</a>
-  <a href="#the-longer-story">The longer story</a>
   <a href="#my-travel-map">Travel map</a>
   <a href="#photo-gallery">Photo gallery</a>
   <a href="#how-codex-sees-me">An outside perspective</a>
 </nav>
-
-## In a few words
-
-I’m **Guowei Lu**, also known as **Peter**. I work in computer graphics, with a background in research and 3D GIS engineering. I’m drawn to the meeting point of mathematics, code, and images: how light behaves, how surfaces are represented, and how an idea becomes something we can see.
-
-Outside that work, I run while listening to music and make room for travel and family. I want to understand difficult things deeply, build things that are useful, and keep enough curiosity for the world beyond my work.
-
-## The longer story
-
-### Light, geometry, and making ideas visible
-
-My academic path brought me to Utrecht University, where I completed an MSc with honours in Computer Science, in the Game and Media Technology programme, in summer 2020. In June 2022, I joined the Computer Graphics and Visualization group at TU Delft as a PhD candidate.
-
-My research interests include real-time rendering, realistic materials, global illumination, and virtual reality. Differentiable and neural rendering are also areas I want to understand better. A recurring question behind these interests is how to make a convincing image while respecting the practical limits of computation.
-
-My professional background also includes working in SuperMap’s R&D department as a 3D GIS engineer, on virtual-earth and mapping products. That experience gives a practical dimension to my interest in graphics: images and spatial models can help people explore and understand real places.
-
-### What I contribute
-
-I work with colleagues on rendering methods, including texture filtering and lightmap updates. I also use technical notes to work through ideas and check my understanding.
-
-You can find our papers in the [publications section]({{ '/' | relative_url }}#publications), and my background in my [CV]({{ '/cv/' | relative_url }}).
 
 ## My travel map
 

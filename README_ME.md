@@ -17,6 +17,10 @@ For each future status update:
 
 ### Status history
 
+- **11 October 2026 — photo memories:** Peter accepted adding short personal memories to photos. Each photo now has an optional `memory` string, initially empty. The gallery displays a nonempty memory beneath its title; empty memories show no placeholder. Peter can write one sentence about why the moment matters. Do not invent those recollections.
+
+- **11 October 2026 — About/Me scope:** Peter clarified that About is for his short introduction, work, and latest news. Removed both “In a few words” and “The longer story”, including their contents and navigation links, from Me. Me now focuses on the symbolic visual depiction, travel map, personal photo gallery, and Codex's personal perspective. Avoid reintroducing a second professional biography here. Possible future additions should be brief and based on Peter's own input, such as a current personal interest or a short memory accompanying a photo; suggestions are not facts to publish.
+
 - **10 October 2026 — visually reviewed gallery captions:** Inspected all 24 local photographs and replaced numbered or generic titles with short place-first titles describing visible subjects. Updated alt descriptions to match the images. Future titles should follow “Place · brief visible detail”, without inventing personal memories or identifying people from appearance.
 
 - **10 October 2026 — family section removed:** Peter requested removing the entire A life with room for other people section. Do not restore it in future page updates unless requested.
@@ -73,6 +77,10 @@ Earlier discussions were not available in the creation chat. The draft therefore
 The page includes a short biography, full story, research contributions, developing abilities, running/music/reading, travel, family priorities, and an outside perspective. It links to the existing publications and CV. The travel map and gallery use a small vanilla JavaScript file; no additional packages are required.
 
 ## JSON travel map and photo gallery
+
+### Try a photo memory
+
+In `assets/json/travel.json`, find a photo and fill in its `memory` field with one short sentence in your own words. You might describe why you stopped to take the picture, a small detail you noticed, or what you want to remember. English or Chinese text is supported. Leave it as `"memory": ""` to show only the title. Memories appear under the corresponding photo title after deployment; no public editing form is needed. Keep `kind: "travel"` and use `src` for the image path.
 
 **Current photo schema, 10 October 2026:** Peter requested simple `kind: "travel"` for the photo entries, without `credit` or `source` (the image link uses `src` directly). All current gallery photographs are his own local files. New files in `assets/img/me/travel/` have been registered, preserving exact filenames, including spelling/casing. Titles and alt text identify locations without inventing what happened in the photos. Known trip years follow the supplied itineraries; everyday Netherlands photos have no inferred year. Gallery code no longer requires credit/source fields. This schema supersedes earlier descriptions of credit fields and reference photos in the handoff history.
 
@@ -226,34 +234,10 @@ nav_order: 1
 </figure>
 
 <nav class="me-contents" aria-label="On this page">
-  <a href="#in-a-few-words">The short version</a>
-  <a href="#the-longer-story">The longer story</a>
   <a href="#my-travel-map">Travel map</a>
   <a href="#photo-gallery">Photo gallery</a>
   <a href="#how-codex-sees-me">An outside perspective</a>
 </nav>
-
-## In a few words
-
-I’m **Guowei Lu**, also known as **Peter**. I work in computer graphics, with a background in research and 3D GIS engineering. I’m drawn to the meeting point of mathematics, code, and images: how light behaves, how surfaces are represented, and how an idea becomes something we can see.
-
-Outside that work, I run while listening to music and make room for travel and family. I want to understand difficult things deeply, build things that are useful, and keep enough curiosity for the world beyond my work.
-
-## The longer story
-
-### Light, geometry, and making ideas visible
-
-My academic path brought me to Utrecht University, where I completed an MSc with honours in Computer Science, in the Game and Media Technology programme, in summer 2020. In June 2022, I joined the Computer Graphics and Visualization group at TU Delft as a PhD candidate.
-
-My research interests include real-time rendering, realistic materials, global illumination, and virtual reality. Differentiable and neural rendering are also areas I want to understand better. A recurring question behind these interests is how to make a convincing image while respecting the practical limits of computation.
-
-My professional background also includes working in SuperMap’s R&D department as a 3D GIS engineer, on virtual-earth and mapping products. That experience gives a practical dimension to my interest in graphics: images and spatial models can help people explore and understand real places.
-
-### What I contribute
-
-I work with colleagues on rendering methods, including texture filtering and lightmap updates. I also use technical notes to work through ideas and check my understanding.
-
-You can find our papers in the [publications section]({{ '/' | relative_url }}#publications), and my background in my [CV]({{ '/cv/' | relative_url }}).
 
 ## My travel map
 
@@ -622,9 +606,9 @@ description: Curriculum vitae of Guowei (Peter) Lu.
 .personal-story .me-photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: .6rem; }
 .personal-story .me-photo strong { color: var(--global-text-color); display: block; }
 .personal-story .me-photo p { margin: .3rem 0; }
+.personal-story .me-photo .me-photo-memory { color: var(--global-text-color); font-size: .9rem; line-height: 1.6; }
 .personal-story .me-photo-unavailable { display: block; padding: 2rem 1rem; background: var(--global-code-bg-color); }
 @media (max-width: 640px) { .personal-story .me-photo-gallery { grid-template-columns: 1fr; } }
-
 ```
 
 ### assets/js/personal-travel.js
@@ -685,6 +669,9 @@ description: Curriculum vitae of Guowei (Peter) Lu.
       figure.append(link);
       const caption = element('figcaption');
       caption.append(element('strong', photo.title));
+      if (photo.memory && photo.memory.trim()) {
+        caption.append(element('p', photo.memory.trim(), 'me-photo-memory'));
+      }
       caption.append(element('p', `${photo.year ? `${photo.year} · ` : ''}${photo.kind} · displayed crop`));
       figure.append(caption);
       gallery.append(figure);
@@ -1029,165 +1016,189 @@ description: Curriculum vitae of Guowei (Peter) Lu.
       "title": "Salzburg · palace gardens",
       "alt": "Formal flower beds and a fountain in a palace garden, with buildings and a hilltop fortress beyond.",
       "kind": "travel",
-      "year": 2024
+      "year": 2024,
+      "memory": ""
     },
     {
       "src": "assets/img/me/travel/china_beijing_forestry_university.jpg",
       "title": "Beijing · a tree-lined campus",
       "alt": "A person sitting on a broad campus avenue shaded by tall green trees.",
       "kind": "travel",
-      "year": 2026
+      "year": 2026,
+      "memory": ""
     },
     {
       "src": "assets/img/me/travel/czech_prague_charles_bridge.jpg",
       "title": "Prague · Charles Bridge at sunset",
       "alt": "An elevated view of Charles Bridge filled with pedestrians, with sunlight over the river.",
       "kind": "travel",
-      "year": 2024
+      "year": 2024,
+      "memory": ""
     },
     {
       "src": "assets/img/me/travel/france_paris_01.jpg",
       "title": "Paris · Notre-Dame by the Seine",
       "alt": "Notre-Dame cathedral beside the Seine, beneath a textured cloudy sky.",
       "kind": "travel",
-      "year": 2025
+      "year": 2025,
+      "memory": ""
     },
     {
       "src": "assets/img/me/travel/france_paris_02.jpg",
       "title": "Paris · a moment with art",
       "alt": "A visitor standing in a museum gallery beside framed paintings.",
       "kind": "travel",
-      "year": 2025
+      "year": 2025,
+      "memory": ""
     },
     {
       "src": "assets/img/me/travel/germany_koln_01.jpg",
       "title": "Cologne · beneath the cathedral",
       "alt": "Visitors on the steps below the towering Gothic facade of Cologne Cathedral.",
       "kind": "travel",
-      "year": 2024
+      "year": 2024,
+      "memory": ""
     },
     {
       "src": "assets/img/me/travel/germany_munich_eibsee.jpg",
       "title": "Eibsee · clear water, cloudy skies",
       "alt": "Turquoise lake water with wooded shores and mountains beneath large white clouds.",
       "kind": "travel",
-      "year": 2026
+      "year": 2026,
+      "memory": ""
     },
     {
       "src": "assets/img/me/travel/hungary_budapest_01.jpg",
       "title": "Budapest · Parliament after dark",
       "alt": "The illuminated Hungarian Parliament building reflected in dark river water.",
       "kind": "travel",
-      "year": 2026
+      "year": 2026,
+      "memory": ""
     },
     {
       "src": "assets/img/me/travel/italty_florence_01.jpg",
       "title": "Florence · rooftops beside the Duomo",
       "alt": "The dome and marble exterior of Florence Cathedral above red-roofed city buildings.",
       "kind": "travel",
-      "year": 2025
+      "year": 2025,
+      "memory": ""
     },
     {
       "src": "assets/img/me/travel/italty_milan_01.jpg",
       "title": "Milan · the cathedral square",
       "alt": "The ornate facade of Milan Cathedral overlooking a busy square.",
       "kind": "travel",
-      "year": 2025
+      "year": 2025,
+      "memory": ""
     },
     {
       "src": "assets/img/me/travel/italty_venice_01.jpg",
       "title": "Venice · golden light on the water",
       "year": 2025,
       "alt": "A motorboat crossing the water beneath golden sunset clouds in Venice.",
-      "kind": "travel"
+      "kind": "travel",
+      "memory": ""
     },
     {
       "src": "assets/img/me/travel/italty_venice_02.jpg",
       "title": "Venice · a gondola on the lagoon",
       "alt": "A gondola and its passengers on open water, with waterfront buildings in the distance.",
       "kind": "travel",
-      "year": 2025
+      "year": 2025,
+      "memory": ""
     },
     {
       "src": "assets/img/me/travel/netherlands_delft_compus.jpg",
       "title": "Delft · campus from above",
       "alt": "An elevated view across campus buildings, green spaces, and the city under an overcast sky.",
-      "kind": "travel"
+      "kind": "travel",
+      "memory": ""
     },
     {
       "src": "assets/img/me/travel/netherlands_delft_office.jpg",
       "title": "Delft · small desk companions",
       "alt": "A hand holding small animal figurines beside a window overlooking green trees.",
-      "kind": "travel"
+      "kind": "travel",
+      "memory": ""
     },
     {
       "src": "assets/img/me/travel/netherlands_hague_circus.jpg",
       "title": "The Hague · circus in the spotlight",
       "alt": "Acrobatic performers on an ornate stage beneath bright beams of theatre light.",
-      "kind": "travel"
+      "kind": "travel",
+      "memory": ""
     },
     {
       "src": "assets/img/me/travel/norway_bergen_01.jpg",
       "title": "Bergen · colourful waterfront",
       "alt": "Colourful waterfront buildings and boats below a misty wooded hillside.",
       "kind": "travel",
-      "year": 2026
+      "year": 2026,
+      "memory": ""
     },
     {
       "src": "assets/img/me/travel/norway_oslo_01.jpg",
       "title": "Oslo · sculpture under summer skies",
       "alt": "A tall carved stone column surrounded by sculptures and visitors beneath a blue sky.",
       "kind": "travel",
-      "year": 2026
+      "year": 2026,
+      "memory": ""
     },
     {
       "src": "assets/img/me/travel/slovakia_bratislava_01.jpg",
       "title": "Bratislava · river beyond the ruins",
       "alt": "A broad river and wooded landscape viewed over weathered stone ruins.",
       "kind": "travel",
-      "year": 2026
+      "year": 2026,
+      "memory": ""
     },
     {
       "src": "assets/img/me/travel/sweden_stockholm_01.jpg",
       "title": "Stockholm · evening by the water",
       "alt": "People silhouetted on a waterfront platform beneath a softly coloured evening sky.",
       "kind": "travel",
-      "year": 2026
+      "year": 2026,
+      "memory": ""
     },
     {
       "src": "assets/img/me/travel/switzerland_grindelwald_01.jpg",
       "title": "Grindelwald · a cow in the Alps",
       "year": 2025,
       "alt": "A brown-and-white cow in a grassy Alpine pasture, with mountains and clouds behind it.",
-      "kind": "travel"
+      "kind": "travel",
+      "memory": ""
     },
     {
       "src": "assets/img/me/travel/switzerland_grindelwald_02.jpg",
       "title": "Grindelwald · peaks above the valley",
       "alt": "Snow-covered mountain peaks above green slopes and an Alpine valley.",
       "kind": "travel",
-      "year": 2025
+      "year": 2025,
+      "memory": ""
     },
     {
       "src": "assets/img/me/travel/switzerland_Montreux_01.jpg",
       "title": "Montreux · a sailboat on the lake",
       "year": 2025,
       "alt": "A sailboat on blue lake water, with a mountain range in the distance.",
-      "kind": "travel"
+      "kind": "travel",
+      "memory": ""
     },
     {
       "src": "assets/img/me/travel/vatican_city_01.jpg",
       "title": "Vatican City · the museum entrance",
       "alt": "The Vatican Museums entrance with sculpted figures and the inscription Musei Vaticani.",
       "kind": "travel",
-      "year": 2025
+      "year": 2025,
+      "memory": ""
     },
     {
       "src": "assets/img/me/travel/vatican_city_saint_peter_01.jpg",
       "title": "Vatican City · marble and mosaics",
       "year": 2025,
       "alt": "An ornate doorway framed by marble columns, with a religious mosaic above and patterned marble flooring below.",
-      "kind": "travel"
+      "kind": "travel",
+      "memory": ""
     }
   ]
 }

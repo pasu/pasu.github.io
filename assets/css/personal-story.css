@@ -38,5 +38,6 @@
 .personal-story .me-photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: .6rem; }
 .personal-story .me-photo strong { color: var(--global-text-color); display: block; }
 .personal-story .me-photo p { margin: .3rem 0; }
+.personal-story .me-photo .me-photo-memory { color: var(--global-text-color); font-size: .9rem; line-height: 1.6; }
 .personal-story .me-photo-unavailable { display: block; padding: 2rem 1rem; background: var(--global-code-bg-color); }
 @media (max-width: 640px) { .personal-story .me-photo-gallery { grid-template-columns: 1fr; } }

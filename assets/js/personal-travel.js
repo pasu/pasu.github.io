@@ -53,6 +53,9 @@
       figure.append(link);
       const caption = element('figcaption');
       caption.append(element('strong', photo.title));
+      if (photo.memory && photo.memory.trim()) {
+        caption.append(element('p', photo.memory.trim(), 'me-photo-memory'));
+      }
       caption.append(element('p', `${photo.year ? `${photo.year} · ` : ''}${photo.kind} · displayed crop`));
       figure.append(caption);
       gallery.append(figure);
