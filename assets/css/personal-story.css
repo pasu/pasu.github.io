@@ -41,6 +41,7 @@
 .personal-story .me-photo strong { color: var(--global-text-color); display: block; }
 .personal-story .me-photo p { margin: .3rem 0; }
 .personal-story .me-photo-frame { position: relative; border-radius: .6rem; }
+.personal-story .me-photo-memory[hidden] { display: none !important; }
 .personal-story .me-photo .me-photo-memory { position: absolute; inset: 0; padding: 1.2rem; border-radius: .6rem; background: rgba(15, 20, 25, .9); color: #fff; font-size: .9rem; line-height: 1.7; overflow-y: auto; visibility: hidden; opacity: 0; transition: opacity .18s ease; }
 .personal-story .me-photo-frame:hover .me-photo-memory,
 .personal-story .me-photo-frame:focus-within .me-photo-memory { visibility: visible; opacity: 1; }

@@ -62,13 +62,25 @@
         memory.id = `me-memory-${index}`;
         memory.lang = 'en';
         memory.tabIndex = 0;
+        memory.hidden = true;
         link.setAttribute('aria-describedby', memory.id);
-        const close = () => frame.classList.add('me-memory-dismissed');
+        const show = () => {
+          frame.classList.remove('me-memory-dismissed');
+          memory.hidden = false;
+        };
+        const close = () => {
+          memory.hidden = true;
+          frame.classList.add('me-memory-dismissed');
+        };
+        frame.addEventListener('mouseenter', show);
+        frame.addEventListener('focusin', show);
         frame.addEventListener('keydown', event => { if (event.key === 'Escape') close(); });
-        frame.addEventListener('mouseleave', () => frame.classList.remove('me-memory-dismissed'));
+        frame.addEventListener('mouseleave', () => {
+          if (!frame.contains(document.activeElement)) close();
+        });
         frame.addEventListener('focusout', event => {
           if (!frame.contains(event.relatedTarget)) {
-            frame.classList.remove('me-memory-dismissed');
+            close();
           }
         });
         frame.append(memory);

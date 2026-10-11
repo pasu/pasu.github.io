@@ -17,6 +17,9 @@ For each future status update:
 
 ### Status history
 
+- **11 October 2026 — hidden memory fix:** Peter’s screenshot showed English recollections flowing below photographs. Added stylesheet content-hash cache-busting and explicit HTML hidden state: memories start hidden, reveal on mouseenter or keyboard focus, and hide on mouseleave, focus departure, or Escape. The CSS positions them over the image, and hidden text stays absent even before stylesheet loading.
+
+
 - **11 October 2026 — hover-only memory presentation:** Peter requested the English memory as a hover popup, without a visible memory label. Removed the Read memory button; memories remain hidden until photo hover or keyboard focus, and Escape dismisses them. Photo captions retain only the place-first title and date. Chinese originals and English translations remain in the JSON. This supersedes the earlier touch-button instructions.
 
 
@@ -234,7 +237,7 @@ nav: true
 nav_order: 1
 ---
 
-<link rel="stylesheet" href="{{ '/assets/css/personal-story.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/personal-story.css' | relative_url | bust_file_cache }}">
 
 <div class="personal-story" markdown="1">
 
@@ -623,6 +626,7 @@ description: Curriculum vitae of Guowei (Peter) Lu.
 .personal-story .me-photo strong { color: var(--global-text-color); display: block; }
 .personal-story .me-photo p { margin: .3rem 0; }
 .personal-story .me-photo-frame { position: relative; border-radius: .6rem; }
+.personal-story .me-photo-memory[hidden] { display: none !important; }
 .personal-story .me-photo .me-photo-memory { position: absolute; inset: 0; padding: 1.2rem; border-radius: .6rem; background: rgba(15, 20, 25, .9); color: #fff; font-size: .9rem; line-height: 1.7; overflow-y: auto; visibility: hidden; opacity: 0; transition: opacity .18s ease; }
 .personal-story .me-photo-frame:hover .me-photo-memory,
 .personal-story .me-photo-frame:focus-within .me-photo-memory { visibility: visible; opacity: 1; }
@@ -700,13 +704,25 @@ description: Curriculum vitae of Guowei (Peter) Lu.
         memory.id = `me-memory-${index}`;
         memory.lang = 'en';
         memory.tabIndex = 0;
+        memory.hidden = true;
         link.setAttribute('aria-describedby', memory.id);
-        const close = () => frame.classList.add('me-memory-dismissed');
+        const show = () => {
+          frame.classList.remove('me-memory-dismissed');
+          memory.hidden = false;
+        };
+        const close = () => {
+          memory.hidden = true;
+          frame.classList.add('me-memory-dismissed');
+        };
+        frame.addEventListener('mouseenter', show);
+        frame.addEventListener('focusin', show);
         frame.addEventListener('keydown', event => { if (event.key === 'Escape') close(); });
-        frame.addEventListener('mouseleave', () => frame.classList.remove('me-memory-dismissed'));
+        frame.addEventListener('mouseleave', () => {
+          if (!frame.contains(document.activeElement)) close();
+        });
         frame.addEventListener('focusout', event => {
           if (!frame.contains(event.relatedTarget)) {
-            frame.classList.remove('me-memory-dismissed');
+            close();
           }
         });
         frame.append(memory);

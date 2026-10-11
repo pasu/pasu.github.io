@@ -7,7 +7,7 @@ nav: true
 nav_order: 1
 ---
 
-<link rel="stylesheet" href="{{ '/assets/css/personal-story.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/personal-story.css' | relative_url | bust_file_cache }}">
 
 <div class="personal-story" markdown="1">
 
