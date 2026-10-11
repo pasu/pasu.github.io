@@ -64,11 +64,19 @@
         memory.tabIndex = 0;
         memory.hidden = true;
         link.setAttribute('aria-describedby', memory.id);
+        let hideTimer;
         const show = () => {
+          clearTimeout(hideTimer);
+          const bounds = frame.getBoundingClientRect();
+          const cardWidth = Math.min(320, window.innerWidth - 32);
+          const side = window.innerWidth - bounds.right >= cardWidth + 12 ? 'right'
+            : bounds.left >= cardWidth + 12 ? 'left' : 'below';
+          memory.setAttribute('data-side', side);
           frame.classList.remove('me-memory-dismissed');
           memory.hidden = false;
         };
         const close = () => {
+          clearTimeout(hideTimer);
           memory.hidden = true;
           frame.classList.add('me-memory-dismissed');
         };
@@ -76,7 +84,7 @@
         frame.addEventListener('focusin', show);
         frame.addEventListener('keydown', event => { if (event.key === 'Escape') close(); });
         frame.addEventListener('mouseleave', () => {
-          if (!frame.contains(document.activeElement)) close();
+          if (!frame.contains(document.activeElement)) hideTimer = setTimeout(close, 180);
         });
         frame.addEventListener('focusout', event => {
           if (!frame.contains(event.relatedTarget)) {

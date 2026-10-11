@@ -17,6 +17,9 @@ For each future status update:
 
 ### Status history
 
+- **11 October 2026 — memory card outside the photograph:** Peter disliked the dark overlay obscuring the image. Memories now open in a compact floating card to the right or left of the hovered photograph, choosing the side with enough viewport space. Narrow screens place the card below the image. The photo itself stays unobscured. A brief mouse-leave delay permits moving into the card to read or scroll. Original text, translations, and randomized gallery order are preserved.
+
+
 - **11 October 2026 — hidden memory fix:** Peter’s screenshot showed English recollections flowing below photographs. Added stylesheet content-hash cache-busting and explicit HTML hidden state: memories start hidden, reveal on mouseenter or keyboard focus, and hide on mouseleave, focus departure, or Escape. The CSS positions them over the image, and hidden text stays absent even before stylesheet loading.
 
 
@@ -621,13 +624,16 @@ description: Curriculum vitae of Guowei (Peter) Lu.
 .personal-story .me-country-detail { font-size: .9rem; }
 .personal-story .me-country-detail:empty { display: none; }
 .personal-story .me-photo-gallery { columns: 2; column-gap: 1.4rem; }
-.personal-story .me-photo { margin: 0 0 1.8rem; min-width: 0; break-inside: avoid; }
+.personal-story .me-photo { position: relative; margin: 0 0 1.8rem; min-width: 0; break-inside: avoid; }
+.personal-story .me-photo:hover, .personal-story .me-photo:focus-within { z-index: 10; }
 .personal-story .me-photo img { display: block; width: 100%; height: auto; border-radius: .6rem; }
 .personal-story .me-photo strong { color: var(--global-text-color); display: block; }
 .personal-story .me-photo p { margin: .3rem 0; }
 .personal-story .me-photo-frame { position: relative; border-radius: .6rem; }
 .personal-story .me-photo-memory[hidden] { display: none !important; }
-.personal-story .me-photo .me-photo-memory { position: absolute; inset: 0; padding: 1.2rem; border-radius: .6rem; background: rgba(15, 20, 25, .9); color: #fff; font-size: .9rem; line-height: 1.7; overflow-y: auto; visibility: hidden; opacity: 0; transition: opacity .18s ease; }
+.personal-story .me-photo .me-photo-memory { position: absolute; top: calc(100% + .75rem); left: 0; width: min(320px, calc(100vw - 32px)); box-sizing: border-box; padding: 1rem 1.15rem; border: 1px solid var(--global-divider-color); border-radius: .65rem; background: var(--global-bg-color); color: var(--global-text-color); box-shadow: 0 8px 28px rgba(0,0,0,.18); font-size: .85rem; line-height: 1.7; max-height: 65vh; overflow-y: auto; visibility: hidden; opacity: 0; transition: opacity .18s ease; z-index: 11; }
+.personal-story .me-photo-memory[data-side="right"] { top: 0; left: calc(100% + .75rem); }
+.personal-story .me-photo-memory[data-side="left"] { top: 0; left: auto; right: calc(100% + .75rem); }
 .personal-story .me-photo-frame:hover .me-photo-memory,
 .personal-story .me-photo-frame:focus-within .me-photo-memory { visibility: visible; opacity: 1; }
 .personal-story .me-photo-frame.me-memory-dismissed .me-photo-memory { visibility: hidden; opacity: 0; }
@@ -706,11 +712,19 @@ description: Curriculum vitae of Guowei (Peter) Lu.
         memory.tabIndex = 0;
         memory.hidden = true;
         link.setAttribute('aria-describedby', memory.id);
+        let hideTimer;
         const show = () => {
+          clearTimeout(hideTimer);
+          const bounds = frame.getBoundingClientRect();
+          const cardWidth = Math.min(320, window.innerWidth - 32);
+          const side = window.innerWidth - bounds.right >= cardWidth + 12 ? 'right'
+            : bounds.left >= cardWidth + 12 ? 'left' : 'below';
+          memory.setAttribute('data-side', side);
           frame.classList.remove('me-memory-dismissed');
           memory.hidden = false;
         };
         const close = () => {
+          clearTimeout(hideTimer);
           memory.hidden = true;
           frame.classList.add('me-memory-dismissed');
         };
@@ -718,7 +732,7 @@ description: Curriculum vitae of Guowei (Peter) Lu.
         frame.addEventListener('focusin', show);
         frame.addEventListener('keydown', event => { if (event.key === 'Escape') close(); });
         frame.addEventListener('mouseleave', () => {
-          if (!frame.contains(document.activeElement)) close();
+          if (!frame.contains(document.activeElement)) hideTimer = setTimeout(close, 180);
         });
         frame.addEventListener('focusout', event => {
           if (!frame.contains(event.relatedTarget)) {

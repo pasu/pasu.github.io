@@ -36,13 +36,16 @@
 .personal-story .me-country-detail { font-size: .9rem; }
 .personal-story .me-country-detail:empty { display: none; }
 .personal-story .me-photo-gallery { columns: 2; column-gap: 1.4rem; }
-.personal-story .me-photo { margin: 0 0 1.8rem; min-width: 0; break-inside: avoid; }
+.personal-story .me-photo { position: relative; margin: 0 0 1.8rem; min-width: 0; break-inside: avoid; }
+.personal-story .me-photo:hover, .personal-story .me-photo:focus-within { z-index: 10; }
 .personal-story .me-photo img { display: block; width: 100%; height: auto; border-radius: .6rem; }
 .personal-story .me-photo strong { color: var(--global-text-color); display: block; }
 .personal-story .me-photo p { margin: .3rem 0; }
 .personal-story .me-photo-frame { position: relative; border-radius: .6rem; }
 .personal-story .me-photo-memory[hidden] { display: none !important; }
-.personal-story .me-photo .me-photo-memory { position: absolute; inset: 0; padding: 1.2rem; border-radius: .6rem; background: rgba(15, 20, 25, .9); color: #fff; font-size: .9rem; line-height: 1.7; overflow-y: auto; visibility: hidden; opacity: 0; transition: opacity .18s ease; }
+.personal-story .me-photo .me-photo-memory { position: absolute; top: calc(100% + .75rem); left: 0; width: min(320px, calc(100vw - 32px)); box-sizing: border-box; padding: 1rem 1.15rem; border: 1px solid var(--global-divider-color); border-radius: .65rem; background: var(--global-bg-color); color: var(--global-text-color); box-shadow: 0 8px 28px rgba(0,0,0,.18); font-size: .85rem; line-height: 1.7; max-height: 65vh; overflow-y: auto; visibility: hidden; opacity: 0; transition: opacity .18s ease; z-index: 11; }
+.personal-story .me-photo-memory[data-side="right"] { top: 0; left: calc(100% + .75rem); }
+.personal-story .me-photo-memory[data-side="left"] { top: 0; left: auto; right: calc(100% + .75rem); }
 .personal-story .me-photo-frame:hover .me-photo-memory,
 .personal-story .me-photo-frame:focus-within .me-photo-memory { visibility: visible; opacity: 1; }
 .personal-story .me-photo-frame.me-memory-dismissed .me-photo-memory { visibility: hidden; opacity: 0; }
