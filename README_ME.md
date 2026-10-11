@@ -17,6 +17,8 @@ For each future status update:
 
 ### Status history
 
+- **11 October 2026 — AI disclosure:** Peter requested identifying Me as AI-generated. Added a visible note at the top that the page was generated with AI assistance and edited by Peter, the illustration is AI-generated, and the gallery photographs are his own. Preserve this disclosure during future updates.
+
 - **11 October 2026 — photo memories:** Peter accepted adding short personal memories to photos. Each photo now has an optional `memory` string, initially empty. The gallery displays a nonempty memory beneath its title; empty memories show no placeholder. Peter can write one sentence about why the moment matters. Do not invent those recollections.
 
 - **11 October 2026 — About/Me scope:** Peter clarified that About is for his short introduction, work, and latest news. Removed both “In a few words” and “The longer story”, including their contents and navigation links, from Me. Me now focuses on the symbolic visual depiction, travel map, personal photo gallery, and Codex's personal perspective. Avoid reintroducing a second professional biography here. Possible future additions should be brief and based on Peter's own input, such as a current personal interest or a short memory accompanying a photo; suggestions are not facts to publish.
@@ -221,6 +223,8 @@ nav_order: 1
 <link rel="stylesheet" href="{{ '/assets/css/personal-story.css' | relative_url }}">
 
 <div class="personal-story" markdown="1">
+
+*This page was generated with AI assistance and edited by me. The illustration is AI-generated; the gallery photographs are my own.*
 
 <div class="me-intro">
   <p class="me-eyebrow">A personal introduction · Guowei / Peter</p>

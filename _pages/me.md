@@ -11,6 +11,8 @@ nav_order: 1
 
 <div class="personal-story" markdown="1">
 
+*This page was generated with AI assistance and edited by me. The illustration is AI-generated; the gallery photographs are my own.*
+
 <div class="me-intro">
   <p class="me-eyebrow">A personal introduction · Guowei / Peter</p>
   <h2 class="me-headline">I imagine things.<br>I try to understand them.<br>Then I build.</h2>
